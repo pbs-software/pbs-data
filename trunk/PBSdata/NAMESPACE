@@ -1,0 +1,7 @@
+# Export all names from PBSdata
+#exportPattern(".")
+exportPattern("^[^\\.]")
+
+# Import all packages listed as Imports or Depends
+#import(PBSfishery)
+

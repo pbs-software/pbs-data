@@ -1,0 +1,15 @@
+Package: PBSdata
+Version: 1.22
+Date: 2012-07-06
+Title: Data, Boundaries, and Key Codes for PBS Packages
+Author: Rowan Haigh, Jon T. Schnute, Norm Olsen, Lisa Lacko
+Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
+Depends: R (>= 2.10.0)
+Description: These data objects first appeared in a private
+   DFO package called PBSdata before they were transferred
+   to PBSfishery, publicly available on Google Code. 
+   PBSfishery became too bulky with a plethora of
+   data and functions, so it was dismantled to form various 
+   smaller packages called PBSdata, PBStools, and PBSmapx. 
+License: GPL (>= 2)
+

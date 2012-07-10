@@ -1,0 +1,47 @@
+\name{qcssa}
+\docType{data}
+\alias{qcssa}
+\title{Topo: Queen Charlotte Sound Survey Strata}
+\description{
+  PolySet of polygons describing the survey strata for the Queen
+  Charlotte Sound synoptic groundfish survey.
+}
+\usage{data(qcssa)}
+\format{
+  Data frame comprising 5 columns: \cr
+    \code{PID.....}{primary polygon ID} \cr
+    \code{POS.....}{position of each vertex within a given polygon} \cr
+    \code{X.......}{longitude coordinates} \cr
+    \code{Y.......}{latitude coordinates} \cr
+    \code{strat...}{stratum descriptor}
+}
+\source{
+  Polygon data in use at Fisheries and Oceans Canada (Pacific region)
+  for delimiting 2 areal strata for the Queen Charlotte Sound synoptic
+  groundfish survey (Stanley \emph{et al.} 2004). The two areal strata divide
+  the central BC coast region into a northern and southern
+  component. Four depth zones (50--125 m, 125--200 m, 200--330 m, 330--500 m)
+  are used in the survey but not delimited in this PolySet.
+}
+\references{
+  Stanley, R.D., Starr, P., Olsen, N. and Haigh, R. (2004) 
+  Summary of results of the 2003 Queen Charlotte Sound bottom trawl survey. 
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/028}, 50 pp. \cr
+  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_028_E.htm}
+}
+\examples{
+\dontrun{
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL,qcssa)
+  plotMap(nepacLL,xlim=c(-132.8,-126.9),ylim=c(50.5,52.9),border="grey")
+  pdata=attributes(qcssa)$PolyData
+  addPolys(qcssa,polyProps=pdata); addPolys(nepacLL,border="grey")
+  addPolys(qcssa,border="black");  addLabels(pdata,cex=1.2)
+  box(); invisible() }
+pbsfun()
+}
+}
+\seealso{
+  \code{\link{ltsa}}, \code{\link{wcvisa}}
+}
+\keyword{datasets}
