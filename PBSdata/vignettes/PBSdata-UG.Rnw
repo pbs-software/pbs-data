@@ -1,0 +1,543 @@
+\documentclass[letterpaper,12pt]{article}
+%\documentclass[article,shortnames,letterpaper,12pt]{jss}
+%\VignetteIndexEntry{Introduction to PBSdata}
+%\VignettePackage{PBSdata}
+
+% Packages
+%\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{hyperref,url,parskip} %,inconsolata}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %  page margins
+\usepackage[format=plain, indention=0.25in, labelsep=period, justification=raggedright]{caption}
+\usepackage[round]{natbib}
+%\usepackage{lscape}
+
+\raggedright
+%\setlength{\hangindent}{0.25in}
+\def\noh{\vspace*{2ex}\noindent\hangindent\parindent}
+\def\tab{\hspace{0.5 in}}
+
+% For colors
+\usepackage{color}
+\definecolor{red}{rgb}{0.8039216,0.2156863,0}
+\definecolor{green}{rgb}{0, 1, 0}
+\definecolor{blue}{rgb}{0, 0, 1}
+\definecolor{slategrey}{rgb}{0.4392157, 0.5019608, 0.5647059}
+\definecolor{deepskyblue}{rgb}{0, 0.7490196, 1}
+
+% Definitions
+%\newfont{inc}{inconsolata} 
+\newcommand{\slan}{{\tt S}}
+\newcommand{\rlan}{{\tt R}}
+\newcommand{\pbsd}{{\tt PBSdata}}
+\newcommand{\pbsf}{{\tt PBSfishery}}
+\newcommand{\pbst}{{\tt PBStools}}
+\newcommand{\pbsdat}{{\it PBS Data}}
+\newcommand{\tcl}{{\tt Tcl/Tk}}
+
+% from RODBC.Rnw
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\pkg}[1]{\texttt{#1}}
+\newcommand{\var}[1]{\emph{#1}}
+\newcommand{\link}[1]{#1}
+\newcommand{\sQuote}[1]{`#1'}
+
+%\newcommand{\pkg}[1]{\texttt{\textbf{#1}}}
+%\newcommand{\code}[1]{{\tt #1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\ital}[1]{{\it #1}}
+\newcommand{\bold}[1]{{\bf #1}}
+\newcommand{\under}[1]{{\underline {#1}}}
+\newcommand{\red}[1]{{\textcolor{red} {#1}}}
+\newcommand{\blue}[1]{{\textcolor{blue} {#1}}}
+\newcommand{\grey}[1]{{\textcolor{slategrey} {#1}}}
+\newcommand{\sky}[1]{{\textcolor{deepskyblue} {#1}}}
+
+% from Sweave.Rnw
+\hypersetup{%
+colorlinks,%
+plainpages=true,%
+linkcolor=black,%
+citecolor=black,%
+urlcolor=blue,%
+}
+
+\newcommand\pbsfig[3]{    % filename is #1, text is #2, figure height is #3
+	\clearpage
+	\begin{figure}[t!] %[htbp]
+	\centering
+	\includegraphics[width=6.5in,height=#3in,keepaspectratio=TRUE]{#1.png}
+	%\vspace{0pt}
+	\caption{#2}\vspace{-2ex}
+	\label{fig:#1}
+	\end{figure}
+	%\vspace{-10ex}
+	\normalsize \bold{Example code for \code{#1}:}
+	\footnotesize
+	\begin{verbatim}
+}
+
+\newcommand\pbscode[1]{    % filename is #1  % currently not used
+	\vspace{12pt}
+	\large \bold{Example code for \code{#1}:}
+	\small
+	\begin{verbatim}
+}
+
+% Get rid of all that margin space
+\topmargin -0.5in 
+\oddsidemargin 0in \evensidemargin 0in
+\textheight 9.0in \textwidth 6.5in
+
+\begin{document}
+
+\title{PBSdata User's Guide}
+\author{Rowan Haigh and Jon T. Schnute}
+\maketitle
+
+\section{What is PBSdata?}
+
+\tab \pkg{PBSdata} contains data objects used primarily by the R package \pkg{PBStools} for illustrative purposes. The data herein either exist in the public domain or are non-proprietary and open for public use.
+
+\tab A useful set of data (regional boundaries, key codes, example data), a GUI interface to \code{PBSmapping}, and handy utility functions evolved over time (2007--2012) in one R package called \pkg{PBSfishery}, which can be found on Google's Project Hosting site: \url{http://code.google.com/p/pbs-fishery/}. In April 2012, we decided to split this package into three separate libraries -- \code{PBSdata}, \code{PBSmapx}, and \code{PBStools} -- for distribution on CRAN.
+
+\section{What is PBS?}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=5cm]{PBS.png}
+	\quad
+	\caption{Pacific Biological Station (PBS), Nanaimo BC}
+	\label{fig:PBS}
+\end{figure}
+
+\tab The Pacific Biological Station is the oldest fisheries research centre on Canada's Pacific coast and forms part of a network of nine major scientific facilities operated by Fisheries and Oceans Canada. Located in Nanaimo, British Columbia, the Station is home to scientists, technicians, support staff and ships' crews whose common interests are the coastal waters of British Columbia, the Northeast Pacific Ocean, the Western Arctic and navigable waters east to the Manitoba, Saskatchewan border.
+
+\tab PBS was established in 1908 and is the principal centre for fisheries research on Canada's west coast. There are some 22 structures on the site including a four-story office/wet lab building, specialty storage structures for hazardous chemicals and salt water pumping facilities. PBS maintains a number of workshops for research support. There is a wharf used for loading, unloading, and berthage of research vessels, as well as a small boat dock for inshore research boats. PBS also maintains a library and meeting facilities. Aquatic facilities, primarily used by Aquaculture Science, include ambient temperature and heated salt water and fresh water. 
+
+\tab Research at PBS responds to stock assessment, aquaculture, marine environment, habitat, ocean science, and fish productivity priorities. Some fisheries management activities are also conducted here. 
+
+For more information, see:\\ \footnotesize
+\url{http://www.pac.dfo-mpo.gc.ca/science/facilities-installations/pbs-sbp/index-eng.htm}. \normalsize
+
+\section{Figure Demos}
+
+\tab The \pkg{PBSdata} help files provide examples to illustrate the data objects; however, these examples have been disabled using the \code{dontrun\{\}} enclosure because we want to keep \pkg{PBSdata} from depending on other packages. Many of the examples require \pkg{PBSmapping}, and a few will require \pkg{PBStools}. In turn, \pkg{PBStools} depends on \pkg{PBSmapping}, \pkg{PBSmodelling}, \pkg{PBSdata}, and \pkg{RODBC}.
+
+\vspace*{4ex} \noindent {\bf \Large Contact}\\
+\vspace*{2ex} \noindent \blue{{\bf \normalsize Rowan Haigh}}\\
+\small
+\grey{Research Biologist, Groundfish Section\\
+Marine Ecosystems and Aquaculture Division\\
+Fisheries and Oceans Canada\\
+Pacific Biological Station, Nanaimo, BC  V9T 6N7}\\
+\sky{Tel. +1 250-756-7123  fac simile +1 250-756-7053\\
+Email rowan.haigh@dfo-mpo.gc.ca} 
+\normalsize
+
+%\vspace*{4ex} \noindent {\bf \Large References}
+
+\bibliographystyle{jss}
+\bibliography{PBSrefs}
+
+%-----FIGURES-----
+%bctopo
+\pbsfig{bctopo}{Data frame of sea floor topography \citep{Smith-Sandwell:1997} downloaded from TOPEX 
+  and reformatted for use by \code{makeTopography} in \pkg{PBSmapping}.}{5.5}
+pbsfun=function(xlim=c(-128.5,-124.5),ylim=c(48,50.5),zlev=c(123,1234)) { 
+  require(PBSmapping); data(bctopo,nepacLL)
+  zx=bctopo$x>=xlim[1] & bctopo$x<=xlim[2] &!is.na(bctopo$x)
+  zy=bctopo$y>=ylim[1] & bctopo$y<=ylim[2] &!is.na(bctopo$y)
+  topo=bctopo[zx&zy,]
+  bathy = makeTopography(topo)
+  bCL   = contourLines(bathy,levels=zlev)
+  bCP   = convCP(bCL,projection="LL",zone=9)
+  bPoly = bCP$PolySet
+  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="moccasin")
+  addLines(bPoly,col=c("red","blue"))
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%bgcp
+%\begin{landscape}
+\pbsfig{bgcp}{Polygons outlining the biogeochemical provinces of the world's oceans as defined
+  by Dr. Alan Longhurst and others \citep{Longhurst:2007,Pauly-etal:2000}.}{5}
+pbsfun=function(){
+  require(PBSmapping); data(bgcp)
+  pdata <- attributes(bgcp)$PolyData
+  plotMap(bgcp,polyProps=pdata,plt=c(.05,.99,.05,.99))
+  pdata$label=pdata$bgcp
+  addLabels(pdata,cex=.7) }
+pbsfun()
+\end{verbatim}
+%\end{landscape}
+
+%dbr.rem
+\pbsfig{dbrrem}{Annual catches of Darkblotched Rockfish \ital{Sebastes crameri} in BC waters by gear sector 
+	and nationality (currently, only US Trawl available for non-domestic). See \citet{Haigh-Starr:2008a,Haigh-Starr:2008b} for assessment details.}{7}
+require(PBStools)
+plotCatch(dbr.rem)
+\end{verbatim}
+
+%hsgrid
+\pbsfig{hsgrid}{PolySet of polygons for the Hecate Strait Assemblage Survey grid \citep{Fargo-Tyler:1992}.}{6.5}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL, hsgrid)
+  xlim=extendrange(hsgrid$X,f=0.2); ylim=extendrange(hsgrid$Y,f=0.1)
+  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
+  addPolys(hsgrid,border="blue",lwd=2)
+  addLabels(extractPolyData(hsgrid),placement="CENTROID",
+    polys=hsgrid,col="red")
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%hsisob
+\pbsfig{hsisob}{PolySet of polylines that trace the 20m and 50m isobaths in Hecate Strait, British Columbia (BC).}{6.5}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL, hsisob)
+  pdata=attributes(hsisob)$PolyData
+  xlim=extendrange(hsisob$X,f=0.2); ylim=extendrange(hsisob$Y,f=0.1)
+  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
+  addLines(hsisob,col=c("red","blue"),lwd=1)
+  addLabels(pdata,adj=0,polyProps=pdata)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%iphc.rbr
+\pbsfig{iphcrbr}{Catch and CPUE indices for the catch of Redbanded Rockfish \emph{Sebastes babcocki}
+  from the International Pacific Halibut Commission's (IPHC) standardized stock assessment (SSA) 
+  survey using longline skates \citep{Yamanaka-etal:2008}.}{6.75}
+pbsfun=function(){
+  require(PBStools); data(iphc.rbr)
+  trend("401","iphc.rbr",dbName="none",type="FILE")
+  print("Press the GUI button labelled 'TREND'")
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+
+%isobath
+\pbsfig{isobath}{PolySet of polylines describing isobaths from 100m to 1800m at 100m increments.
+  The isobaths are an interpolation from a bathymetry grid created from a triangular irregular network (TIN) 
+  that was created from Canadian Hydrographic Service digital natural resource maps \citep{Schnute-etal:1999b}.}{6}
+pbsfun=function(){ 
+  require(PBSmapping); data(isobath,nepacLL)
+  xlim = c(-131.5,-128); ylim = c(50.5,52.5)
+  ptemp = attributes(isobath)$PolyData
+  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="orange")
+  itemp = clipLines(isobath[is.element(isobath$PID,c(200,500,1000)),],xlim=xlim,ylim=ylim)
+  addLines(itemp,polyProps=ptemp)
+  warn=options()$warn; options(warn=-1)
+  addLabels(ptemp,polys=itemp,placement="MEAN_XY",cex=.8,adj=1); box()
+  options(warn=warn); invisible() } ;   pbsfun()
+\end{verbatim}
+
+%locality
+\pbsfig{locality}{PolySet of polygons for fishing ground localities within Pacific Marine Fisheries Commission (PMFC) 
+  minor areas \citep{Schnute-etal:2001, Tagart:1991}.}{6.25}
+pbsfun=function(){
+  require(PBSmapping);  data(locality,nepacLL)
+  plotMap(locality,xlim=c(-130.2,-127),ylim=c(49.8,52.1),col="aliceblue")
+  addPolys(nepacLL,col="#b9ed3f")
+  pdata <- attributes(locality)$PolyData
+  pdata$label <- gsub("[/-]"," ",pdata$name)
+  pdata$label=sapply(sapply(pdata$label,strsplit,split=" "),paste,collapse="\n")
+  addLabels(pdata,polys=locality,placement="CENTROID",cex=.65,col="red") 
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%ltea
+\pbsfig{ltea}{PolySet of polygons describing management areas for Longspine Thornyhead 
+	\ital{Sebastolobus altivelis} during the 2000 and 2001 fishing years (April 1 to March 31).\\
+	See \citet{Schnute-etal:2004a} for details.}{6.5}
+pbsfun=function(){
+  require(PBSmapping)
+  data(ltea,nepacLL)
+  plotMap(ltea,xlim=range(ltea$X),ylim=range(ltea$Y),col=c("chartreuse","pink"))
+  addPolys(nepacLL,col="gold")
+  text(c(-127.23,-130.64), c(48.97,51.27),c("Established","Exploratory"),cex=.8)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%ltmose07
+\pbsfig{ltmose07}{PolySet of polygons describing 7 Longspine Thornyhead fishing grounds off the west coast 
+	of Vancouver Island (WCVI) according to Brian Mose of the Canadian Groundfish Research and Conservation Society (CGRCS).
+	See \citet{Krishka-etal:2005,Starr-etal:2002a,Starr-etal:2002b} for details of the Thornyhead surveys.}{6.5}
+pbsfun=function(){
+  require(PBSmapping)
+  data(ltmose07,nepacLL)
+  xlim=extendrange(ltmose07$X); ylim=extendrange(ltmose07$Y)
+  plotMap(ltmose07,xlim=xlim,ylim=ylim,border="lightseagreen",lwd=2)
+  addPolys(nepacLL,col="sandybrown")
+  addLabels(attributes(ltmose07)$PolyData,polys=ltmose07,
+    placement="CENTROID",col="purple4")
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%ltmose12
+\pbsfig{ltmose12}{PolySet of polygons describing 12 Longspine Thornyhead fishing grounds off the west coast 
+	of Vancouver Island (WCVI) according to Brian Mose of the Canadian Groundfish Research and Conservation Society (CGRCS).
+	See \citet{Krishka-etal:2005,Starr-etal:2002a,Starr-etal:2002b} for details of the Thornyhead surveys.}{6.5}
+pbsfun=function(){
+  require(PBSmapping)
+  data(ltmose12,nepacLL)
+  xlim=extendrange(ltmose12$X); ylim=extendrange(ltmose12$Y)
+  plotMap(ltmose12,xlim=xlim,ylim=ylim,border="red",lwd=2)
+  addPolys(nepacLL,col="moccasin")
+  addLabels(attributes(ltmose12)$PolyData,polys=ltmose12,
+    placement="CENTROID",col="darkblue",cex=.8)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%ltsa
+\pbsfig{ltsa}{PolySet of polygons describing the survey strata for Longspine Thornyheads off the west coast of Vancouver Island (WCVI).
+  See \citet{Krishka-etal:2005,Starr-etal:2002a,Starr-etal:2002b} for details of the Thornyhead surveys, and \citet{Schnute-etal:2004a} 
+  for analysis of the survey results.}{6.25}
+pbsfun=function(){
+  require(PBSmapping); data(ltsa)
+  plotMap(ltsa,border="grey50",col=c("lightgreen","pink","skyblue"))
+  pdata <- attributes(ltsa)$PolyData
+  addLabels(pdata,polys=ltsa,placement="CENTROID",cex=.75,col="red3") 
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%ltsa.bad
+\pbsfig{ltsabad}{PolySet of polygons describing 26 no-trawl zones in the Longspine Thornyhead survey strata 
+  off the west coast of Vancouver Island (WCVI), according to Chris Roberts (CGRCS).
+  See \citet{Krishka-etal:2005,Starr-etal:2002a,Starr-etal:2002b} for details of the Thornyhead surveys, and \citet{Schnute-etal:2004a} 
+  for analysis of the survey results.}{6.25}
+pbsfun=function(){
+  require(PBSmapping); data(ltsa,ltsa.bad)
+  plotMap(ltsa,border="grey")
+  addPolys(ltsa.bad,col="pink",border="red");
+  addLabels(attributes(ltsa.bad)$PolyData,polys=ltsa.bad,placement="MEAN_XY",
+    col="blue",cex=0.7,adj=-.3) 
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%ltxa
+\pbsfig{ltxa}{PolySet of polygons describing management areas for Longspine Thornyheads in effect since the 2002 fishing year.
+  See \citet{Schnute-etal:2004a} for analysis of this fishery.}{6.5}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL, ltxa)
+  xlim=c(-134.2,-125); ylim=c(48.5,54.40)
+  pdata=attributes(ltxa)$PolyData
+  plotMap(ltxa,xlim=xlim,ylim=ylim,polyProps=pdata)
+  addPolys(nepacLL,col="gainsboro")
+  addLabels(pdata,cex=.9)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%major
+\pbsfig{major}{PolySet of polygons for BC's Pacific Marine Fisheries Commission (PMFC) major areas.
+  See \citet{Schnute-etal:2001} and \citet{Tagart:1991} for discussions on boundaries.}{6.75}
+pbsfun=function(){
+  require(PBSmapping); data(major,nepacLL)
+  plotMap(nepacLL,xlim=c(-134.2,-124),ylim=c(47.5,55),border="grey")
+  addPolys(major,border="purple")
+  addLabels(attributes(major)$PolyData,col="goldenrod",cex=1.5)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%minor
+\pbsfig{minor}{PolySet of polygons for BC's Pacific Marine Fisheries Commission (PMFC) minor areas.
+  See \citet{Schnute-etal:2001} and \citet{Tagart:1991} for discussions on boundaries.}{6.75}
+pbsfun=function(){
+  require(PBSmapping); data(minor,nepacLL)
+  plotMap(nepacLL,xlim=c(-134.2,-122.5),ylim=c(47.5,55),border="grey")
+  addPolys(minor,border="green4")
+  addLabels(attributes(minor)$PolyData,cex=.7,col=4)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%nage394
+\pbsfig{nage394}{An age frequency matrix by calendar year for Rougheye Rockfish (\ital{Sebastes aleutianus} 
+  + \ital{S. melanostictus}) from research surveys along the BC coast \citep{Haigh-etal:2005a}.}{6.75}
+pbsfun=function(){
+  require(PBSmodelling); data(nage394)
+  plotBubbles(nage394,dnam=TRUE,hide0=TRUE,size=0.1)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%orfhistory
+\pbsfig{orfhistory}{Barplot showing the various historical records of total rockfish (t) other than Pacific 
+  Ocean Perch. In years where sources overlap, the catch reconstruction either sums the catches or takes
+  the maximum, depending on the source 
+  \citep{CDBS:1918-1950,Ketchen:1976,Ketchen:1980,Rutherford:1999,Thomson-Yates:1960,Thomson-Yates:1961}.}{6.75}
+pbsfun=function(dat, spp="396", ...){
+	require(PBStools); data(orfhistory)
+	dat  = dat[is.element(dat$spp,spp),]
+	ctab = crossTab(dat,c("year","source"),"catch",function(x){sum(x)/1000})
+	out  = as.data.frame(ctab[,-1]); row.names(out)=ctab[,1]
+	sou  = dimnames(out)[[2]]; nsou = length(sou)
+	clrs = c("red","blue","orange","purple","gold","green4","black","pink")[1:nsou]
+	expandGraph(mar=c(3,3,.5,.5))
+	evalCall(barplot,argu=list(height=t(out),beside=TRUE,col=clrs,border=FALSE,type="h",
+		space=c(0,0),las=3,cex.axis=.8,cex.names=.8,xaxs="i"),...,checkdef=TRUE,checkpar=TRUE)
+	legend("topleft",bty="n",fill=clrs,legend=sou,inset=.025)
+	mtext("ORF Catch (t)",side=2,line=2,cex=1.2)
+	invisible(out)
+}
+x = pbsfun(orfhistory,spp=c("388","389","391"),space=c(0,0))
+\end{verbatim}
+
+%pcoda
+\pbsfig{pcoda}{Simple polygons that outline the Hecate Strait Pacific Cod Monitoring Survey areas: TPBW = Two Peaks/ Butterworth,
+	SG = Shell Ground, WR = White Rocks, RI = Reef Island, HS = Horseshoe \citep{Sinclair-Workman:2002,Sinclair-Starr:2005}.}{6.25}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL,pcoda)
+  xlim=extendrange(pcoda$X,f=0.2); ylim=extendrange(pcoda$Y,f=0.1)
+  plotMap(nepacLL,xlim=xlim,ylim=ylim,plt=NULL,col="gainsboro")
+  pdata=attributes(pcoda)$PolyData
+  addPolys(pcoda,polyProps=pdata)
+  addLabels(pdata,polys=pcoda,placement="CENTROID",font=2)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%pmfc
+\pbsfig{pmfc}{Pacific Marine Fisheries Commission (PMFC) areas ued by DFO groundfish personnel (see \code{major}). 
+	These are based largely on the original definitions set up by the US PMFC and the Fisheries Research Board of Canada
+	\citep{Forrester:1969,Tagart:1991}.}{6.5}
+pbsfun=function(){
+  data(pmfc)
+  mess=attributes(pmfc)$history
+  plot(-1:1,-1:1,type="n",axes=FALSE,xlab="",ylab="")
+  text(0,0,paste(strwrap(mess,width=80),collapse="\n"),col="blue",cex=.8)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%popa
+\pbsfig{popa}{PolySet of polygons for areal boundaries that delimit Pacific Ocean Perch (\emph{Sebastes alutus})
+	population clusters based on POP catch and/or CPUE patterns \citep{Schnute-etal:2001}. }{6.5}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL,popa)
+  plotMap(nepacLL,xlim=c(-134.2,-124),ylim=c(47.5,55),border="grey")
+  addPolys(popa,border="firebrick")
+  addLabels(attributes(popa)$PolyData,col="orangered",cex=1.2)
+  invisible() }
+pbsfun()
+\end{verbatim}
+
+%qcb
+\pbsfig{qcb}{PolySet of polygons describing the surficial geology of Queen Charlotte Sound (QCS) and Hecate Strait
+  \citep{Barrie-etal:1991,Sinclair-etal:2005}.}{6.25}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL,qcb)
+  pdata=attributes(qcb)$PolyData
+  leglab=sapply(split(pdata$label,pdata$col),function(x){y=unique(x);paste(y,collapse=" / ")})
+  leglab=leglab[order(leglab)]
+  xlim=c(-132.5,-127.5); ylim=c(50.5,55)
+  plotMap(nepacLL,xlim=xlim,ylim=ylim,border="grey")
+  addPolys(qcb,border=FALSE, polyProps=pdata)
+  legend("bottomleft",fill=names(leglab),legend=leglab,bty="n",cex=.8)
+  invisible() } ;  pbsfun()
+\end{verbatim}
+
+%qcssa
+\pbsfig{qcssa}{PolySet of polygons describing the survey strata for the Queen Charlotte Sound (QCS) synoptic groundfish survey
+  \citep{Stanley-etal:2004}.}{6.5}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL,qcssa)
+  plotMap(nepacLL,xlim=c(-132.8,-126.9),ylim=c(50.5,52.9),border="grey")
+  pdata=attributes(qcssa)$PolyData
+  addPolys(qcssa,polyProps=pdata); addPolys(nepacLL,border="grey")
+  addPolys(qcssa,border="black");  addLabels(pdata,cex=1.2)
+  box(); invisible() }
+pbsfun()
+\end{verbatim}
+
+%rca
+\pbsfig{rca}{PolySet of polygons for BC inshore Rockfish Conservation Areas 2007 \citep{DFO:2006}.}{6.5}
+pbsfun=function(xlim=c(-124,-123.4),ylim=c(48.77,49.25)){
+  require(PBSmapping); data(nepacLLhigh,rca)
+  plotMap(nepacLLhigh,xlim=xlim,ylim=ylim,col="gainsboro",border="darkgrey")
+  pdata=attributes(rca)$PolyData
+  addPolys(rca,col="skyblue")
+  addLabels(pdata,cex=0.65,polys=rca,placement="CENTROID",col="red")
+  box(); invisible() }
+pbsfun()
+\end{verbatim}
+
+%species
+\pbsfig{species}{Data frame of species described primarily by \citet{Hart:1973} codes. The information resides in a data table 
+	called \code{C\_Species} in the relational database \code{PacHarvest}, and is supplemented from species codes in \code{GFBIO}.}{5.9}
+pbsfun=function(N=100){
+  data(species);  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
+  par(mar=c(3,10,0,1),las=1,mgp=c(0,.2,0),tck=.01)
+  spp=species[species$gfbrwt>0 & !is.na(species$gfbrwt),]
+  spp=spp[(order(spp$gfbrwt)),]
+  spw=spp$gfbrwt/1000; names(spw)=spp$latin
+  if (is.null(N) || N<=1) N=length(spw)
+  x=1:N; xlim=c(1,N); ylim=c(0,max(spw))
+  barplot(spw[x],space=0,names.arg=names(spw)[x],horiz=TRUE,
+    col="cornflowerblue",las=1,cex.names=.8,cex.axis=.8)
+  mtext("Mean weight (kg)",side=1,line=1.5,cex=1); invisible() } ;  pbsfun()
+\end{verbatim}
+
+%srfa
+\pbsfig{srfa}{PolySet of polygons for areal boundaries used in slope rockfish assessments \citep{Schnute-etal:2001}.}{6.75}
+pbsfun=function(){
+  require(PBSmapping); data(nepacLL,srfa)
+  plotMap(nepacLL,xlim=c(-134.2,-124),y=c(47.5,55),border="grey")
+  addPolys(srfa,border="cornflowerblue",lwd=2)
+  addLabels(attributes(srfa)$PolyData,col="indianred",cex=0.9)
+  box(); invisible() }
+pbsfun()
+\end{verbatim}
+
+%srfs
+\pbsfig{srfs}{PolySet of polygons for Queen Charlotte Sound (QCS) gullies used in slope rockfish assessments \citep{Schnute-etal:2001}.}{6.75}
+pbsfun=function(){
+  require(PBSmapping); data(srfs,nepacLL)
+  plotMap(nepacLL,xlim=c(-134.2,-125),y=c(50,55),border="grey")
+  addPolys(srfs,border="coral",lwd=2)
+  addLabels(attributes(srfs)$PolyData,col="navy",cex=0.8)
+  box(); invisible() }
+pbsfun()
+\end{verbatim}
+
+%trawlability
+\pbsfig{trawlability}{PolySet of polygons describing areas of \sQuote{trawlability} on the 
+	central coast of BC (Queen Charlotte Sound) and the west coast of The Queen Charlotte Islands 
+	\citep{Schnute-etal:1999b}.}{6.25}
+pbsfun=function(){
+  require(PBSmapping); data(trawlability,nepacLL)
+  pdata=attributes(trawlability)$PolyData
+  plotMap(nepacLL,xlim=c(-134.3,-127.4),y=c(49.7,54.7),border="grey")
+  addPolys(trawlability,polyProps=pdata)
+  leglab=sapply(split(paste(pdata$label,pdata$brief,sep=": "),pdata$col),unique)
+  leglab=leglab[order(leglab)]
+  legend(x="bottomleft",fill=names(leglab),legend=leglab,bty="n",cex=.8,inset=.025)
+  box(); invisible() } ;   pbsfun()
+\end{verbatim}
+
+%wcvisa
+\pbsfig{wcvisa}{PolySet of polygons describing the survey strata for the west coast of Vancouver Island synoptic groundfish survey
+  \citep{Schnute-etal:2004a,Stanley-etal:2004}.}{6.75}
+pbsfun=function(){
+  require(PBSmapping); data(wcvisa,nepacLL)
+  pdata=attributes(wcvisa)$PolyData
+  plotMap(nepacLL,xlim=c(-129.0,-124.3),y=c(48.0,50.8),border="grey")
+  addPolys(wcvisa,polyProps=pdata)
+  box(); invisible() }
+pbsfun()
+\end{verbatim}
+
+\end{document}
+
