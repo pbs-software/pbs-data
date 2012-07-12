@@ -4,7 +4,7 @@
 	if( is.character( pkg_info$Packaged ) )
 		pkg_date <- strsplit( pkg_info$Packaged, " " )[[1]][1]
 	else
-		pkg_date  <- "unkown"
+		pkg_date  <- date()
 	
 	userguide_path <- system.file( "doc/PBSdata-UG.pdf", package = "PBSdata")
 	
