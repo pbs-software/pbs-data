@@ -98,7 +98,7 @@ urlcolor=blue,%
 
 \section{What is PBSdata?}
 
-\tab \pkg{PBSdata} contains data objects used primarily by the R package \pkg{PBStools} for illustrative purposes. The data herein either exist in the public domain or are non-proprietary and open for public use.
+\tab \pkg{PBSdata} contains data objects used primarily by the R packages \pkg{PBStools} for illustrating function examples and \pkg{PBSmapx} for drawing various coastline and boundary shapefiles. The data herein either exist in the public domain or are non-proprietary and open for public use.
 
 \tab A useful set of data (regional boundaries, key codes, example data), a GUI interface to \code{PBSmapping}, and handy utility functions evolved over time (2007--2012) in one R package called \pkg{PBSfishery}, which can be found on Google's Project Hosting site: \url{http://code.google.com/p/pbs-fishery/}. In April 2012, we decided to split this package into three separate libraries -- \code{PBSdata}, \code{PBSmapx}, and \code{PBStools} -- for distribution on CRAN.
 
@@ -125,8 +125,10 @@ For more information, see:\\ \footnotesize
 
 \tab The \pkg{PBSdata} help files provide examples to illustrate the data objects; however, these examples have been disabled using the \code{dontrun\{\}} enclosure because we want to keep \pkg{PBSdata} from depending on other packages. Many of the examples require \pkg{PBSmapping}, and a few will require \pkg{PBStools}. In turn, \pkg{PBStools} depends on \pkg{PBSmapping}, \pkg{PBSmodelling}, \pkg{PBSdata}, and \pkg{RODBC}.
 
-\vspace*{4ex} \noindent {\bf \Large Contact}\\
-\vspace*{2ex} \noindent \blue{{\bf \normalsize Rowan Haigh}}\\
+\section* {Contact Information}
+
+%\vspace*{4ex} \noindent {\bf \Large Contact}\\
+\vspace*{0ex} \noindent \blue{{\bf \normalsize Rowan Haigh}}\\
 \small
 \grey{Research Biologist, Groundfish Section\\
 Marine Ecosystems and Aquaculture Division\\
@@ -375,7 +377,7 @@ pbsfun()
 
 %orfhistory
 \pbsfig{orfhistory}{Barplot showing the various historical records of total rockfish (t) other than Pacific 
-  Ocean Perch. In years where sources overlap, the catch reconstruction either sums the catches or takes
+  Ocean Perch. In years where sources overlap, the catch reconstruction \citep{Haigh-Yamanaka:2011} either sums the catches or takes
   the maximum, depending on the source 
   \citep{CDBS:1918-1950,Ketchen:1976,Ketchen:1980,Rutherford:1999,Thomson-Yates:1960,Thomson-Yates:1961}.}{6.75}
 pbsfun=function(dat, spp="396", ...){
@@ -475,8 +477,8 @@ pbsfun()
 \end{verbatim}
 
 %species
-\pbsfig{species}{Data frame of species described primarily by \citet{Hart:1973} codes. The information resides in a data table 
-	called \code{C\_Species} in the relational database \code{PacHarvest}, and is supplemented from species codes in \code{GFBIO}.}{5.9}
+\pbsfig{species}{Mean weight in data frame \code{species} identified primarily by \citet{Hart:1973} codes. The information resides in a data table 
+	called \code{C\_Species} in the relational database \code{PacHarvest}, and is supplemented with data from \code{GFBIO}.}{5.9}
 pbsfun=function(N=100){
   data(species);  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
   par(mar=c(3,10,0,1),las=1,mgp=c(0,.2,0),tck=.01)

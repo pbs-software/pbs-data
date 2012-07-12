@@ -3,7 +3,8 @@ PBSdata Changes
 Authors: RH = Rowan Haigh     JTS = Jon T. Schnute
          NO = Norm Olsen       LL = Lisa Lacko     
 
-1.22  2012-04-26  Authors
+1.22  2012-07-12  Authors
+  - Updated the 'PBSdata-UG' vignette. (RH 7/12)
   - Added a vignette called 'PBSdata-UG.Rnw' in the suggested 'vignette' subfolder; put PBSdata-UG.pdf in the inst\doc folder. (RH 4/26)
   - Added a few more examples to the Rd files. (RH 4/25)
 
