@@ -3,7 +3,10 @@ PBSdata Changes
 Authors: RH = Rowan Haigh     JTS = Jon T. Schnute
          NO = Norm Olsen       LL = Lisa Lacko     
 
-1.22  2012-07-13  Authors
+1.22  2012-10-23 Authors
+  - Updated the data object 'orfhistory' to include Ketchen's (1980a) Japanese data for WCVI and WCHG;
+	also the PFMA to PMFC conversion for PacHarv3 now uses PFMA small areas for better catch placement but PacHarv3 areas (e.g., 9021) are still problematic. (RH 10/12)
+  - Added new PolySets 'wchgsa' (west coast Haida Gwaii survey area) and 'hssa' (Hecate Strait survey area). (RH 10/5)
   - Added 'jss.bst' and 'jss.cls' to the 'vignettes' directory to enforce bibliography execution. (RH 7/13)
   - Updated the 'PBSdata-UG' vignette. (RH 7/12)
   - Added a vignette called 'PBSdata-UG.Rnw' in the suggested 'vignette' subfolder; put PBSdata-UG.pdf in the inst\doc folder. (RH 4/26)
