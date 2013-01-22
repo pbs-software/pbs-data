@@ -54,8 +54,10 @@ Abstract from Sinclair and Workman (2002): \cr
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(nepacLL,pcoda)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(nepacLL,pcoda)
   xlim=extendrange(pcoda$X,f=0.2); ylim=extendrange(pcoda$Y,f=0.1)
   plotMap(nepacLL,xlim=xlim,ylim=ylim,plt=NULL,col="gainsboro")
   pdata=attributes(pcoda)$PolyData
@@ -63,6 +65,7 @@ pbsfun=function(){
   addLabels(pdata,polys=pcoda,placement="CENTROID",font=2)
   invisible() }
 pbsfun()
+})
 }
 }
 \keyword{datasets}

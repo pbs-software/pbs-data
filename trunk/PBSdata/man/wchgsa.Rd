@@ -50,10 +50,11 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun = function() {
   opar = par(no.readonly=TRUE)
   on.exit(par(opar))
-  require(PBSmapping)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
   data(wchgsa,nepacLL)
   xlim = extendrange(wchgsa$X)
   ylim = extendrange(wchgsa$Y)
@@ -62,6 +63,7 @@ pbsfun = function() {
   addPolys(nepacLL,col="ivory")
   invisible() }
 pbsfun()
+})
 }
 }
 \keyword{datasets}

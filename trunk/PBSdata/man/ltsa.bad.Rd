@@ -57,14 +57,17 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){ 
-  require(PBSmapping); data(ltsa,ltsa.bad)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(ltsa,ltsa.bad)
   plotMap(ltsa,border="grey")
   addPolys(ltsa.bad,col="pink",border="red");
   addLabels(attributes(ltsa.bad)$PolyData,polys=ltsa.bad,placement="MEAN_XY",
     col="blue",cex=0.7,adj=-.3) 
   invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

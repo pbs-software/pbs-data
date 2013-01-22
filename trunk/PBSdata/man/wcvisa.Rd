@@ -46,13 +46,16 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(wcvisa,nepacLL)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(wcvisa,nepacLL)
   pdata=attributes(wcvisa)$PolyData
   plotMap(nepacLL,xlim=c(-129.0,-124.3),y=c(48.0,50.8),border="grey")
   addPolys(wcvisa,polyProps=pdata)
   box(); invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

@@ -51,8 +51,9 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(ex=1){
-  require(PBSmapping)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
   if (ex==1) {
   data(ltmose07,nepacLL)
   xlim=extendrange(ltmose07$X); ylim=extendrange(ltmose07$Y)
@@ -69,6 +70,7 @@ pbsfun=function(ex=1){
       placement="CENTROID",col="darkblue",cex=.8) }
   invisible() }
 pbsfun(1); pbsfun(2)
+})
 }
 }
 \seealso{

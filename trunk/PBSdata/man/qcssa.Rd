@@ -31,14 +31,17 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(nepacLL,qcssa)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(nepacLL,qcssa)
   plotMap(nepacLL,xlim=c(-132.8,-126.9),ylim=c(50.5,52.9),border="grey")
   pdata=attributes(qcssa)$PolyData
   addPolys(qcssa,polyProps=pdata); addPolys(nepacLL,border="grey")
   addPolys(qcssa,border="black");  addLabels(pdata,cex=1.2)
   box(); invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

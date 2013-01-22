@@ -57,13 +57,16 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(major,nepacLL)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(major,nepacLL)
   plotMap(nepacLL,xlim=c(-134.2,-124),ylim=c(47.5,55),border="grey")
   addPolys(major,border="purple")
   addLabels(attributes(major)$PolyData,col="goldenrod",cex=1.5)
   invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

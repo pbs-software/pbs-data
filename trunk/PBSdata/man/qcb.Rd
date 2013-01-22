@@ -69,8 +69,10 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(nepacLL,qcb)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(nepacLL,qcb)
   pdata=attributes(qcb)$PolyData
   leglab=sapply(split(pdata$label,pdata$col),function(x){
     y=unique(x);paste(y,collapse=" / ")})
@@ -81,6 +83,7 @@ pbsfun=function(){
   legend("bottomleft",fill=names(leglab),legend=leglab,bty="n",cex=.8)
   invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

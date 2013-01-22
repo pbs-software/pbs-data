@@ -63,8 +63,9 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(ex=1){
-  require(PBSmapping)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
   if (ex==1) {
     data(locality)
     plotMap(locality,border="cornflowerblue")
@@ -79,8 +80,8 @@ pbsfun=function(ex=1){
     pdata$label=sapply(sapply(pdata$label,strsplit,split=" "),paste,collapse="\n")
     addLabels(pdata,polys=locality,placement="CENTROID",cex=.65,col="red") }
   invisible() }
-
 pbsfun(1); pbsfun(2)
+})
 }
 }
 \seealso{

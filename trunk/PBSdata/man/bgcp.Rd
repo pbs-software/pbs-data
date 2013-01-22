@@ -72,13 +72,16 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(bgcp)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(bgcp)
   pdata <- attributes(bgcp)$PolyData
   plotMap(bgcp,polyProps=pdata,plt=c(.05,.99,.05,.99))
   pdata$label=pdata$bgcp
   addLabels(pdata,cex=.7) }
 pbsfun()
+})
 }
 }
 \seealso{

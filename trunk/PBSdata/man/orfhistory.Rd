@@ -61,21 +61,24 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(dat, spp="396", ...){
-	require(PBStools); data(orfhistory)
-	dat  = dat[is.element(dat$spp,spp),]
-	ctab = crossTab(dat,c("year","source"),"catch",function(x){sum(x)/1000})
-	out  = as.data.frame(ctab[,-1]); row.names(out)=ctab[,1]
-	sou  = dimnames(out)[[2]]; nsou = length(sou)
-	clrs = c("red","blue","orange","purple","gold","green4","black","pink")[1:nsou]
-	expandGraph(mar=c(3,3,.5,.5))
-	evalCall(barplot,argu=list(height=t(out),beside=TRUE,col=clrs,border=FALSE,type="h",
-		space=c(0,0),las=3,cex.axis=.8,cex.names=.8,xaxs="i"),...,checkdef=TRUE,checkpar=TRUE)
-	legend("topleft",bty="n",fill=clrs,legend=sou,inset=.025)
-	mtext("ORF Catch (t)",side=2,line=2,cex=1.2)
-	invisible(out)
+  if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
+  data(orfhistory)
+  dat  = dat[is.element(dat$spp,spp),]
+  ctab = crossTab(dat,c("year","source"),"catch",function(x){sum(x)/1000})
+  out  = as.data.frame(ctab[,-1]); row.names(out)=ctab[,1]
+  sou  = dimnames(out)[[2]]; nsou = length(sou)
+  clrs = c("red","blue","orange","purple","gold","green4","black","pink")[1:nsou]
+  expandGraph(mar=c(3,3,.5,.5))
+  evalCall(barplot,argu=list(height=t(out),beside=TRUE,col=clrs,border=FALSE,type="h",
+    space=c(0,0),las=3,cex.axis=.8,cex.names=.8,xaxs="i"),...,checkdef=TRUE,checkpar=TRUE)
+  legend("topleft",bty="n",fill=clrs,legend=sou,inset=.025)
+  mtext("ORF Catch (t)",side=2,line=2,cex=1.2)
+  invisible(out)
 }
 x = pbsfun(orfhistory,spp=c("388","389","391"),space=c(0,0))
+})
 }
 }
 %\seealso{

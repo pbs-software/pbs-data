@@ -103,12 +103,15 @@ coastwide relative abundance indices for many groundfish species.
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBStools); data(iphc.rbr)
+  if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
+  data(iphc.rbr)
   trend("401","iphc.rbr",dbName="none",type="FILE")
   print("Press the GUI button labelled 'TREND'")
   invisible() }
 pbsfun()
+})
 }
 }
 \seealso{
