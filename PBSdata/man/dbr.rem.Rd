@@ -53,9 +53,11 @@
 %}
 \examples{
 \dontrun{
-require(PBStools)
-plotCatch(dbr.rem)
-plotCatch(ymr.rem)
+local(envir=.PBSdataEnv,expr={
+  if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
+  plotCatch(dbr.rem)
+  plotCatch(ymr.rem)
+})
 }
 }
 \keyword{datasets}

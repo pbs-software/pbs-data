@@ -40,8 +40,10 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(nepacLL, ltxa)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(nepacLL, ltxa)
   xlim=c(-134.2,-125); ylim=c(48.5,54.40)
   pdata=attributes(ltxa)$PolyData
   plotMap(ltxa,xlim=xlim,ylim=ylim,polyProps=pdata)
@@ -49,6 +51,7 @@ pbsfun=function(){
   addLabels(pdata,cex=.9)
   invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

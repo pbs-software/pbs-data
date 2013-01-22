@@ -49,14 +49,17 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(xlim=c(-124,-123.4),ylim=c(48.77,49.25)){
-  require(PBSmapping); data(nepacLLhigh,rca)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(nepacLLhigh,rca)
   plotMap(nepacLLhigh,xlim=xlim,ylim=ylim,col="gainsboro",border="darkgrey")
   pdata=attributes(rca)$PolyData
   addPolys(rca,col="skyblue")
   addLabels(pdata,cex=0.65,polys=rca,placement="CENTROID",col="red")
   box(); invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

@@ -27,18 +27,20 @@
   Board of Canada} \bold{180}, 740 pp.
 }
 \examples{
-\dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
   data(spn)
   spp=c(396,440,394,403,439,451,453) # slopes
   x=as.character(spp); xL=paste(spp,".L",sep="")
   xdf=cbind(spn[x],paste("(",spn[xL],")",sep=""),rep("\n\n",length(x)))
   mess=paste(apply(xdf,1,paste,collapse=" "),collapse="")
   mess=paste("BC slope rockfish:\n\n\n",mess,sep="")
-  showMessage(mess,as.is=TRUE,col="blue",cex=1.2,adj=0,x=.05)
+  plot(-1:1,-1:1,type="n",axes=FALSE,xlab="",ylab="")
+  text(0,0,paste(strwrap(mess,width=80),collapse="\n"),col="blue",cex=.8)
   invisible() }
 pbsfun()
-}
+})
 }
 \seealso{
   \code{\link{species}}

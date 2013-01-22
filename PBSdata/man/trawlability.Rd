@@ -69,8 +69,10 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping); data(trawlability,nepacLL)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(trawlability,nepacLL)
   pdata=attributes(trawlability)$PolyData
   plotMap(nepacLL,xlim=c(-134.3,-127.4),y=c(49.7,54.7),border="grey")
   addPolys(trawlability,polyProps=pdata)
@@ -81,6 +83,7 @@ pbsfun=function(){
     legend=leglab,bty="n",cex=.8,inset=.025)
   box(); invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

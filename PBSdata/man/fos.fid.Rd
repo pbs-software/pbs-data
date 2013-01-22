@@ -21,7 +21,7 @@
   Norm Olsen, Pacific Biological Station, Nanaimo BC
 }
 \examples{
-\dontrun{
+local(envir=.PBSdataEnv,expr={
 # Quick reference to fishery:
 pbsfun=function(fid=c(17,21,23,48)) {
   data(fos.fid)
@@ -29,7 +29,7 @@ pbsfun=function(fid=c(17,21,23,48)) {
   names(fishery)=fid
   return(fishery) }
 pbsfun()
-}
+})
 }
 \seealso{
   \code{\link{spn}}, \code{\link{species}}

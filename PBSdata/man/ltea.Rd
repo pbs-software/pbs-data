@@ -32,14 +32,16 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmapping)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
   data(ltea,nepacLL)
   plotMap(ltea,xlim=range(ltea$X),ylim=range(ltea$Y),col=c("chartreuse","pink"))
   addPolys(nepacLL,col="gold")
   text(c(-127.23,-130.64), c(48.97,51.27),c("Established","Exploratory"),cex=.8)
   invisible() }
 pbsfun()
+})
 }
 }
 \seealso{

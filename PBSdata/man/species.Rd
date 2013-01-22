@@ -55,7 +55,7 @@
   Board of Canada} \bold{180}, 740 pp.
 }
 \examples{
-\dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(N=100){
   data(species)
   oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
@@ -70,7 +70,7 @@ pbsfun=function(N=100){
   mtext("Mean weight (kg)",side=1,line=1.5,cex=1)
   invisible() }
 pbsfun()
-}
+})
 }
 \seealso{
   \code{\link{spn}}

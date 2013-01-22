@@ -21,11 +21,14 @@ data(nage394)
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  require(PBSmodelling); data(nage394)
+  if (!require(PBSmodelling, quietly=TRUE)) stop("`PBSmodelling` package is required")
+  data(nage394)
   plotBubbles(nage394,dnam=TRUE,hide0=TRUE,size=0.1)
   invisible() }
 pbsfun()
+})
 }
 }
 \keyword{datasets}

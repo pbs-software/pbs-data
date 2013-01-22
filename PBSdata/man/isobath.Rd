@@ -45,8 +45,10 @@
 }
 \examples{
 \dontrun{
+local(envir=.PBSdataEnv,expr={
 pbsfun=function(){ 
-  require(PBSmapping); data(isobath,nepacLL)
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(isobath,nepacLL)
   xlim = c(-131.5,-128); ylim = c(50.5,52.5)
   ptemp = attributes(isobath)$PolyData
   plotMap(nepacLL,xlim=xlim,ylim=ylim,col="orange")
@@ -57,6 +59,7 @@ pbsfun=function(){
   addLabels(ptemp,polys=itemp,placement="MEAN_XY",cex=.8,adj=1); box()
   options(warn=warn); invisible() }
 pbsfun()
+})
 }
 }
 \seealso{
