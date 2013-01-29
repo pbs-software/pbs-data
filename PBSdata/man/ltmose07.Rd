@@ -8,8 +8,8 @@
   grounds off the west coast of Vancouver Island according to Brian Mose (CGRCS).
 }
 \usage{
-  data(ltmose07)
-  data(ltmose12)
+data(ltmose07)
+data(ltmose12)
 }
 \format{
   Data frame comprising 4 columns: \cr
@@ -53,16 +53,17 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(ex=1){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
   if (ex==1) {
-  data(ltmose07,nepacLL)
+  data(ltmose07,nepacLL,envir=.PBSdataEnv)
   xlim=extendrange(ltmose07$X); ylim=extendrange(ltmose07$Y)
     plotMap(ltmose07,xlim=xlim,ylim=ylim,border="lightseagreen",lwd=2)
     addPolys(nepacLL,col="sandybrown")
     addLabels(attributes(ltmose07)$PolyData,polys=ltmose07,
       placement="CENTROID",col="purple4") }
   if (ex==2) {
-    data(ltmose12,nepacLL)
+    data(ltmose12,nepacLL,envir=.PBSdataEnv)
   xlim=extendrange(ltmose12$X); ylim=extendrange(ltmose12$Y)
     plotMap(ltmose12,xlim=xlim,ylim=ylim,border="red",lwd=2)
     addPolys(nepacLL,col="moccasin")

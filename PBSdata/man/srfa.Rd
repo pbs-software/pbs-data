@@ -47,8 +47,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,srfa)
+  data(nepacLL,srfa,envir=.PBSdataEnv)
   plotMap(nepacLL,xlim=c(-134.2,-124),y=c(47.5,55),border="grey")
   addPolys(srfa,border="cornflowerblue",lwd=2)
   addLabels(attributes(srfa)$PolyData,col="indianred",cex=0.9)

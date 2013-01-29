@@ -31,7 +31,9 @@
 \examples{
 \dontrun{
 pbsfun=function(){
-  require(PBSmapping); data(nepacLL, hsisob)
+  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
+  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
+  data(nepacLL,hsisob,envir=.PBSdataEnv)
   pdata=attributes(hsisob)$PolyData
   xlim=extendrange(hsisob$X,f=0.2); ylim=extendrange(hsisob$Y,f=0.1)
   plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")

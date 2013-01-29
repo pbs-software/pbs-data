@@ -8,16 +8,17 @@
   A list object of data frames detailing survey information.
 }
 \usage{
-  data(ssid)
+data(ssid)
 }
 \format{
   A list of data frames, one for each database, of survey series.
 
   \code{gfb} (GFBioSQL): \cr
-  Data frame with 118 series (rows) and 4 fields.
+  Data frame with 118 series (rows) and 5 fields.
   \tabular{ll}{
   \code{ssid}     \tab survey series ID number; also repeated as row names. \cr
   \code{desc}     \tab survey description \cr
+  \code{nsurv}    \tab number of surveys in the series \cr
   \code{original} \tab logical: if \code{TRUE}, the series comprises an original set of surveys; \cr
                   \tab if \code{FALSE}, the series has been derived for some special purpose. \cr
   \code{trawl}    \tab logical: if \code{TRUE}, the series comprises trawl surveys.
@@ -31,7 +32,7 @@
 \examples{
 local(envir=.PBSdataEnv,expr={
   # To see the original GFBioSQL survey series:
-  data(ssid)
+  data(ssid,envir=.PBSdataEnv)
   print(ssid$gfb[ssid$gfb$original,])
 })
 }

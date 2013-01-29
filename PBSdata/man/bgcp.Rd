@@ -74,8 +74,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(bgcp)
+  data(bgcp,envir=.PBSdataEnv)
   pdata <- attributes(bgcp)$PolyData
   plotMap(bgcp,polyProps=pdata,plt=c(.05,.99,.05,.99))
   pdata$label=pdata$bgcp

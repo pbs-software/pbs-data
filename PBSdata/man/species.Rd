@@ -45,7 +45,7 @@
   Quick reference to latin name:  \code{species["424",]$latin} yields \code{Sebastes maliger}.
   
   Mean weights are calculated by the SQL query \code{gfb_fishwt.sql} located in \cr
-  \code{.../library/PBSfishery/sql}
+  \code{.../library/PBStools/sql}
 }
 \source{
   Norm Olsen, Pacific Biological Station, Fisheries and Oceans Canada, Nanaimo BC
@@ -57,12 +57,12 @@
 \examples{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(N=100){
-  data(species)
-  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
+  opar=par(no.readonly=TRUE); on.exit(par(opar))
+  data(species,envir=.PBSdataEnv)
   par(mar=c(3,10,0,1),las=1,mgp=c(0,.2,0),tck=.01)
   spp=species[species$gfbrwt>0 & !is.na(species$gfbrwt),]
   spp=spp[(order(spp$gfbrwt)),]
-  spw=spp$gfbrwt/1000; names(spw)=spp$latin
+  spw=spp$gfbrwt; names(spw)=spp$latin
   if (is.null(N) | N<=1) N=length(spw)
   x=1:N; xlim=c(1,N); ylim=c(0,max(spw))
   barplot(spw[x],space=0,names.arg=names(spw)[x],horiz=TRUE,

@@ -24,7 +24,7 @@
 local(envir=.PBSdataEnv,expr={
 # Quick reference to fishery:
 pbsfun=function(fid=c(17,21,23,48)) {
-  data(fos.fid)
+  data(fos.fid,envir=.PBSdataEnv)
   fishery=fos.fid[fid,]$fishery
   names(fishery)=fid
   return(fishery) }

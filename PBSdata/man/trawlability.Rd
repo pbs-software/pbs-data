@@ -71,8 +71,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(trawlability,nepacLL)
+  data(trawlability,nepacLL,envir=.PBSdataEnv)
   pdata=attributes(trawlability)$PolyData
   plotMap(nepacLL,xlim=c(-134.3,-127.4),y=c(49.7,54.7),border="grey")
   addPolys(trawlability,polyProps=pdata)

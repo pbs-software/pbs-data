@@ -14,9 +14,9 @@
   Last update Feb 15, 2008 (Lisa Lacko)
 }
 \usage{
-  data(iphc.rbr)
-  data(iphc.rer)
-  data(iphc.yyr)
+data(iphc.rbr)
+data(iphc.rer)
+data(iphc.yyr)
 }
 
 \format{
@@ -105,9 +105,10 @@ coastwide relative abundance indices for many groundfish species.
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
-  data(iphc.rbr)
-  trend("401","iphc.rbr",dbName="none",type="FILE")
+  data(iphc.rbr,envir=.PBSdataEnv)
+  trend("401","iphc.rbr",dbName="none",type="FILE",ioenv=.PBSdataEnv)
   print("Press the GUI button labelled 'TREND'")
   invisible() }
 pbsfun()

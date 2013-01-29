@@ -23,8 +23,9 @@ data(nage394)
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmodelling, quietly=TRUE)) stop("`PBSmodelling` package is required")
-  data(nage394)
+  data(nage394,envir=.PBSdataEnv)
   plotBubbles(nage394,dnam=TRUE,hide0=TRUE,size=0.1)
   invisible() }
 pbsfun()

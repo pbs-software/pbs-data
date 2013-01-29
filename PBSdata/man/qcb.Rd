@@ -71,8 +71,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,qcb)
+  data(nepacLL,qcb,envir=.PBSdataEnv)
   pdata=attributes(qcb)$PolyData
   leglab=sapply(split(pdata$label,pdata$col),function(x){
     y=unique(x);paste(y,collapse=" / ")})

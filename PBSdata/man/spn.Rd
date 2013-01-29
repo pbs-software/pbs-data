@@ -29,8 +29,8 @@
 \examples{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
-  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
-  data(spn)
+  opar=par(no.readonly=TRUE); on.exit(par(opar))
+  data(spn,envir=.PBSdataEnv)
   spp=c(396,440,394,403,439,451,453) # slopes
   x=as.character(spp); xL=paste(spp,".L",sep="")
   xdf=cbind(spn[x],paste("(",spn[xL],")",sep=""),rep("\n\n",length(x)))
