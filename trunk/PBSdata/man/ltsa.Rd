@@ -69,8 +69,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){ 
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(ltsa)
+  data(ltsa,envir=.PBSdataEnv)
   plotMap(ltsa,border="grey50",col=c("lightgreen","pink","skyblue"))
   pdata <- attributes(ltsa)$PolyData
   addLabels(pdata,polys=ltsa,placement="CENTROID",cex=.75,col="red3") 

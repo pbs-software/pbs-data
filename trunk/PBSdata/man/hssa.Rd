@@ -52,10 +52,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun = function() {
-  opar = par(no.readonly=TRUE)
-  on.exit(par(opar))
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(hssa,nepacLL)
+  data(hssa,nepacLL,envir=.PBSdataEnv)
   xlim = extendrange(hssa$X)
   ylim = extendrange(hssa$Y)
   par(mar=c(4,3,1.2,0.5), mgp=c(1.6,0.5,0))

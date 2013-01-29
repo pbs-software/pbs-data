@@ -28,8 +28,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(xlim=c(-128.5,-124.5),ylim=c(48,50.5),zlev=c(123,1234)) { 
+  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(bctopo,nepacLL)
+  data(bctopo,nepacLL,envir=.PBSdataEnv)
   zx=bctopo$x>=xlim[1] & bctopo$x<=xlim[2] &!is.na(bctopo$x)
   zy=bctopo$y>=ylim[1] & bctopo$y<=ylim[2] &!is.na(bctopo$y)
   topo=bctopo[zx&zy,]

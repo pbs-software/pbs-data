@@ -33,8 +33,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,qcssa)
+  data(nepacLL,qcssa,envir=.PBSdataEnv)
   plotMap(nepacLL,xlim=c(-132.8,-126.9),ylim=c(50.5,52.9),border="grey")
   pdata=attributes(qcssa)$PolyData
   addPolys(qcssa,polyProps=pdata); addPolys(nepacLL,border="grey")

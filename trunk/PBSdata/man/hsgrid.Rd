@@ -33,8 +33,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL, hsgrid)
+  data(nepacLL,hsgrid,envir=.PBSdataEnv)
   xlim=extendrange(hsgrid$X,f=0.2); ylim=extendrange(hsgrid$Y,f=0.1)
   plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
   addPolys(hsgrid,border="blue",lwd=2)

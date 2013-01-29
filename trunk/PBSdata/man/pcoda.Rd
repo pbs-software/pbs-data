@@ -56,8 +56,9 @@ Abstract from Sinclair and Workman (2002): \cr
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,pcoda)
+  data(nepacLL,pcoda,envir=.PBSdataEnv)
   xlim=extendrange(pcoda$X,f=0.2); ylim=extendrange(pcoda$Y,f=0.1)
   plotMap(nepacLL,xlim=xlim,ylim=ylim,plt=NULL,col="gainsboro")
   pdata=attributes(pcoda)$PolyData

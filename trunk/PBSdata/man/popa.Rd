@@ -51,8 +51,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,popa)
+  data(nepacLL,popa,envir=.PBSdataEnv)
   plotMap(nepacLL,xlim=c(-134.2,-124),ylim=c(47.5,55),border="grey")
   addPolys(popa,border="firebrick")
   addLabels(attributes(popa)$PolyData,col="orangered",cex=1.2)

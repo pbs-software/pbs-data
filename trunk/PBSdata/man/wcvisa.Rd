@@ -48,8 +48,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(wcvisa,nepacLL)
+  data(wcvisa,nepacLL,envir=.PBSdataEnv)
   pdata=attributes(wcvisa)$PolyData
   plotMap(nepacLL,xlim=c(-129.0,-124.3),y=c(48.0,50.8),border="grey")
   addPolys(wcvisa,polyProps=pdata)

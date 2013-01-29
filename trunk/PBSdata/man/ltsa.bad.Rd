@@ -59,8 +59,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){ 
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(ltsa,ltsa.bad)
+  data(ltsa,ltsa.bad,envir=.PBSdataEnv)
   plotMap(ltsa,border="grey")
   addPolys(ltsa.bad,col="pink",border="red");
   addLabels(attributes(ltsa.bad)$PolyData,polys=ltsa.bad,placement="MEAN_XY",

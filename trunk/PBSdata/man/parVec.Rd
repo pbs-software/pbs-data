@@ -8,7 +8,7 @@
   \code{PBSmodelling::calcMin}.
 }
 \usage{
-  data(parVec)
+data(parVec)
 }
 
 \format{

@@ -50,7 +50,7 @@
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
   oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
-  data(pmfc)
+  data(pmfc,envir=.PBSdataEnv)
   mess=attributes(pmfc)$history
   plot(-1:1,-1:1,type="n",axes=FALSE,xlab="",ylab="")
   text(0,0,paste(strwrap(mess,width=80),collapse="\n"),col="blue",cex=.8)

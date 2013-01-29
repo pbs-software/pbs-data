@@ -65,14 +65,15 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(ex=1){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
   if (ex==1) {
-    data(locality)
+    data(locality,envir=.PBSdataEnv)
     plotMap(locality,border="cornflowerblue")
     addLabels(attributes(locality)$PolyData,polys=locality,
       placement="CENTROID",col="gray40",cex=.5) }
   if(ex==2) {
-    data(locality,nepacLL)
+    data(locality,nepacLL,envir=.PBSdataEnv)
     plotMap(locality,xlim=c(-130.2,-127),ylim=c(49.8,52.1),col="aliceblue")
     addPolys(nepacLL,col="#b9ed3f")
     pdata <- attributes(locality)$PolyData

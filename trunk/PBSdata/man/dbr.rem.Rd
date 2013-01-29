@@ -12,8 +12,8 @@
   Last update Apr 9, 2008 (RH)
 }
 \usage{
-  data(dbr.rem)
-  data(ymr.rem)
+data(dbr.rem)
+data(ymr.rem)
 }
 \format{
   A data frame with 77 rows and 8 columns, where each row represents a 
@@ -54,6 +54,7 @@
 \examples{
 \dontrun{
 local(envir=.PBSdataEnv,expr={
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
   plotCatch(dbr.rem)
   plotCatch(ymr.rem)

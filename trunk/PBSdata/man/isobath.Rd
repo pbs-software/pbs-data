@@ -47,8 +47,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){ 
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(isobath,nepacLL)
+  data(isobath,nepacLL,envir=.PBSdataEnv)
   xlim = c(-131.5,-128); ylim = c(50.5,52.5)
   ptemp = attributes(isobath)$PolyData
   plotMap(nepacLL,xlim=xlim,ylim=ylim,col="orange")

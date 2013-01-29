@@ -63,8 +63,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(dat, spp="396", ...){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
-  data(orfhistory)
+  data(orfhistory,envir=.PBSdataEnv)
   dat  = dat[is.element(dat$spp,spp),]
   ctab = crossTab(dat,c("year","source"),"catch",function(x){sum(x)/1000})
   out  = as.data.frame(ctab[,-1]); row.names(out)=ctab[,1]

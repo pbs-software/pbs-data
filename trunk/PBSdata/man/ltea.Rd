@@ -34,8 +34,9 @@
 \dontrun{
 local(envir=.PBSdataEnv,expr={
 pbsfun=function(){
+  opar = par(no.readonly=TRUE); on.exit(par(opar))
   if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(ltea,nepacLL)
+  data(ltea,nepacLL,envir=.PBSdataEnv)
   plotMap(ltea,xlim=range(ltea$X),ylim=range(ltea$Y),col=c("chartreuse","pink"))
   addPolys(nepacLL,col="gold")
   text(c(-127.23,-130.64), c(48.97,51.27),c("Established","Exploratory"),cex=.8)
