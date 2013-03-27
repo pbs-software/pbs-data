@@ -6,7 +6,9 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
-1.22  2013-01-22
+1.22  2013-03-27
+  - Minor tweaks to `zzz.r` and `Makefile` in vignettes. (RH 3/27)
+  - Updated data object `species`. (RH 3/15)
   - Added new data object `ssid` that summarises survey series information in GFBioSQL. (RH 1/22)
   - Updated the data object 'orfhistory' to include Ketchen's (1980a) Japanese data for WCVI and WCHG;
 	also the PFMA to PMFC conversion for PacHarv3 now uses PFMA small areas for better catch placement but PacHarv3 areas (e.g., 9021) are still problematic. (RH 10/12)

@@ -1,7 +1,7 @@
 # Taking cue from Roger Bivand's maptools:
 .PBSdataEnv <- new.env(FALSE, parent=globalenv())  # be sure to exportPattern("^\\.PBS") in NAMESPACE
 
-.onLoad <- function(lib, pkg)
+.onAttach <- function(lib, pkg)
 {
 	pkg_info <- utils::sessionInfo( package="PBSdata" )$otherPkgs$PBSdata
 	if( is.character( pkg_info$Packaged ) )
