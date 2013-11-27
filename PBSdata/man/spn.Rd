@@ -7,7 +7,7 @@
 }
 \usage{data(spn)}
 \format{
-  Named character vector comprising 4,908 elements of species descriptions. 
+  Named character vector comprising 4,919 elements of species descriptions. 
   The user can access any element using a code that is part of the 
   \code{names(spn)} vector. For example, \code{spn["POP"]} and \code{spn["396"]} 
   both yield \code{"Pacific Ocean Perch"}.
@@ -17,7 +17,11 @@
 }
 \details{
   Codes (Hart 1973, 3-letter, 2-letter, etc.) for species can be found in the data 
-  table \code{C_Species} of DFO's \code{PacHarvest} database. 
+  table \code{C_Species} of DFO's \code{PacHarvest} database.
+
+  The object also contains codes for additional items, e.g., \cr
+  \code{ORF} = \sQuote{Rockfish other than POP} \cr
+  \code{cpue} = \sQuote{CPUE (kg/h)}
 }
 \source{
   Norm Olsen, Pacific Biological Station, Nanaimo BC.
