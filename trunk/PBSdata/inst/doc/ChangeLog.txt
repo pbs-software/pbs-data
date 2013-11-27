@@ -6,7 +6,10 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
-1.22  2013-03-27
+1.22  2013-11-27
+  - Updated data object `spn`. (RH 11/27)
+  - Added data objects `spongeCPZ` (sponge reef core protected zones), `spongeAMZ` (sponge reef adaptive management zones), and `trawlfoot` (trawl footprint). (RH 8/9)
+  - Added data object `phytospp` (not yet complete) for phytoplankton species codes. (RH 5/2)
   - Minor tweaks to `zzz.r` and `Makefile` in vignettes. (RH 3/27)
   - Updated data object `species`. (RH 3/15)
   - Added new data object `ssid` that summarises survey series information in GFBioSQL. (RH 1/22)
