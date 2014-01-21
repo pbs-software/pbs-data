@@ -2,7 +2,7 @@
 \alias{trawlfoot}
 \docType{data}
 \title{
-  BC Trawl Footprint
+  Topo: BC Trawl Footprint
 }
 \description{
   Areas along the BC continental shelf/slope that have been vetted by DFO and 
