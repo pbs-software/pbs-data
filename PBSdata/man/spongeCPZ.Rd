@@ -3,7 +3,7 @@
 \alias{spongeAMZ}
 \docType{data}
 \title{
-  Sponge Reef Zones
+  Topo: Sponge Reef Zones
 }
 \description{
   Sponge reef core protected zones and adaptive management zones within the 

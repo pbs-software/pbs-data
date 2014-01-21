@@ -6,6 +6,11 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
+1.23  2014-01-21
+  - Added new PolyData object `seamounts` that give the approximate location of common seamounts off the BC coast. (RH 1/20)
+  - Added new PolySet object `bowie` which outlines the Bowie Seamount Marine Protected Area. (RH 1/16)
+  - Added two new PolySet objects `farmsFF` (finfish tenures) and `farmsSF` (shellfish tenures) from the BC government. (RH 1/8)
+
 1.22  2013-11-27
   - Updated data object `spn`. (RH 11/27)
   - Added data objects `spongeCPZ` (sponge reef core protected zones), `spongeAMZ` (sponge reef adaptive management zones), and `trawlfoot` (trawl footprint). (RH 8/9)

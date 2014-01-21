@@ -1,6 +1,6 @@
 Package: PBSdata
-Version: 1.22
-Date: 2013-11-27
+Version: 1.23
+Date: 2014-01-21
 Title: Data, Boundaries, and Key Codes for PBS Packages
 Author: Rowan Haigh, Jon T. Schnute, Norm Olsen, Lisa Lacko
 Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
