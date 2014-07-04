@@ -3,6 +3,6 @@
 exportPattern("^[^\\.]")
 exportPattern("^\\.PBS")
 
-# Import all packages listed as Imports or Depends
-#import(PBSfishery)
+# Packages declared in the 'Depends' field should not also be in the 'Imports' field (from R-exts.pdf).
+#import(something)
 

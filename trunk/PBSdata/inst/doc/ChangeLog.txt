@@ -6,146 +6,148 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
-1.23  2014-01-21
-  - Added new PolyData object `seamounts` that give the approximate location of common seamounts off the BC coast. (RH 1/20)
-  - Added new PolySet object `bowie` which outlines the Bowie Seamount Marine Protected Area. (RH 1/16)
-  - Added two new PolySet objects `farmsFF` (finfish tenures) and `farmsSF` (shellfish tenures) from the BC government. (RH 1/8)
+1.23  2014-07-04
+  - Ran `tools::checkRdaFiles' before and after `tools::resaveRdaFiles' and replaced those that were smaller (more compressed). (RH 7/4)
+  - Added new PolySet object `gwaiihaanas' that outlines a simple boundary for Gwaii Haanas National Park Reserve. (RH 7/4)
+  - Added new PolyData object `seamounts' that give the approximate location of common seamounts off the BC coast. (RH 1/20)
+  - Added new PolySet object `bowie' which outlines the Bowie Seamount Marine Protected Area. (RH 1/16)
+  - Added two new PolySet objects `farmsFF' (finfish tenures) and `farmsSF' (shellfish tenures) from the BC government. (RH 1/8)
 
 1.22  2013-11-27
   - Updated data object `spn`. (RH 11/27)
-  - Added data objects `spongeCPZ` (sponge reef core protected zones), `spongeAMZ` (sponge reef adaptive management zones), and `trawlfoot` (trawl footprint). (RH 8/9)
-  - Added data object `phytospp` (not yet complete) for phytoplankton species codes. (RH 5/2)
-  - Minor tweaks to `zzz.r` and `Makefile` in vignettes. (RH 3/27)
+  - Added data objects `spongeCPZ' (sponge reef core protected zones), `spongeAMZ' (sponge reef adaptive management zones), and `trawlfoot' (trawl footprint). (RH 8/9)
+  - Added data object `phytospp' (not yet complete) for phytoplankton species codes. (RH 5/2)
+  - Minor tweaks to `zzz.r' and `Makefile' in vignettes. (RH 3/27)
   - Updated data object `species`. (RH 3/15)
-  - Added new data object `ssid` that summarises survey series information in GFBioSQL. (RH 1/22)
-  - Updated the data object 'orfhistory' to include Ketchen's (1980a) Japanese data for WCVI and WCHG;
+  - Added new data object `ssid' that summarises survey series information in GFBioSQL. (RH 1/22)
+  - Updated the data object `orfhistory' to include Ketchen's (1980a) Japanese data for WCVI and WCHG;
 	also the PFMA to PMFC conversion for PacHarv3 now uses PFMA small areas for better catch placement but PacHarv3 areas (e.g., 9021) are still problematic. (RH 10/12)
-  - Added new PolySets 'wchgsa' (west coast Haida Gwaii survey area) and 'hssa' (Hecate Strait survey area). (RH 10/5)
-  - Added 'jss.bst' and 'jss.cls' to the 'vignettes' directory to enforce bibliography execution. (RH 7/13)
-  - Updated the 'PBSdata-UG' vignette. (RH 7/12)
-  - Added a vignette called 'PBSdata-UG.Rnw' in the suggested 'vignette' subfolder; put PBSdata-UG.pdf in the inst\doc folder. (RH 4/26)
+  - Added new PolySets `wchgsa' (west coast Haida Gwaii survey area) and `hssa' (Hecate Strait survey area). (RH 10/5)
+  - Added `jss.bst' and `jss.cls' to the `vignettes' directory to enforce bibliography execution. (RH 7/13)
+  - Updated the `PBSdata-UG' vignette. (RH 7/12)
+  - Added a vignette called `PBSdata-UG.Rnw' in the suggested `vignette' subfolder; put PBSdata-UG.pdf in the inst\doc folder. (RH 4/26)
   - Added a few more examples to the Rd files. (RH 4/25)
 
 1.21  2012-04-12  Authors
   - PBSdata is spun-off from PBSfishery and contains the latter's data objects. (RH 4/12)
-	The old PBSdata package (non-public) is now called 'PBSvault'.
+	The old PBSdata package (non-public) is now called `PBSvault'.
 
 PBSfishery History
 ==================
 1.20  2012-02-27  Authors
-  - Added new argument 'leg.font' to 'par.map' to allow user to change the font parameter of the legend (still uses 'mono' family). (RH 2/27)
+  - Added new argument `leg.font' to `par.map' to allow user to change the font parameter of the legend (still uses `mono' family). (RH 2/27)
   - Wrapped the events information in the legend if minimum vessels/cell > 1. (RH 2/27)
-  - Revised 'requestAges' to allow argument 'nfree' to select otoliths from samples with minimum number of otoliths. (RH 2/27)
-  - Removed 'GLOP' button from map GUI and added 'GOP' (grid over plot) and 'LOP' (land over plot) buttons. (RH 2/23)
-  - Added two new 'par.map' values called 'tit.loc' and 'leg.loc' to give the user some control on title and legend placement - requested by Paul Starr. (RH 2/21)
-  - Added new button on map GUI called 'par.map' to allow the user to see and change extra par values. (RH 2/21)
-  - Added small subfuction '.map.checkLims' to 'M01_Map.r' to check that data limit GUI inputs are strictly increasing. (RH 2/17)
-  - Added new SQL query 'fos_checklist_catch.sql' to provide retained and discarded catches for DFO's checklist. (RH 2/16)
-  - Modified functions 'trackComp', 'plotDiversity', and 'boxSeason' to use local files/objects if available. (RH 12/5)
-  - R-2.14.0 appears to implement windows buffering, which can screw the interactive nature of 'map'.
-	Code now sets 'windows.options(buffered=FALSE)' then resets it back to the user's original setting with an 'onclose=.map.exit' in the GUI. (RH 11/14)
-  - Used 'packageStartupMessage' rather than 'cat' in '.onLoad' in 'zzz.r'. (RH 11/14)
-  - Resaved the '.rda' data files using compress = "bzip2". (RH 11/14)
+  - Revised `requestAges' to allow argument `nfree' to select otoliths from samples with minimum number of otoliths. (RH 2/27)
+  - Removed `GLOP' button from map GUI and added `GOP' (grid over plot) and `LOP' (land over plot) buttons. (RH 2/23)
+  - Added two new `par.map' values called `tit.loc' and `leg.loc' to give the user some control on title and legend placement - requested by Paul Starr. (RH 2/21)
+  - Added new button on map GUI called `par.map' to allow the user to see and change extra par values. (RH 2/21)
+  - Added small subfuction `.map.checkLims' to `M01_Map.r' to check that data limit GUI inputs are strictly increasing. (RH 2/17)
+  - Added new SQL query `fos_checklist_catch.sql' to provide retained and discarded catches for DFO's checklist. (RH 2/16)
+  - Modified functions `trackComp', `plotDiversity', and `boxSeason' to use local files/objects if available. (RH 12/5)
+  - R-2.14.0 appears to implement windows buffering, which can screw the interactive nature of `map'.
+	Code now sets `windows.options(buffered=FALSE)' then resets it back to the user's original setting with an `onclose=.map.exit' in the GUI. (RH 11/14)
+  - Used `packageStartupMessage' rather than `cat' in `.onLoad' in `zzz.r'. (RH 11/14)
+  - Resaved the `.rda' data files using compress = "bzip2". (RH 11/14)
   - Building PDF manuals (for R itself or packages, e.g. via R CMD check) by default requires the LaTeX package inconsolata. (RH 11/14)
 
 1.19  2011-11-09  Authors
-  - namespace requires the use of '.onLoad' instead of '.First.lib'. (RH 11/9)
+  - namespace requires the use of `.onLoad' instead of `.First.lib'. (RH 11/9)
   - R-2.14.0 now requires all packages to have a namespace.  (RH 11/9)
   - Aside: RH updated to Tortoise SVN 1.7.0 which means that the user now has only one .svn folder at the root of the project;
 	previously, each subfolder in the project contained a separate .svn folder. (RH 10/13)
-  - Revised function 'requestAges' to get a pool of unaged fish identified by 'SPECIMEN_SERIAL_NUMBER' from which to sample;
-	also expanded the user's choice of which field contains N fish to sample: 'nfree', 'ncalc', 'nallo'. (RH 10/12)
-  - Revised SQL query 'gfb_age_request.sql' to identify all potential container IDs. (RH 10/6)
-  - Added example SQL query 'gfb_concat_rows_example.sql' to illustrate concatenating strings from multiple rows to one string that can be used for grouping. (RH 10/6)
-  - Added links to 'SQLcode' in Rd files describing functions that use SQL queries. (RH 10/5)
-  - Added a new Rd file called 'SQLcode.Rd' to summarise the SQL code available in the package. (RH 10/4)
-  - Added new function 'trackBycat' to display the annual catch of fish groups from bottom or midwater trawls. (RH 10/3)
-  - Added new SQL query 'gfb_bycatch.sql' to get the catch of fish groups from GFBioSQL not reported elsewhere. (RH 9/29)
-  - Revised SQL query 'gfb_iphc.sql' to use regular GFBioSQL tables rather than a custom provisional table. (NO 9/28)
-  - Revised legend rendering in 'map' to display or hide the 'Area (km²)' column. (thanks Jackie King). (RH 9/26)
-  - Revised 'gfb_age_request.sql' to identify broken and burnt samples. (RH 9/21)
+  - Revised function `requestAges' to get a pool of unaged fish identified by `SPECIMEN_SERIAL_NUMBER' from which to sample;
+	also expanded the user's choice of which field contains N fish to sample: `nfree', `ncalc', `nallo'. (RH 10/12)
+  - Revised SQL query `gfb_age_request.sql' to identify all potential container IDs. (RH 10/6)
+  - Added example SQL query `gfb_concat_rows_example.sql' to illustrate concatenating strings from multiple rows to one string that can be used for grouping. (RH 10/6)
+  - Added links to `SQLcode' in Rd files describing functions that use SQL queries. (RH 10/5)
+  - Added a new Rd file called `SQLcode.Rd' to summarise the SQL code available in the package. (RH 10/4)
+  - Added new function `trackBycat' to display the annual catch of fish groups from bottom or midwater trawls. (RH 10/3)
+  - Added new SQL query `gfb_bycatch.sql' to get the catch of fish groups from GFBioSQL not reported elsewhere. (RH 9/29)
+  - Revised SQL query `gfb_iphc.sql' to use regular GFBioSQL tables rather than a custom provisional table. (NO 9/28)
+  - Revised legend rendering in `map' to display or hide the `Area (km²)' column. (thanks Jackie King). (RH 9/26)
+  - Revised `gfb_age_request.sql' to identify broken and burnt samples. (RH 9/21)
 
 1.18  2011-09-15  Rowan
-  - Added new function 'genPa' to generate proportions-at-age from the catch curve composition of Schnute & Haigh (2007). (RH 9/15)
-  - Added new function 'scaleVec' to scale a vector to span a target minimum and maximum. (RH 9/15)
-  - Modified 'gfb_age-request.sql' to report samples that have any otoliths collected (aged or not). (RH 9/12)
-  - Updated 'pht_map_density.sql' and 'gfb_bio.sql' (latter still had bug) to identify POP/YMR tows in the Cape St.James rectangle. (RH 9/12)
-  - Added small function '.su' which returns 'sort(unique(x))'. (RH 9/12)
-  - Fixed small bug where the code did not recognise a change in the input file name 'fnam'. (RH 9/6)
-  - Fixed a bug in 'gfb_bio.sql' that was incorrectly determining whether (X,Y) occurred in the POP/YMR Cape St. James polygon (thanks Paul Starr). (RH 9/1)
-  - Revised SQL query 'gfb_bio.sql' to report whether or not an otolith is collected for a specimen. (RH 8/29)
-  - Added new topo file 'eez.bc' which outlines BC's 200-mile Exclusive Economic Zone. (RH 7/27)
-  - Added new function 'stdConc' to standardise a chemical concentration. (RH 7/15)
+  - Added new function `genPa' to generate proportions-at-age from the catch curve composition of Schnute & Haigh (2007). (RH 9/15)
+  - Added new function `scaleVec' to scale a vector to span a target minimum and maximum. (RH 9/15)
+  - Modified `gfb_age-request.sql' to report samples that have any otoliths collected (aged or not). (RH 9/12)
+  - Updated `pht_map_density.sql' and `gfb_bio.sql' (latter still had bug) to identify POP/YMR tows in the Cape St.James rectangle. (RH 9/12)
+  - Added small function `.su' which returns `sort(unique(x))'. (RH 9/12)
+  - Fixed small bug where the code did not recognise a change in the input file name `fnam'. (RH 9/6)
+  - Fixed a bug in `gfb_bio.sql' that was incorrectly determining whether (X,Y) occurred in the POP/YMR Cape St. James polygon (thanks Paul Starr). (RH 9/1)
+  - Revised SQL query `gfb_bio.sql' to report whether or not an otolith is collected for a specimen. (RH 8/29)
+  - Added new topo file `eez.bc' which outlines BC's 200-mile Exclusive Economic Zone. (RH 7/27)
+  - Added new function `stdConc' to standardise a chemical concentration. (RH 7/15)
 
 1.17  2011-07-11  Rowan
   - Edited a number of Rd files. (RH 7/11)
-  - Fixed bug in function 'calcMA'. (RH 7/7)
-  - Updated Rd files (inserted equations '\eqn' and '\deqn', removed useless '\describe' tables). (RH 6/20)
+  - Fixed bug in function `calcMA'. (RH 7/7)
+  - Updated Rd files (inserted equations `\eqn' and `\deqn', removed useless `\describe' tables). (RH 6/20)
   - Added a short list of functions that appear coded in each module to the top of the module's file. (RH 6/15)
-  - Added new function 'makeErrMat' which creates a simple, symmetric ageing error matrix for use as input to an Awatea model. (RH 6/15)
-  - Added new function 'calcLenWt' which estimates a length-weight relationship using a linear fit in log-log space. (RH 6/15)
-  - Added new functions 'dumpMod' and 'dumpRat' which dump the catch from modern databases and the calculated catch ratios, respectively. (RH 6/15)
-  - Added new function 'plotRecon' which produces barplots of the catch reconstruction stacked by PMFC catch. (RH 6/15)
-  - Added new functions 'predictRER', 'simRER', 'simBSR' to implement Orr & Hawkins (2008) discriminant analysis. (RH 6/14)
-  - Tweaked function 'imputeRate'; tightened limits on parVec for rate r. (RH 6/13)
-  - Fixed function 'imputeRate', bug improperly computed internal rate of return. (RH 6/10)
-  - Revised 'buildCatch' algorithm for the Tech Report. (6/7)
-  - Added new function 'plotGMA' to plot Groundfish Management Areas (RH 5/24)
-  - R-2.13.0 has deprecated zip files in the data section. Now stores as the original '.rda' files.
+  - Added new function `makeErrMat' which creates a simple, symmetric ageing error matrix for use as input to an Awatea model. (RH 6/15)
+  - Added new function `calcLenWt' which estimates a length-weight relationship using a linear fit in log-log space. (RH 6/15)
+  - Added new functions `dumpMod' and `dumpRat' which dump the catch from modern databases and the calculated catch ratios, respectively. (RH 6/15)
+  - Added new function `plotRecon' which produces barplots of the catch reconstruction stacked by PMFC catch. (RH 6/15)
+  - Added new functions `predictRER', `simRER', `simBSR' to implement Orr & Hawkins (2008) discriminant analysis. (RH 6/14)
+  - Tweaked function `imputeRate'; tightened limits on parVec for rate r. (RH 6/13)
+  - Fixed function `imputeRate', bug improperly computed internal rate of return. (RH 6/10)
+  - Revised `buildCatch' algorithm for the Tech Report. (6/7)
+  - Added new function `plotGMA' to plot Groundfish Management Areas (RH 5/24)
+  - R-2.13.0 has deprecated zip files in the data section. Now stores as the original `.rda' files.
 
 1.16  2011-05-05  Rowan
-  - Fixed bug in function 'calcMA'. (RH 5/5)
-  - Added new function 'findHoles' to identify parent polygons and their holes. (RH 4/21)
-  - Revised function 'calcHabitat' to deal with a bug in the PBSmapping function 'joinPolys'. (RH 4/21)
-  - Revised 'preferDepth' to specify a gear type (1=bottom, 3=midwater). (RH 4/1)
-  - Added new dataset 'pjsa' that contains Paul Starr's unique locality codes for GLM analyses. (RH 3/9)
-  - Revised function 'glimmer' for better output (RH 3/9)
-  - Revised function 'glimmer' to accept gear as a factor. (RH 3/8)
-  - Revised SQL queries 'pht_glm.sql' and 'fos_glm.sql'; added 'gfc_glm.sql'. (RH 3/8)
-  - Revised function 'crossTab' to properly handle situation with one 'id.vars'. (RH 3/1)
-  - Modified function 'buildCatch' to estimate ORF and POP in the very early years (1918-1952). (RH 2/23)
-  - Modified function 'estOgive' to fit proportions-at-age to a double-normal curve. (RH 2/21
-  - Modified 'M01_Map' module (primarily '.map.map') to utilize 'setPBSoptions' for greater control over par parameters. (RH 1/6)
-  - Modified 'convYfuns' to better detect date fields. (RH 11/30)
-  - Modified 'gfb_bio.sql' to include PMFC, PFMA, PFMS, and GMA (groundfish management areas for POP/YMR). (RH 11/19)
-  - Modified 'pht_map_density.sql' to include PMFC, PFMA, PFMS, and GMA (groundfish management areas for POP/YMR). (RH 11/18)
-  - Modified 'map' function and GUI to allow creation of encapsulated postscript files. (RH 11/17)
-  - Modified SQL query 'pht_map_density.sql', which now collects GFFOS catch-effort data in addition to that from PHT. (RH 11/16)
-  - Modified 'imputeRate' to more accurately calculate the NPV of past contributions. (RH 10/22)
+  - Fixed bug in function `calcMA'. (RH 5/5)
+  - Added new function `findHoles' to identify parent polygons and their holes. (RH 4/21)
+  - Revised function `calcHabitat' to deal with a bug in the PBSmapping function `joinPolys'. (RH 4/21)
+  - Revised `preferDepth' to specify a gear type (1=bottom, 3=midwater). (RH 4/1)
+  - Added new dataset `pjsa' that contains Paul Starr's unique locality codes for GLM analyses. (RH 3/9)
+  - Revised function `glimmer' for better output (RH 3/9)
+  - Revised function `glimmer' to accept gear as a factor. (RH 3/8)
+  - Revised SQL queries `pht_glm.sql' and `fos_glm.sql'; added `gfc_glm.sql'. (RH 3/8)
+  - Revised function `crossTab' to properly handle situation with one `id.vars'. (RH 3/1)
+  - Modified function `buildCatch' to estimate ORF and POP in the very early years (1918-1952). (RH 2/23)
+  - Modified function `estOgive' to fit proportions-at-age to a double-normal curve. (RH 2/21
+  - Modified `M01_Map' module (primarily `.map.map') to utilize `setPBSoptions' for greater control over par parameters. (RH 1/6)
+  - Modified `convYfuns' to better detect date fields. (RH 11/30)
+  - Modified `gfb_bio.sql' to include PMFC, PFMA, PFMS, and GMA (groundfish management areas for POP/YMR). (RH 11/19)
+  - Modified `pht_map_density.sql' to include PMFC, PFMA, PFMS, and GMA (groundfish management areas for POP/YMR). (RH 11/18)
+  - Modified `map' function and GUI to allow creation of encapsulated postscript files. (RH 11/17)
+  - Modified SQL query `pht_map_density.sql', which now collects GFFOS catch-effort data in addition to that from PHT. (RH 11/16)
+  - Modified `imputeRate' to more accurately calculate the NPV of past contributions. (RH 10/22)
 
 1.15  2010-10-20  Rowan
   - Renamed subfunctions to reflect parent function: e.g., .function.subfunction() (RH 10/20)
-	completed: 'preferDepth', 'map', 'imputeRate', 'plotProp', 'reportCatchAge', 'runCCA', 'trend'
-  - Revised functions 'plotConcur', 'preferDepth', 'weightBio'. (RH 10/18)
-  - Revised queries 'pht_fdep.sql' and 'pht_effort' to include trawl data from PacHarvest (1996-2007) and GFFOS (2007-current). (RH 10/8)
+	completed: `preferDepth', `map', `imputeRate', `plotProp', `reportCatchAge', `runCCA', `trend'
+  - Revised functions `plotConcur', `preferDepth', `weightBio'. (RH 10/18)
+  - Revised queries `pht_fdep.sql' and `pht_effort' to include trawl data from PacHarvest (1996-2007) and GFFOS (2007-current). (RH 10/8)
 
 1.14  2010-09-30  Rowan
-  - Revised function 'plotConcur' to choose trawl type and dump results into a '.csv' file. (RH 10/5)
-  - Revised query 'pht_concurrent.sql' to query and combine trawl data from PacHarvest and GFFOS. (RH 10/5)
-  - Revised queries 'pht_bycatch.sql' and 'fos_bycatch.sql'. (RH 10/4)
-  - Revised function 'getData' to use a 'dummy' variable for numerics or strings. (RH 10/4)
-  - Revised function 'preferDepth' to speed up effort data retrieval. (RH 10/4)
-  - Revised queries 'pht_fdep.sql' and 'pht_effort.sql' to choose specific major areas. (RH 10/4)
-  - Added new queries 'pht_bycatch.sql' and 'fos_bycatch.sql' to get annual group catches. (RH 9/30)
-  - Revised the data object 'species'. (RH 9/29)
-  - Revised function 'getData' to allow various species substitutions. (RH 9/29)
-  - Revised function 'plotConcur' to show COSEWIC species in red. (RH 9/28)
-  - Revised function 'preferDepth' properly place depth-of-median-catch triangle. (RH 9/28)
+  - Revised function `plotConcur' to choose trawl type and dump results into a `.csv' file. (RH 10/5)
+  - Revised query `pht_concurrent.sql' to query and combine trawl data from PacHarvest and GFFOS. (RH 10/5)
+  - Revised queries `pht_bycatch.sql' and `fos_bycatch.sql'. (RH 10/4)
+  - Revised function `getData' to use a `dummy' variable for numerics or strings. (RH 10/4)
+  - Revised function `preferDepth' to speed up effort data retrieval. (RH 10/4)
+  - Revised queries `pht_fdep.sql' and `pht_effort.sql' to choose specific major areas. (RH 10/4)
+  - Added new queries `pht_bycatch.sql' and `fos_bycatch.sql' to get annual group catches. (RH 9/30)
+  - Revised the data object `species'. (RH 9/29)
+  - Revised function `getData' to allow various species substitutions. (RH 9/29)
+  - Revised function `plotConcur' to show COSEWIC species in red. (RH 9/28)
+  - Revised function `preferDepth' properly place depth-of-median-catch triangle. (RH 9/28)
 
 1.13  2010-09-24  Rowan
-  - Revised functions 'getData' and 'plotConcur' to specify PMFC major area codes and top N selections. (RH 9/24)
-  - Revised SQL queries 'pht_concurrent.sql' and 'phhl_concurrent.sql' for use in 'plotConcur'. (RH 9/24)
-  - Revised function 'requestAges' to allow the user to specify particular trip IDs. (RH 9/23)
-  - Cleaned up comments in function 'buildCatch'; removed 'buildCatch' from 'M03_Fishery.r' to stand alone. (RH 9/21)
-  - Revised function 'glimmer' to handle specified depth breaks and bycatch. (RH 9/13)
-  - Revised 'orfhistory' data object (very early ORF now 1918-1950, previously 1918-1955). (RH 8/26)
-  - Add calls to the garbage collection function 'gc' in 'getData' and 'getFile'. (ARK 8/26)
+  - Revised functions `getData' and `plotConcur' to specify PMFC major area codes and top N selections. (RH 9/24)
+  - Revised SQL queries `pht_concurrent.sql' and `phhl_concurrent.sql' for use in `plotConcur'. (RH 9/24)
+  - Revised function `requestAges' to allow the user to specify particular trip IDs. (RH 9/23)
+  - Cleaned up comments in function `buildCatch'; removed `buildCatch' from `M03_Fishery.r' to stand alone. (RH 9/21)
+  - Revised function `glimmer' to handle specified depth breaks and bycatch. (RH 9/13)
+  - Revised `orfhistory' data object (very early ORF now 1918-1950, previously 1918-1955). (RH 8/26)
+  - Add calls to the garbage collection function `gc' in `getData' and `getFile'. (ARK 8/26)
   - Made a slight revision to map caption. (RH 8/26)
-  - Made a small revising to function 'weightBio'. (RH 8/23)
+  - Made a small revising to function `weightBio'. (RH 8/23)
 
 1.12  2010-08-17  Rowan
-  - Added a 'GLOP' button (Grid Land Over Plot) to the map GUI. (RH 8/17)
-  - Modified event expansion in '.gevent' to speed up the tow blend option in the mapping routine. (RH 8/17)
+  - Added a `GLOP' button (Grid Land Over Plot) to the map GUI. (RH 8/17)
+  - Modified event expansion in `.gevent' to speed up the tow blend option in the mapping routine. (RH 8/17)
   - Modified map legend to indicate ranges more clearly (for big P). (RH 8/16)
   - Modified mapping routine to create tow vectors with expansions appropriate to each event. (RH 8/16)
   - Modified the mapping control GUI and code to accommodate the big P (Paul Starr that is). (RH 8/10)
@@ -154,212 +156,212 @@ PBSfishery History
 		The user can now choose between two blending options:
 			Uniform - spreads Z evenly across expanded intervals, and
 			Normal  - spreads Z across expanded intervals using a normal distribution (i.e. more Z in the middle).
-		The quantile breaks now have two options 'Qhi' to emphasize hotspots and 'Qeq' to break the data evenly.
+		The quantile breaks now have two options `Qhi' to emphasize hotspots and `Qeq' to break the data evenly.
 		The quantile breaks with be loosened if break points are duplicated.
 		There is now a quick re-colouring option for tows, bubbles, and cells.
-  - Fixed small bug in functions 'calcVB' and 'calcSG'. (RH 8/9)
+  - Fixed small bug in functions `calcVB' and `calcSG'. (RH 8/9)
 
 1.11  2010-08-06  Rowan
-  - Modified function 'buildCatch' to use the new query 'fos_vcatORF.sql' rather than 'fos_fcatORF.sql'. (RH 8/6)
-  - Modified query 'pht_tcatORF.sql' to collect the set 999 catches. (RH 8/6)
-  -Added new function 'crossTab' to perform a crosstab-like summary on a data frame using the package 'reshape'. (RH 8/6)
-  - Created new query 'fos_vcatORF.sql' for the catch reconstruction function 'buildCatch'. (RH 8/5)
-	This query uses the merged catch table 'GF_D_OFFICIAL_FE_CATCH'.
-	The previous call to FOS 'fos_fcatORF.sql' used the observer/fisherlog catch table 'GF_FE_CATCH'.
-  - Revised function 'weightBio' to weight survey data (RH 8/4)
-  - Revamped the SQL query 'gfb_catch_records.sql' (and its mirror 'gfb_gfb_catch.sql') 
+  - Modified function `buildCatch' to use the new query `fos_vcatORF.sql' rather than `fos_fcatORF.sql'. (RH 8/6)
+  - Modified query `pht_tcatORF.sql' to collect the set 999 catches. (RH 8/6)
+  -Added new function `crossTab' to perform a crosstab-like summary on a data frame using the package `reshape'. (RH 8/6)
+  - Created new query `fos_vcatORF.sql' for the catch reconstruction function `buildCatch'. (RH 8/5)
+	This query uses the merged catch table `GF_D_OFFICIAL_FE_CATCH'.
+	The previous call to FOS `fos_fcatORF.sql' used the observer/fisherlog catch table `GF_FE_CATCH'.
+  - Revised function `weightBio' to weight survey data (RH 8/4)
+  - Revamped the SQL query `gfb_catch_records.sql' (and its mirror `gfb_gfb_catch.sql') 
 	to correctly allocated survey IDs and grouping codes to fishing events. Thanks Norm. (RH 7/27)
-  - Updated 'getData' to handle survey IDs and survey series IDs. (RH 7/27)
-  - Temporarily added modified function 'plotBubbles' from PBSmodelling for testing. (RH 7/23)
-  - Modified 'getCatch' to also retrieve survey catch from GFBioSQL (used in 'weightBio'). (RH 7/22)
-  - Modified 'getData' to accept additional arguments through '...' that are passed to RODBC's 'sqlQuery'. (RH 7/22)
+  - Updated `getData' to handle survey IDs and survey series IDs. (RH 7/27)
+  - Temporarily added modified function `plotBubbles' from PBSmodelling for testing. (RH 7/23)
+  - Modified `getCatch' to also retrieve survey catch from GFBioSQL (used in `weightBio'). (RH 7/22)
+  - Modified `getData' to accept additional arguments through `...' that are passed to RODBC's `sqlQuery'. (RH 7/22)
 
 1.10  2010-07-19  Rowan
-  - Fixed minor bug regarding the behaviour of 'missing' in 'buildCatch'. (RH 7/19)
-  - Revised 'buildCatch' and 'orfhistory' to deal with early (1918-1950) catch data. (RH 7/13)
-  - Added query 'phhl_districts' to determine the PMFC major areas in Districts I, II, III based on 1951-1952 red rockfish catch data. (RH 7/13)
-  - Updated 'map' to create files reflecting date range, depth range, and fishery IDs. (RH 7/9)
-  - Created 'phhl_f_map_density.sql' query to use in mapping CPUE density. (RH 7/6)
-  - Altered the way large data files (e.g., Mfile, Qfile) are written to the global object 'PBSmap'.
-	Using 'packList' is very slow for some reason (flag for PBSmod). Used the direct write '<<-' method to populate the global list. (RH 7/6)
+  - Fixed minor bug regarding the behaviour of `missing' in `buildCatch'. (RH 7/19)
+  - Revised `buildCatch' and `orfhistory' to deal with early (1918-1950) catch data. (RH 7/13)
+  - Added query `phhl_districts' to determine the PMFC major areas in Districts I, II, III based on 1951-1952 red rockfish catch data. (RH 7/13)
+  - Updated `map' to create files reflecting date range, depth range, and fishery IDs. (RH 7/9)
+  - Created `phhl_f_map_density.sql' query to use in mapping CPUE density. (RH 7/6)
+  - Altered the way large data files (e.g., Mfile, Qfile) are written to the global object `PBSmap'.
+	Using `packList' is very slow for some reason (flag for PBSmod). Used the direct write `<<-' method to populate the global list. (RH 7/6)
   - Debugged some of the mapWin GUI buttons due to some unknown change in PBSmodelling scoping behaviour. (RH 7/6)
-  - Revised 'map' and it's GUI to include the selection of a fishery type. (RH 7/6)
-  - Created 'pht_map_density.sql' and 'fos_map_density.sql' queries to use in mapping CPUE density. (RH 7/5)
-  - Revised '.getSQLdata' to re-query the connection using 'rows_at_time=1' if resulting dataframe contains 0 rows. (RH 6/28)
+  - Revised `map' and it's GUI to include the selection of a fishery type. (RH 7/6)
+  - Created `pht_map_density.sql' and `fos_map_density.sql' queries to use in mapping CPUE density. (RH 7/5)
+  - Revised `.getSQLdata' to re-query the connection using `rows_at_time=1' if resulting dataframe contains 0 rows. (RH 6/28)
 
 1.09  2010-06-24  Rowan
-  - Revised 'requestAges' to sample stratified random otoliths from surveys. (RH 6/25)
-  - Revised 'sumCatTabs' to use the 'catmod' catch array from the catch reconstruction 'buildCatch' (RH 6/23)
-  - Modified 'buildCatch' to use a new argument called 'reconstruct':
+  - Revised `requestAges' to sample stratified random otoliths from surveys. (RH 6/25)
+  - Revised `sumCatTabs' to use the `catmod' catch array from the catch reconstruction `buildCatch' (RH 6/23)
+  - Modified `buildCatch' to use a new argument called `reconstruct':
 	if TRUE (default) complete the reconstruction as previously,
 	if FALSE, terminate the code once the modern catch array has been compiled and saved
-	(to a binary file 'cat123mod.rda', where 123 = species code). (RH 6/22)
-  - Revised the queries 'phhl_vcatch_fyear.sql', 'phhl_fcatch_fyear.sql', 'phhl_hcatch_fyear.sql' 
+	(to a binary file `cat123mod.rda', where 123 = species code). (RH 6/22)
+  - Revised the queries `phhl_vcatch_fyear.sql', `phhl_fcatch_fyear.sql', `phhl_hcatch_fyear.sql' 
 	to mirror those used for the catch reconstruction. ( RH 6/21)
 
 1.08  2010-06-16  Rowan
-  - Revised 'requestAges', 'gfb_age_request.sql', 'gfb_pht_catch.sql' and 'gfb_fos_catch.sql'. (RH 6/16)
-  - Added new SQL queries 'gfb_pht_catch.sql' and 'gfb_fos_catch.sql' for use by 'requestAges'. (RH 6/11)
-  - Revised 'requestAges' to query  GFB, PHT, and FOS through the SQL server. (RH 6/11)
-  - Removed concept of reference major areas from 'buildCatch' (never used, causes indexing problems). (RH 6/10)
+  - Revised `requestAges', `gfb_age_request.sql', `gfb_pht_catch.sql' and `gfb_fos_catch.sql'. (RH 6/16)
+  - Added new SQL queries `gfb_pht_catch.sql' and `gfb_fos_catch.sql' for use by `requestAges'. (RH 6/11)
+  - Revised `requestAges' to query  GFB, PHT, and FOS through the SQL server. (RH 6/11)
+  - Removed concept of reference major areas from `buildCatch' (never used, causes indexing problems). (RH 6/10)
 
 1.07  2010-06-09  Rowan
-  - Updated 'Bootstrap2010.r' (see 'surveys' branch). (RH 6/9)
-  - Added new arguments to 'weightBio' for more flexibility on figure output. (RH 6/7)
-  - Added new function 'runCCA' to run catch-curve analysis of Schnute & Haigh (2007). (RH 6/3)
-  - Revised 'plotProp' to work more consistently with other applications in the making. (RH 5/31)
-  - Revised 'weightBio' to handle commercial and/or survey samples; fixed scaling of multi-panel bubble plots. (RH 5/28)
-  - Revised 'buildCatch' to use SQL queries in the package repository. (RH 5/27)
+  - Updated `Bootstrap2010.r' (see `surveys' branch). (RH 6/9)
+  - Added new arguments to `weightBio' for more flexibility on figure output. (RH 6/7)
+  - Added new function `runCCA' to run catch-curve analysis of Schnute & Haigh (2007). (RH 6/3)
+  - Revised `plotProp' to work more consistently with other applications in the making. (RH 5/31)
+  - Revised `weightBio' to handle commercial and/or survey samples; fixed scaling of multi-panel bubble plots. (RH 5/28)
+  - Revised `buildCatch' to use SQL queries in the package repository. (RH 5/27)
 
 1.06  2010-05-26  Rowan
-  - Transferred 'buildCatch' and 'orfhistory' from a branch into the trunk. (RH 5/27)
-  - Revised 'weightBio' to save results in a list 'PBSfish' and to fix a bug introduced by the new 'write.csv' function. (RH 5/26)
-  - Added new function 'getCatch' to extract catch records for a species from various databases and combine them into one catch file. (RH 5/26)
-  - Revised 'plotFOScatch' and 'requestAges' to use the Oracle server 'GFSH' instead of 'ORADEV'. (RH 5/26)
+  - Transferred `buildCatch' and `orfhistory' from a branch into the trunk. (RH 5/27)
+  - Revised `weightBio' to save results in a list `PBSfish' and to fix a bug introduced by the new `write.csv' function. (RH 5/26)
+  - Added new function `getCatch' to extract catch records for a species from various databases and combine them into one catch file. (RH 5/26)
+  - Revised `plotFOScatch' and `requestAges' to use the Oracle server `GFSH' instead of `ORADEV'. (RH 5/26)
 
 1.05  2010-05-25  Rowan
-  - Altered any calls to 'getFile' from other functions as needed. (RH 5/25)
-  - Revised 'getFile's handling of package data. (RH 5/25)
-  - Added new shortcut functions to get environments" 'lenv' (local), 'penv' (parent), 'genv' (global). (RH 5/25)
+  - Altered any calls to `getFile' from other functions as needed. (RH 5/25)
+  - Revised `getFile's handling of package data. (RH 5/25)
+  - Added new shortcut functions to get environments" `lenv' (local), `penv' (parent), `genv' (global). (RH 5/25)
 
 1.04  2010-05-17  Rowan
-  - Revised 'calcRatio' to operate silently (handy when used in other functions). (RH 5/21)
-  - Revised 'buildCatch' to view all modern database catches simultaneously and choose the maximum annual value. (RH 5/20)
-  - Revised 'getFile' to ignore package 'data' as the default (because function is used more often to get files from user's working directory). (RH 5/20)
-  - Revised 'getData' to choose all fisheries if 'fisheryid=NULL' or select specified fisheries. (RH 5/17).
+  - Revised `calcRatio' to operate silently (handy when used in other functions). (RH 5/21)
+  - Revised `buildCatch' to view all modern database catches simultaneously and choose the maximum annual value. (RH 5/20)
+  - Revised `getFile' to ignore package `data' as the default (because function is used more often to get files from user's working directory). (RH 5/20)
+  - Revised `getData' to choose all fisheries if `fisheryid=NULL' or select specified fisheries. (RH 5/17).
   - Modified SQL queries to select multiple fisheries. (RH 5/17)
-  - Revised the 'buildCatch' routine to save some of the queried results and the PBSfish list to binary .rda files. (RH 5/17)
+  - Revised the `buildCatch' routine to save some of the queried results and the PBSfish list to binary .rda files. (RH 5/17)
   - Revised some of the phhl_ORF queries due to catch unit mix-ups. (RH 5/13)
   - Revised remaining Rd files for format consistency. (RH 5/10)
-  - Revised Rd files alphabetically up to 'isobath' for format consistency. (RH 5/7)
+  - Revised Rd files alphabetically up to `isobath' for format consistency. (RH 5/7)
 
 1.03  2010-05-05  Rowan
-  - Added new function 'calcSG' that fits length/weight vs. age data using a versatile Schnute growth model. (RH 5/5)
-  - Revised function 'calcVB'. (RH 5/5)
-  - Restructured and renamed the parameter initialization value list from 'parVec.vonB' to 'parVec'. (RH 5/5)
-  - Added shapefile 'pcoda' that outlines the Hecate Strait Pacific Cod Monitoring Survey areas. (NO 4/29)
-  - Revised the catch reconstruction appendix (see branch 'buildCatch'). (RH 4/28)
-  - Revised the code for 'buildCatch.r' (see branch 'buildCatch'). (RH 4/27)
+  - Added new function `calcSG' that fits length/weight vs. age data using a versatile Schnute growth model. (RH 5/5)
+  - Revised function `calcVB'. (RH 5/5)
+  - Restructured and renamed the parameter initialization value list from `parVec.vonB' to `parVec'. (RH 5/5)
+  - Added shapefile `pcoda' that outlines the Hecate Strait Pacific Cod Monitoring Survey areas. (NO 4/29)
+  - Revised the catch reconstruction appendix (see branch `buildCatch'). (RH 4/28)
+  - Revised the code for `buildCatch.r' (see branch `buildCatch'). (RH 4/27)
 
 1.02  2010-04-22  Rowan
   - Updated the User Guide. (RH 4/22)
-  - Revised 'calcVB' to spit out fitted VB curves to a CSV file. (RH 4/21)
-  - Revised 'calcVB' to allow fixing parameter t0 to 0 and to subset the data based on a set of years. (RH 4/20)
-  - Revised function 'calcLenAge' and renamed it to 'calcVB'; can now also fit weights-at-age. (RH 4/19)
-  - Revised the parameter vector object 'parVec.vonB' to include 'length' and 'weight'. (RH 4/19)
-  - Revised description document 'SQLcode.txt'.(RH 4/6)
-  - Fixed small bug in 'boxSeason' to properly use range of years when some years are missing. (RH 4/6)
+  - Revised `calcVB' to spit out fitted VB curves to a CSV file. (RH 4/21)
+  - Revised `calcVB' to allow fixing parameter t0 to 0 and to subset the data based on a set of years. (RH 4/20)
+  - Revised function `calcLenAge' and renamed it to `calcVB'; can now also fit weights-at-age. (RH 4/19)
+  - Revised the parameter vector object `parVec.vonB' to include `length' and `weight'. (RH 4/19)
+  - Revised description document `SQLcode.txt'.(RH 4/6)
+  - Fixed small bug in `boxSeason' to properly use range of years when some years are missing. (RH 4/6)
 
 1.01  2010-04-01  Rowan
-  - Modified SQL query 'ph3_fcatORF.sql' to identify target species using gear code as the 4th dimension:
+  - Modified SQL query `ph3_fcatORF.sql' to identify target species using gear code as the 4th dimension:
 	(STP_SPER_YR, STP_SPER_PERIOD_CDE, SFA_MSFA_MIDSIZE_FA_CDE, GR_GEAR_CDE). (RH 4/1)
   - Modified Norm's survey bootstrap code to work with PBSfishery. (NO-RH 3/30)
-	Stored in new SVN branch called 'surveys'.
-  - Modified function 'getData' to execute a direct SQL query to SQL Server or Oracle. (RH 3/30)
-  - Modified function 'buildCatch'. (RH 3/29)
-  - Added new function 'prime' to determine prime numbers from an input vector. (RH 3/25)
+	Stored in new SVN branch called `surveys'.
+  - Modified function `getData' to execute a direct SQL query to SQL Server or Oracle. (RH 3/30)
+  - Modified function `buildCatch'. (RH 3/29)
+  - Added new function `prime' to determine prime numbers from an input vector. (RH 3/25)
 
 1.00  2010-03-25  Rowan
   - Started subversion numbering as done for other PBS package builds.
-  - Created new function 'prime' to identify the prime numbers in an integer vector.
-  - Created new Oracle View 'GFFOS.MEAN_SPECIES_WEIGHT_VW' on the GFSH server (NO 3/24)
-  - Revised SQL queries 'fos_ pht_ gfc_catch_records.sql' to make objects with identical fields for easy merging.
-  - Revised SQL query 'fos_catch_records.sql' to use new table 'GFFOS.GF_D_OFFICIAL_FE_CATCH' on the GFSH server.
+  - Created new function `prime' to identify the prime numbers in an integer vector.
+  - Created new Oracle View `GFFOS.MEAN_SPECIES_WEIGHT_VW' on the GFSH server (NO 3/24)
+  - Revised SQL queries `fos_ pht_ gfc_catch_records.sql' to make objects with identical fields for easy merging.
+  - Revised SQL query `fos_catch_records.sql' to use new table `GFFOS.GF_D_OFFICIAL_FE_CATCH' on the GFSH server.
   - Transposed grid dimensions for WDF where byrow=FALSE.
 
 0.88  2010-02-10  Rowan
-  - Revised SQL queries 'ph3_fcatORF.sql', 'phhl_vcatORF.sql', and 'phhl_hcatORF.sql' to better capture H&L landings of rockfish.
-  - Added new function 'requestAges' to grab random samples from available otoliths.
+  - Revised SQL queries `ph3_fcatORF.sql', `phhl_vcatORF.sql', and `phhl_hcatORF.sql' to better capture H&L landings of rockfish.
+  - Added new function `requestAges' to grab random samples from available otoliths.
   - Added new SQL queries to summarise FOS catch and to get otolith samples for age requests.
-  - Revised and renamed function 'weightProp' to 'weightBio'.
+  - Revised and renamed function `weightProp' to `weightBio'.
   - Forgot to upload code for v.0.87.
 
 0.87  2010-01-07  Rowan
-  - Revamped function 'calcRatio' to allow more flexibility in handling zero-values and specifying the summary function.
-  - Added new function 'weightProp' to weight commercial age proportions by catch.
+  - Revamped function `calcRatio' to allow more flexibility in handling zero-values and specifying the summary function.
+  - Added new function `weightProp' to weight commercial age proportions by catch.
   - Revamped the SQL queries used in catch reconstruction.
-  - Modified function 'convYP' to include a few attributes with the returned value.
+  - Modified function `convYP' to include a few attributes with the returned value.
 
 0.86  2009-12-09  Rowan
-  - Modified 'gfb_bio.sql' to identify all potential survey IDs 'SVID' if they exist.
-  - Fixed small bugs in functions 'calcMA', 'convYP', 'plotFOScatch'.
-  - Added new function called 'sumCatTabs' to summarize catch by year and PMFC area
+  - Modified `gfb_bio.sql' to identify all potential survey IDs `SVID' if they exist.
+  - Fixed small bugs in functions `calcMA', `convYP', `plotFOScatch'.
+  - Added new function called `sumCatTabs' to summarize catch by year and PMFC area
 	from modern catch input data used in catch reconstruction.
 
 0.85  2009-11-12  Rowan
   - First build under R-2.10.0
-  - Added new function called 'sumBioTabs' to summarize the number of samples and specimens in a biological object.
-  - Modified 'calcMA' to start collecting the moving average at the last observation and move backwards.
+  - Added new function called `sumBioTabs' to summarize the number of samples and specimens in a biological object.
+  - Modified `calcMA' to start collecting the moving average at the last observation and move backwards.
 
 0.84  2009-11-10  Rowan
-  - Updated 'PBSfishery-UG.doc' (thanks Brian for spotting typos).
-  - Fixed bug in 'getData' that was still using 'mnwt' field from 'species'; weight fields are now 'foswt', 'gfbcwt', 'gfrwt'.
-  - Fixed bugs in 'calcLenAge', 'compCsum', 'estOgive', and 'mapMaturity' regarding species selection (thanks Brian).
-  - Changed all calls to 'approx' to include the arguments 'rule=2, ties="ordered"'.
+  - Updated `PBSfishery-UG.doc' (thanks Brian for spotting typos).
+  - Fixed bug in `getData' that was still using `mnwt' field from `species'; weight fields are now `foswt', `gfbcwt', `gfrwt'.
+  - Fixed bugs in `calcLenAge', `compCsum', `estOgive', and `mapMaturity' regarding species selection (thanks Brian).
+  - Changed all calls to `approx' to include the arguments `rule=2, ties="ordered"'.
 
 0.83  2009-11-09  Rowan
-  - Added function 'calcMA' to calculate a moving average of a series (usually time series).
-  - Added function 'fitLogit' to fit binomial data using 'glm' and a logit link function.
-  - Modified the function 'estOgive' to perform both empirical and binomial-logit fits to maturity data.
-  - Modified the function 'histMetric' to allow various plot types 'ptype'.
+  - Added function `calcMA' to calculate a moving average of a series (usually time series).
+  - Added function `fitLogit' to fit binomial data using `glm' and a logit link function.
+  - Modified the function `estOgive' to perform both empirical and binomial-logit fits to maturity data.
+  - Modified the function `histMetric' to allow various plot types `ptype'.
 
 0.82  2009-11-02  Rowan
-  - Updated data object 'species' with all species from GFBIO and mean weights:
+  - Updated data object `species' with all species from GFBIO and mean weights:
 	'foswt' (from ratios of catch weight to pieces in FOS),
 	'gfbcwt' (using weights samples from the commercial fishery), and
 	'gfbrwt' (using weights sampled from research/charter cruises).
-  - Revised function 'plotFOScatch' to handle revised 'fos_catch.sql'. 
-  - Streamlined SQL queries 'fos_catch.sql' and 'fos_fcatORF.sql'.
-  - Added SQL queries 'fos_fishwt.sql' and 'fos_sectors.sql' (thanks Norm for latter).
+  - Revised function `plotFOScatch' to handle revised `fos_catch.sql'. 
+  - Streamlined SQL queries `fos_catch.sql' and `fos_fcatORF.sql'.
+  - Added SQL queries `fos_fishwt.sql' and `fos_sectors.sql' (thanks Norm for latter).
 
 0.81  2009-10-22  Rowan
-  - Added queries for the PacHarv3 DB: 'ph3_fcat.sql' and 'ph3_orfhistory.sql'.
-  - Modified SQL queries used in 'calcCatch()' for catch reconstruction history (see separate branch in SVN).
-  - Modified 'getData' and 'listTables' to better interact with DFO's Oracle databases.
+  - Added queries for the PacHarv3 DB: `ph3_fcat.sql' and `ph3_orfhistory.sql'.
+  - Modified SQL queries used in `calcCatch()' for catch reconstruction history (see separate branch in SVN).
+  - Modified `getData' and `listTables' to better interact with DFO's Oracle databases.
 
 0.80  2009-10-15  Rowan
-  - Added 'fos_fcatORF.sql' to query FOS for species catch history with associated landed catch of other species.
-  - Revised 'getData' to gsub variables in SQL queries; added a few new arguments.
+  - Added `fos_fcatORF.sql' to query FOS for species catch history with associated landed catch of other species.
+  - Revised `getData' to gsub variables in SQL queries; added a few new arguments.
   - Revised the FOS catch records query.
-  - Revised SQl queries 'phhl_fcatORF.sql', 'phhl_hcatORF.sql', 'phhl_ocatORF.sql', 'phs_scatORF.sql', 'pht_tcatORF.sql'.
-  - Fixed small bug in 'getFile'; changed font size for sql error message in 'getData'.
+  - Revised SQl queries `phhl_fcatORF.sql', `phhl_hcatORF.sql', `phhl_ocatORF.sql', `phs_scatORF.sql', `pht_tcatORF.sql'.
+  - Fixed small bug in `getFile'; changed font size for sql error message in `getData'.
 
 0.79  2009-09-17  Rowan
   - Updated survey IDs in survey functions that used them.
-  - Revised function 'compCsum' to plot cumulative proportions-at-age instead of cumulative raw data.
-  - Revised the SQL code files 'pht_catORF.sql' and 'gfb_bio.sql'.
+  - Revised function `compCsum' to plot cumulative proportions-at-age instead of cumulative raw data.
+  - Revised the SQL code files `pht_catORF.sql' and `gfb_bio.sql'.
 
 0.78  2009-09-11  Rowan
   - Added three new SQL queries to get ORF data from PacHarvHL.
-  - Modified the function 'calcRatio'.
-  - Modified all GUIs and their functions to use '@variables' for 'gsub'.
+  - Modified the function `calcRatio'.
+  - Modified all GUIs and their functions to use `@variables' for `gsub'.
 
 0.77  2009-08-21  Rowan
   - Finished 1st draft of User's Guide.
-  - Modified function 'spooler' to more sensibly handle multiple list inputs.
+  - Modified function `spooler' to more sensibly handle multiple list inputs.
 
 0.76  2009-08-18  Rowan
   - Finished documenting UG section on temporal functions.
-  - Revised 'imputeRate' to use a consistent IRR formula.
+  - Revised `imputeRate' to use a consistent IRR formula.
 
 0.75  2009-08-14  Rowan
-  - Documented functions in UG: 'makePMRtables', 'simBGtrend', 'trend'
-  - Modified 'trend' and its GUI 'trendWin.txt'.
-  - Documented functions in UG: 'getBootRuns', 'bootBG', 'showAlpha'
-  - Modified 'gfb_pmr.sql'.
-  - Changed name of function 'calcIndices' to 'calcMoments'. Modified the UG.
-  - Started work on survey functions: modified 'getPMR', 'showIndices'; created small function 'getBootRuns'.
+  - Documented functions in UG: `makePMRtables', `simBGtrend', `trend'
+  - Modified `trend' and its GUI `trendWin.txt'.
+  - Documented functions in UG: `getBootRuns', `bootBG', `showAlpha'
+  - Modified `gfb_pmr.sql'.
+  - Changed name of function `calcIndices' to `calcMoments'. Modified the UG.
+  - Started work on survey functions: modified `getPMR', `showIndices'; created small function `getBootRuns'.
   - Arranged functions in new modules that mirror the documentation chapters.
-  - Finished the 'Spatial Functions' section of the User's Guide.
-  - Fixed small bug in 'getData()'
-  - Added new function 'calcRatio' to calculate ratios of catch (e.g., discard:catch, catch:ORF).
-  - Modified functions 'preferDepth', 'zapHoles'.
+  - Finished the `Spatial Functions' section of the User's Guide.
+  - Fixed small bug in `getData()'
+  - Added new function `calcRatio' to calculate ratios of catch (e.g., discard:catch, catch:ORF).
+  - Modified functions `preferDepth', `zapHoles'.
 
 0.74  2009-07-31  Rowan
-  - Fixed small bug in 'map' : 'getFile' missing new argument 'try.all.frames=TRUE' (thanks Jeff).
-  - Fixed bug in '.map()' that crashed when the X,Y limits yielded no coastline (thanks Paul).
-  - Modified functions 'calcLenAge', 'histMetric', 'histTail', 'mapMaturity', 'plotProp', 'reportCatchAge'
-	'glimmer', 'plotCatch', 'plotConcur', 'calcHabitat', 'calcOccur', 'calcSurficial', 'clarify'
+  - Fixed small bug in `map' : `getFile' missing new argument `try.all.frames=TRUE' (thanks Jeff).
+  - Fixed bug in `.map()' that crashed when the X,Y limits yielded no coastline (thanks Paul).
+  - Modified functions `calcLenAge', `histMetric', `histTail', `mapMaturity', `plotProp', `reportCatchAge'
+	'glimmer', `plotCatch', `plotConcur', `calcHabitat', `calcOccur', `calcSurficial', `clarify'
   - Started working on a User's Guide.
 
 0.73  2009-07-08  Rowan
@@ -370,276 +372,276 @@ PBSfishery History
 	popa, qcb, qcsssa, rca, species, spn, srfa, srfs, trawlability, wcvisa
 
 0.72  2009-06-30  Rowan
-  - Renamed 'yearperiod()' to 'convYP()'.
-  - Extracted subfunctions from 'plotFOScatch' to create 'convFY()' (from 'fyear') and 'convYM()' (from 'xvec').
+  - Renamed `yearperiod()' to `convYP()'.
+  - Extracted subfunctions from `plotFOScatch' to create `convFY()' (from `fyear') and `convYM()' (from `xvec').
 	The former converts dates to fishing years; the latter converts date limits into an expanded year-month character vector.
-  - Revised 'plotFOScatch()' to take an explicit user name and password.
+  - Revised `plotFOScatch()' to take an explicit user name and password.
 
 0.71  2009-06-25  Rowan
   - Received permission from Bruce Leaman (IPHC, Seattle) to include sample datasets for three rockfish caught by the SSA survey.
-	Added an attribute called 'source' to the IPHC datasets giving the IPHC mailing address.
-  - Added 'password=T' to those GUIS with password entry boxes (thanks Alex!)
-  - Revised 'imputeRate' function and GUI. Switched to the internal rate of return formula used in MS Excel.
-  - Revised 'listTables()' to include type="MDB" (Microsoft Access).
-  - Revised 'plotConcur()' to use either 'PacHarvest' or 'PacHarvHL'.
-  - Added new SQL code 'phhl_concurrent.sql' to get top 20 concurrent species in PacHarvHL.
+	Added an attribute called `source' to the IPHC datasets giving the IPHC mailing address.
+  - Added `password=T' to those GUIS with password entry boxes (thanks Alex!)
+  - Revised `imputeRate' function and GUI. Switched to the internal rate of return formula used in MS Excel.
+  - Revised `listTables()' to include type="MDB" (Microsoft Access).
+  - Revised `plotConcur()' to use either `PacHarvest' or `PacHarvHL'.
+  - Added new SQL code `phhl_concurrent.sql' to get top 20 concurrent species in PacHarvHL.
 
 0.70  2009-06-18  Rowan
-  - Added new function 'isThere()' to detect if an object is physically in a specified environment.
-  - Revised 'getFile()' to deal with yet another 'feature'.
-  - Revised '.trendy()' more readily grab a static data object.
-  - Removed non-essential columns and rows from datasets 'testdatC', 'testdatR', and 'pop.age'.
-  - Revised 'preferDepth()' function and GUI.
-  - Revised the 'plotProp' window description file.
-  - Revised 'processBio()' to process the biological file in blocks to speed computation
-	Note: large blocks sent to 'findPolys()' when 'addpopa=TRUE' cause routine to bog down.
+  - Added new function `isThere()' to detect if an object is physically in a specified environment.
+  - Revised `getFile()' to deal with yet another `feature'.
+  - Revised `.trendy()' more readily grab a static data object.
+  - Removed non-essential columns and rows from datasets `testdatC', `testdatR', and `pop.age'.
+  - Revised `preferDepth()' function and GUI.
+  - Revised the `plotProp' window description file.
+  - Revised `processBio()' to process the biological file in blocks to speed computation
+	Note: large blocks sent to `findPolys()' when `addpopa=TRUE' cause routine to bog down.
 
 0.69  2009-06-11  Rowan
-  - Added new function 'plotDiversity()' to plot diversity indices of phytoplankton samples.
-  - Revised functions 'trackComp()' and 'boxSeason()'.
+  - Added new function `plotDiversity()' to plot diversity indices of phytoplankton samples.
+  - Revised functions `trackComp()' and `boxSeason()'.
 
 0.68  2009-06-10  Rowan
-  - Added new function 'trackComp()' to track composition of phytoplankton groups over time.
-  - Added new function 'yearperiod()' to transform dates into binned year-periods.
-  - Added new function 'plotConcur()' to plot concurrent species in tows.
+  - Added new function `trackComp()' to track composition of phytoplankton groups over time.
+  - Added new function `yearperiod()' to transform dates into binned year-periods.
+  - Added new function `plotConcur()' to plot concurrent species in tows.
 
 0.67  2009-06-03  Rowan
-  - Overhauled the 'reportCatchAge' functions and GUI.
-  - Modified 'showMessage()'.
+  - Overhauled the `reportCatchAge' functions and GUI.
+  - Modified `showMessage()'.
 
 0.66  2009-05-29  Rowan
-  - Ironed out small bugs in 'map()' found by Jeff Fargo.
-  - Added 'excl 0' and 'ex -ve' check boxes to display control.
+  - Ironed out small bugs in `map()' found by Jeff Fargo.
+  - Added `excl 0' and `ex -ve' check boxes to display control.
 	(previously cells with zero or negative values were automatically not displayed.)
 
 0.65  2009-05-28  Rowan
-  - Fixed small bug in 'getFile()'.
+  - Fixed small bug in `getFile()'.
   - Revised the mapping module yet again (standardised field names in Mfile and Qfile, added view button to see unique tracked items).
 
 0.64  2009-05-25  Rowan
-  - Reduced dataset 'pop.age' to represent slope rockfish areas 5AB and 5CD only.
+  - Reduced dataset `pop.age' to represent slope rockfish areas 5AB and 5CD only.
   - Altered map GUI to accommodate a tracking vector (primarily for Jeff Fargo).
-  - Made small alteration to 'map()' and 'mapWin.txt' (to view R code and a sample SQL query).
-  - Transferred functions 'clearRgui' and 'focusRgui' to PBSmodelling as 'clearRcon' and 'focusRcon'.
-  - Removed dataset: 'copper' 
+  - Made small alteration to `map()' and `mapWin.txt' (to view R code and a sample SQL query).
+  - Transferred functions `clearRgui' and `focusRgui' to PBSmodelling as `clearRcon' and `focusRcon'.
+  - Removed dataset: `copper' 
 
 0.63  2009-05-12  Rowan
-  - Revised the functions in 'trend()' of the 'M02_IPHC.r' module; revised 'trendWin.txt' GUI.
-  - Revised function 'showError()' to become 'showMessage()'; 'showError() is now a variant of 'showMessage()'.
-  - Revised functions 'getName()' and 'getFile()'
-	the latter tries to resolve named objects and actual objects by adopting 'data()' argument specification, specifically '..., list=character(0)'.
-  - Added new function 'boxSeason()' in module 'M99_Final.r' to summarize data by season using boxplots.
-  - Cleaned up code for 'reportCatchAge()' in 'M06_ADMB.r'.
-  - Revised 'reportCatchAgeWin.txt' (GUI) to be smarter using recent PBSmodelling function 'doAction()'.
+  - Revised the functions in `trend()' of the `M02_IPHC.r' module; revised `trendWin.txt' GUI.
+  - Revised function `showError()' to become `showMessage()'; `showError() is now a variant of `showMessage()'.
+  - Revised functions `getName()' and `getFile()'
+	the latter tries to resolve named objects and actual objects by adopting `data()' argument specification, specifically `..., list=character(0)'.
+  - Added new function `boxSeason()' in module `M99_Final.r' to summarize data by season using boxplots.
+  - Cleaned up code for `reportCatchAge()' in `M06_ADMB.r'.
+  - Revised `reportCatchAgeWin.txt' (GUI) to be smarter using recent PBSmodelling function `doAction()'.
   - Added recent updates (popqcs08.tpl, .dat, .pin) for catch-at-age analysis of POP in Queen Charlotte Sound (srfa 5AB + 5CD).
 
 0.62  2009-05-01  Rowan
-  - Transferred function 'clipVector()' from PBSfishery to PBSmodelling.
-  - Modified function 'showIndices()' to use 'gfb_boot.sql' and to show indices from multiple surveys and indices that occur in the same year.
-  - Added new SQL query 'gfb_boot.sql' to get bootstrapped indices from Norm's boot tables.
+  - Transferred function `clipVector()' from PBSfishery to PBSmodelling.
+  - Modified function `showIndices()' to use `gfb_boot.sql' and to show indices from multiple surveys and indices that occur in the same year.
+  - Added new SQL query `gfb_boot.sql' to get bootstrapped indices from Norm's boot tables.
 
 0.61  2009-04-21  Rowan
-  - Reorganised the 'plotProp' GUI.
-  - Renamed 'propat()' to 'plotProp()'.
-  - Revised 'preferDepth()' (it was bogging down due to returning large data sets).
-  - Revised dataset 'pop.age'.
+  - Reorganised the `plotProp' GUI.
+  - Renamed `propat()' to `plotProp()'.
+  - Revised `preferDepth()' (it was bogging down due to returning large data sets).
+  - Revised dataset `pop.age'.
 
 0.60  2009-04-09  Rowan
-  - Revised 'fos_catch.sql' to get minor & locality codes. Changed 'plotFOScatch()' to properly sum catch given extra grouping levels.
-  - Revised '.map()' and '.fcell()' to use 'colorRamp' within the functions.
-	(Something changed with the availability of 'colorRamp' across environments.)
-  - Revised '.PBSserver' to include the new GF DB server 'SVBCPBSGFIIS'.
+  - Revised `fos_catch.sql' to get minor & locality codes. Changed `plotFOScatch()' to properly sum catch given extra grouping levels.
+  - Revised `.map()' and `.fcell()' to use `colorRamp' within the functions.
+	(Something changed with the availability of `colorRamp' across environments.)
+  - Revised `.PBSserver' to include the new GF DB server `SVBCPBSGFIIS'.
 
 0.59  2009-03-03  Rowan
-  - Revised '.PBSserver' to include Norm's temporary server PAC03450\GFDB to reflect temporary server for the GF databases.
-	(current server address for generic named 'GFDB' is now placed in position one of the '.PBSserver' vector.
-  - Revised '.getSQLdata()' and 'confODBC()' to handle server names with "\" embedded (who knew).
-  - Removed 'packList()' as this function was revised and added to PBSmodelling.
-  - Inserted explicit name for the target list argument when calling 'packList()'.
-  - Removed most instances of '<<-', replaced with 'assign'.
+  - Revised `.PBSserver' to include Norm's temporary server PAC03450\GFDB to reflect temporary server for the GF databases.
+	(current server address for generic named `GFDB' is now placed in position one of the `.PBSserver' vector.
+  - Revised `.getSQLdata()' and `confODBC()' to handle server names with "\" embedded (who knew).
+  - Removed `packList()' as this function was revised and added to PBSmodelling.
+  - Inserted explicit name for the target list argument when calling `packList()'.
+  - Removed most instances of `<<-', replaced with `assign'.
 
 0.58  2009-01-14  Rowan
-  - Revised 'gfb_bio.sql': new fields 'hail' hail number, 'temp' - bottom temperature;
+  - Revised `gfb_bio.sql': new fields `hail' hail number, `temp' - bottom temperature;
 	'date' was originally sample date, now either sample date if it occurs during the trip, or end of trip date if not.
-  - Updated data object 'pop.age'.
-  - Revised functions 'getData()' and 'glimmer()'.
-  - Added new function 'chewData()' that removes data frame records where factor categories are sparsely populated.
+  - Updated data object `pop.age'.
+  - Revised functions `getData()' and `glimmer()'.
+  - Added new function `chewData()' that removes data frame records where factor categories are sparsely populated.
 
 0.57  2008-12-17  Rowan
-  - Revised 'zapDupes()' to more robustly handled columns of index participants.
-  - Revised 'getData()' to handle multiple species input (if sql wants it).
-  - Added SQL queries 'gfc_catch_records.sql' & 'fos_catch_records.sql' to get species catch by tow (zero-catch records excluded).
-  - Updated SQL query 'pht_catch_records.sql'.
-  - Added SQL queries: 'fos_mean_weights.sql', 'fos_fid_catch.sql'.
+  - Revised `zapDupes()' to more robustly handled columns of index participants.
+  - Revised `getData()' to handle multiple species input (if sql wants it).
+  - Added SQL queries `gfc_catch_records.sql' & `fos_catch_records.sql' to get species catch by tow (zero-catch records excluded).
+  - Updated SQL query `pht_catch_records.sql'.
+  - Added SQL queries: `fos_mean_weights.sql', `fos_fid_catch.sql'.
 
 0.56  2008-12-01  Rowan
-  - Added SQL query 'pht_catch_records.sql' to get species catch by tow (zero-catch records excluded).
-  - Revised function 'calcSRFA()' to handle NAs in fields 'major', 'minor', and 'locality'.
-  - Revised function 'imputeRate()'.
+  - Added SQL query `pht_catch_records.sql' to get species catch by tow (zero-catch records excluded).
+  - Revised function `calcSRFA()' to handle NAs in fields `major', `minor', and `locality'.
+  - Revised function `imputeRate()'.
 
 0.55  2008-11-26  Rowan
-  - Revised function 'compCsum()'.
-  - Updated data object 'pop.age'.
-  - Added Norm's function 'clearRgui()' (originally called 'clear.screen').
-  - Added Norm's function 'focusRgui()' (originally called 'focus.r').
-  - Added function 'revStr()' (see examples in 'base::strsplit').
-  - Revised function 'imputeRate()' and added test MDB 'Account.mdb'
+  - Revised function `compCsum()'.
+  - Updated data object `pop.age'.
+  - Added Norm's function `clearRgui()' (originally called `clear.screen').
+  - Added Norm's function `focusRgui()' (originally called `focus.r').
+  - Added function `revStr()' (see examples in `base::strsplit').
+  - Revised function `imputeRate()' and added test MDB `Account.mdb'
 
 0.54  2008-11-20  Rowan
-  - Added function 'compCsum()' to compare cumulative frequencies.
-  - Added function 'spooler()' to spool information directed by a list into a new field of an existing data frame.
-  - Added function 'imputeRate()' to impute the rate of return of an investment.
+  - Added function `compCsum()' to compare cumulative frequencies.
+  - Added function `spooler()' to spool information directed by a list into a new field of an existing data frame.
+  - Added function `imputeRate()' to impute the rate of return of an investment.
 
 0.53  2008-11-12  Rowan
-  - Fixed small bug in 'getData()'.
-  - Revised 'processBio()', 'histMetric()', and 'calcLenAge()'.
-  - Added new function 'biteData()' to subset a data matrix/frame using a vector object.
-  - Updated data object 'pop.age'.
+  - Fixed small bug in `getData()'.
+  - Revised `processBio()', `histMetric()', and `calcLenAge()'.
+  - Added new function `biteData()' to subset a data matrix/frame using a vector object.
+  - Updated data object `pop.age'.
 
 0.52  2008-11-03  Rowan
-  - Modified 'getData()' to accept SQL code with comments "--".
-	Also has new arguments 'doors' (doorspread) and 'speed' (vessel speed) for survey queries.
-  - Added 'gfb_survey_catch.sql', Norm's query for getting survey catch and density by species.
-  - Added 'gfb_survey_stratum.sql', Norm's query for getting survey stratum information.
-  - Added Norm's function 'calcIndices()' to compute index values for species by stratum in specified surveys.
+  - Modified `getData()' to accept SQL code with comments "--".
+	Also has new arguments `doors' (doorspread) and `speed' (vessel speed) for survey queries.
+  - Added `gfb_survey_catch.sql', Norm's query for getting survey catch and density by species.
+  - Added `gfb_survey_stratum.sql', Norm's query for getting survey stratum information.
+  - Added Norm's function `calcIndices()' to compute index values for species by stratum in specified surveys.
 
 0.51  2008-10-02  Rowan
-  - Modified functions 'getFile()', 'bootBG()', 'simBGtrend()' to iron out local environments.
-  - Modified 'plotFOScatch()' to display species name and sum the annual catches in 'yrcat'.
-  - Changed name of 'odbcConf()' to 'confODBC()'.
+  - Modified functions `getFile()', `bootBG()', `simBGtrend()' to iron out local environments.
+  - Modified `plotFOScatch()' to display species name and sum the annual catches in `yrcat'.
+  - Changed name of `odbcConf()' to `confODBC()'.
 
 0.50  2008-10-01  Rowan
-  - Added function 'getPMR()' to get (p, mu, rho) values from survey data on GFBioSQL.
-  - Added function 'calcPMR()' to calculate (p, mu, rho) values from a sample.
-  - Added function 'sampBG()' to sample from the binomial-gamma distribution.
-  - Added function 'bootBG()' to bootstrap binomial-gamma variates from (p, mu, rho) for each stratum.
-  - Added function 'bootBG()' to bootstrap binomial-gamma variates from (p, mu, rho) for each stratum.
-  - Added function 'showAlpha()' to show quantile confidence levels (alpha) for bootstrapped biomass.
-  - Added function 'simBGtrend()' to simulate a population projection based on prior binomial-gamma parameters.
-  - Modified 'getName()' and 'getFile' (more parsing nonsense).
+  - Added function `getPMR()' to get (p, mu, rho) values from survey data on GFBioSQL.
+  - Added function `calcPMR()' to calculate (p, mu, rho) values from a sample.
+  - Added function `sampBG()' to sample from the binomial-gamma distribution.
+  - Added function `bootBG()' to bootstrap binomial-gamma variates from (p, mu, rho) for each stratum.
+  - Added function `bootBG()' to bootstrap binomial-gamma variates from (p, mu, rho) for each stratum.
+  - Added function `showAlpha()' to show quantile confidence levels (alpha) for bootstrapped biomass.
+  - Added function `simBGtrend()' to simulate a population projection based on prior binomial-gamma parameters.
+  - Modified `getName()' and `getFile' (more parsing nonsense).
 
 0.49  2008-09-25  Rowan
-  - Standardised 'ChangeLog.txt' of PBS packages for viewing in HTML.
+  - Standardised `ChangeLog.txt' of PBS packages for viewing in HTML.
 	Header lines comprise:  version  date  builder
-  - Added function 'getName()' to get string names from an input argument.
-  - Revised 'getFile()' to use 'getName()' and to get more than one file.
-  - Added 'showIndices()' to display bootstrapped survey biomass indices in Norm's GFBioSQL tables.
-  - Created new module (partitioning of R code) called 'M07_Survey'.
+  - Added function `getName()' to get string names from an input argument.
+  - Revised `getFile()' to use `getName()' and to get more than one file.
+  - Added `showIndices()' to display bootstrapped survey biomass indices in Norm's GFBioSQL tables.
+  - Created new module (partitioning of R code) called `M07_Survey'.
 
 0.48  2008-09-19  Rowan
-  - Moved 'fos.fid', 'pmfc', and 'species' from 'PBSfishery' to 'PBSdata'.
-  - Added function 'wrapText()' to wrap and prefix long text strings (related to 'presentTalk' project).
-  - Added SQL query 'gfb_mnwt.sql' to calculate the mean commercial weight of any/all species.
-  - Added 'SQLcode.txt' that contains a list of SQL queries available in .../library/PBSfishery/sql.
+  - Moved `fos.fid', `pmfc', and `species' from `PBSfishery' to `PBSdata'.
+  - Added function `wrapText()' to wrap and prefix long text strings (related to `presentTalk' project).
+  - Added SQL query `gfb_mnwt.sql' to calculate the mean commercial weight of any/all species.
+  - Added `SQLcode.txt' that contains a list of SQL queries available in .../library/PBSfishery/sql.
 
 0.47  2008-09-16  Rowan
   - Updated all code for comment consistency.
-  - Added function 'processBio()' to process the results from a call to 'gfb_bio.sql'.
-  - Added function 'zapDupes()' to remove records with duplicated indices from a data frame.
-  - Updated 'propat()' to produce file names that describe the output in detail.
-  - Updated 'gfb_bio.sql' to grab Lon/Lat data.
+  - Added function `processBio()' to process the results from a call to `gfb_bio.sql'.
+  - Added function `zapDupes()' to remove records with duplicated indices from a data frame.
+  - Updated `propat()' to produce file names that describe the output in detail.
+  - Updated `gfb_bio.sql' to grab Lon/Lat data.
 
 0.46  2008-09-10  Rowan
-  - Updated 'M06_ADMB.r' code.
-  - Added 'packList()' to pack a global list with local objects.
-  - Added '.plotDev()' to save a plot on the current device using information from a GUI.
+  - Updated `M06_ADMB.r' code.
+  - Added `packList()' to pack a global list with local objects.
+  - Added `.plotDev()' to save a plot on the current device using information from a GUI.
 
 0.45  2008-09-10  Rowan
-  - Updated 'M06_ADMB.r' code to better display catch-age report files.
-  - Changed the name of 'plotHistory' to 'plotCatch' to avoid conflict with function in 'BRugs'.
+  - Updated `M06_ADMB.r' code to better display catch-age report files.
+  - Changed the name of `plotHistory' to `plotCatch' to avoid conflict with function in `BRugs'.
 
 0.44  2008-08-21  Rowan
-  - Changed 'inst' directories 'SQLcode' to 'sql' and 'ADMB' to 'admb'.
-  - Added 'mapMaturity()' to plot relative occurrence of maturity stages by month.
-  - Added 'estOgive()' to estimate the ogive curve for some metric (e.g., age).
+  - Changed `inst' directories `SQLcode' to `sql' and `ADMB' to `admb'.
+  - Added `mapMaturity()' to plot relative occurrence of maturity stages by month.
+  - Added `estOgive()' to estimate the ogive curve for some metric (e.g., age).
 
 0.43  2008-08-15  Rowan
-  - Added 'calcLenAge()' to fit length-age data using the von Bertalanffy model.
-  - Added data object 'parVec.vonB' with initial parameter estimates for the vonB (some species).
-  - Changed 'calcSRFarea()' to 'calcSRFA()' and fixed a minor bug.
-  - Changed names of data objects 'dbr.removals' to 'dbr.rem' and 'ymr.removals' to 'ymr.rem'.
-  - Changed name of 'gfb_morpho.sql' to 'gfb_bio.sql'.
+  - Added `calcLenAge()' to fit length-age data using the von Bertalanffy model.
+  - Added data object `parVec.vonB' with initial parameter estimates for the vonB (some species).
+  - Changed `calcSRFarea()' to `calcSRFA()' and fixed a minor bug.
+  - Changed names of data objects `dbr.removals' to `dbr.rem' and `ymr.removals' to `ymr.rem'.
+  - Changed name of `gfb_morpho.sql' to `gfb_bio.sql'.
 
 0.42  2008-08-12  Rowan
-  - Revised 'propat()' to accept file at command line call.
-  - Changed 'catchAge()' to 'reportCatchAge()' and made compatible with Anisa's 'PBSadmb' package.
-  - Removed 'isWhat()' as this now appears in 'PBSmodelling'.
+  - Revised `propat()' to accept file at command line call.
+  - Changed `catchAge()' to `reportCatchAge()' and made compatible with Anisa's `PBSadmb' package.
+  - Removed `isWhat()' as this now appears in `PBSmodelling'.
 
 0.41  2008-08-06  Rowan
-  - Added 'histTail()' to plot a simple histogram with optional tail zoom-in.
-  - Built with revised 'Rbuild.bat' and 'Rpaths.bat' to create an indexed HTML file (thanks Kurt Hornik).
+  - Added `histTail()' to plot a simple histogram with optional tail zoom-in.
+  - Built with revised `Rbuild.bat' and `Rpaths.bat' to create an indexed HTML file (thanks Kurt Hornik).
 
 0.40  2008-07-28  Rowan
-  - Revised 'calcHabitat()' and 'calcSurficial()' to use addPolys(...,colHoles="white") when sending to wmf.
-  - Added 'zapHoles()' to remove holes that will ultimately be filled (very preliminary).
-  - Revised 'getData()': hopefully more robust; also can now read XLS and DBF files.
+  - Revised `calcHabitat()' and `calcSurficial()' to use addPolys(...,colHoles="white") when sending to wmf.
+  - Added `zapHoles()' to remove holes that will ultimately be filled (very preliminary).
+  - Revised `getData()': hopefully more robust; also can now read XLS and DBF files.
 
 0.39  2008-07-24  Rowan
-  - Updated 'mapHist.txt'
-  - Modified function 'getData()'.
-  - Fixed 'mono' font problem in legend ('cex' needs to be even)
-  - Added check box for showing 'Area of Occupancy'.
-  - Changed global output list from '.PBSmap' to 'PBSmap'
+  - Updated `mapHist.txt'
+  - Modified function `getData()'.
+  - Fixed `mono' font problem in legend ('cex' needs to be even)
+  - Added check box for showing `Area of Occupancy'.
+  - Changed global output list from `.PBSmap' to `PBSmap'
 
 0.38  2008-07-22  Rowan
-  - Modified functions 'plotFOScatch()' and 'plotHistory'.
-  - Modified 'calcOccur()' to use weighted observations.
+  - Modified functions `plotFOScatch()' and `plotHistory'.
+  - Modified `calcOccur()' to use weighted observations.
 
 0.37  2008-07-21  Rowan
-  - Added function 'clarify()' to summarize catch data into CLARA groups.
-  - Modified function 'plotFOScatch()' to also calculate annual summaries.
-  - Modified function 'plotHistory()' to properly  use 'getFile()'.
-  - Changed name of data object 'FID' to 'fos.fid'.
+  - Added function `clarify()' to summarize catch data into CLARA groups.
+  - Modified function `plotFOScatch()' to also calculate annual summaries.
+  - Modified function `plotHistory()' to properly  use `getFile()'.
+  - Changed name of data object `FID' to `fos.fid'.
 
 0.36  2008-07-18  Rowan
-  - Added function 'calcOccur()' to calculate the percent occurrence of events in a PolySet.
-  - Modified slightly functions 'calcHabitat()' and 'calcSurficial()'.
+  - Added function `calcOccur()' to calculate the percent occurrence of events in a PolySet.
+  - Modified slightly functions `calcHabitat()' and `calcSurficial()'.
 
 0.35  2008-07-17  Rowan
-  - Added function 'calcSurficial' to calculate the intersection between geology and bathymetry.
-  - Transferred 'bctopo' from 'PBSfishery' to 'PBSdata'.
-  - Renamed the window description file folder from 'windows' to 'win' (to parallel 'PBSmodelling').
+  - Added function `calcSurficial' to calculate the intersection between geology and bathymetry.
+  - Transferred `bctopo' from `PBSfishery' to `PBSdata'.
+  - Renamed the window description file folder from `windows' to `win' (to parallel `PBSmodelling').
 
 0.34  2008-07-08  Rowan
-  - Changed module name to 'M04_Bio' from 'M04_Age'
-  - Added function 'histMetric' to display relative frequency of specified biology metric (e.g., length)
-  - Added function 'calcHabitat' to show potential habitat based on bathymetry.
-  - Revised 'PBSfishery.Rd' to report all fisheries related functions.
+  - Changed module name to `M04_Bio' from `M04_Age'
+  - Added function `histMetric' to display relative frequency of specified biology metric (e.g., length)
+  - Added function `calcHabitat' to show potential habitat based on bathymetry.
+  - Revised `PBSfishery.Rd' to report all fisheries related functions.
 
 0.33  2008-07-07  Rowan
-  - Changed function name to 'preferDepth()' from 'plotDepth()'
+  - Changed function name to `preferDepth()' from `plotDepth()'
   - Added total fishing effort histogram in background (preferDepth)
-  - Added a few more GUI controls to 'preferDepth'
+  - Added a few more GUI controls to `preferDepth'
 
 0.32  2008-07-02  Rowan
-  - Modified 'map()' to allow users to specify colours through 'bg' and 'fg' ('RGB' deprecated).
+  - Modified `map()' to allow users to specify colours through `bg' and `fg' ('RGB' deprecated).
 
 0.31  2008-06-19  Rowan
-  - Modified 'map()' to alternate between 'LL' and 'UTM' coordinates, also can specify coastline file.
-  - Modified 'getFile()' to allow variable strings as well as explicit files without delimiters.
+  - Modified `map()' to alternate between `LL' and `UTM' coordinates, also can specify coastline file.
+  - Modified `getFile()' to allow variable strings as well as explicit files without delimiters.
 
 0.30  2008-06-11  Rowan
-  - Added Jon's ADM suite (DOS menu system) and the vonB control files to '../inst/ADMB'.
-  - Updated 'PBSfishery.Rd'
+  - Added Jon's ADM suite (DOS menu system) and the vonB control files to `../inst/ADMB'.
+  - Updated `PBSfishery.Rd'
 
 0.29  2008-06-10  Rowan
-  - Added dataset 'pmfc'.
-  - Added functions 'clipVector()' and 'plotFOScatch()'.
+  - Added dataset `pmfc'.
+  - Added functions `clipVector()' and `plotFOScatch()'.
 
 0.28  2008-06-05  Rowan
-  - Added datasets 'species' and 'FID' (and their Rd files)
-  - Added SQL query 'fos_catch.sql' to get catch data by year, month, and major area from GFFOS.
-  - Revised 'getData()', '.getSQLdata()', 'getFile()' to handle stoopid ORACLE queries.
-  - Added Jon's function 'isWhat()'.
-  - Removed 'showPack()' as this now exists in PBSmodelling as 'showHelp()'.
+  - Added datasets `species' and `FID' (and their Rd files)
+  - Added SQL query `fos_catch.sql' to get catch data by year, month, and major area from GFFOS.
+  - Revised `getData()', `.getSQLdata()', `getFile()' to handle stoopid ORACLE queries.
+  - Added Jon's function `isWhat()'.
+  - Removed `showPack()' as this now exists in PBSmodelling as `showHelp()'.
 
 0.27  2008-05-22  Rowan
-  - Added 'glimmer()' to perform GLM analysis using the protocol of Schnute et al. (2004).
+  - Added `glimmer()' to perform GLM analysis using the protocol of Schnute et al. (2004).
 
 0.26  2008-05-07  Rowan
-  - Added 'showPack()' to display R-package Table of Contents in browser window.
+  - Added `showPack()' to display R-package Table of Contents in browser window.
   - Added SQL code: pht_clara.sql, pht_catORF.sql, pht_glm.sql, gfb_tasu.sql; pht_concurrent.sql (revised)
-  - Standardised global output list to 'PBSfish' (except for 'PBSmap' in map()).
+  - Standardised global output list to `PBSfish' (except for `PBSmap' in map()).
 
 0.25  2008-04-16  Rowan & Norm Olsen
   - Modified listTables(), getData(), .getSQLdata() to handle queries to an Oracle server DB
@@ -653,27 +655,27 @@ PBSfishery History
   - Modified GUI and code for propat() to be more flexible (catch weighting, sex selection, etc.).
 
 0.22  2008-03-04  Rowan
-  - Revised 'trend' GUI to run an SQL query (Lisa Lacko); local file can still be specified.
+  - Revised `trend' GUI to run an SQL query (Lisa Lacko); local file can still be specified.
 
 0.21  2008-02-25  Rowan
-  - Revised 'trend' GUI completely to accept any species.
+  - Revised `trend' GUI completely to accept any species.
   - Revised .trendy() in M03_trend.r and added .getSQLspp() to M03_trend.r
 
 0.20  2008-02-20  Rowan
-  - Revised 'plotDepth' to iron out a few bugs.
+  - Revised `plotDepth' to iron out a few bugs.
 
 0.19  2008-02-19  Rowan
-  - Updated 'plotDepth' to show cumulative catch superimposed on histogram.
+  - Updated `plotDepth' to show cumulative catch superimposed on histogram.
 
 0.18  2008-02-15  Rowan
-  - Updated 'iphc' (Lisa Lacko) with 4 new species (halibut, sablefish, turbot, lingcod).
-  - Altered 'testdatC' and 'testdatR' to make vessels fictitious and jitter longitudes & latitudes 
+  - Updated `iphc' (Lisa Lacko) with 4 new species (halibut, sablefish, turbot, lingcod).
+  - Altered `testdatC' and `testdatR' to make vessels fictitious and jitter longitudes & latitudes 
 
 0.17  2008-02-14  Rowan
-  - Replaced 'iphc' with new IPHC data from Lisa Lacko.
-  - Fixed small bug in '.funky' of Mod03_trend.r
-  - Added new function 'listTables' to see tables in an SQL database.
-  - Added 'date' field to 'gfb_morpho.sql'
+  - Replaced `iphc' with new IPHC data from Lisa Lacko.
+  - Fixed small bug in `.funky' of Mod03_trend.r
+  - Added new function `listTables' to see tables in an SQL database.
+  - Added `date' field to `gfb_morpho.sql'
 
 0.16  2007-11-09  Rowan
   - Added makeCATtables() to summarise species catch by management fishery year using available SQL queries.
@@ -692,7 +694,7 @@ PBSfishery History
 0.13  2007-10-01  Rowan
   - Modified getSQLdata() to accept a flexible connection string regarding trusted vs. SQL IDs.
   - Modified plotDepthWin.txt and plotDepthHist.txt.
-  - Added data object '.PBSserver.rda' in .\inst\SQLcode\ to hold the PACPBSGFDB server IP address
+  - Added data object `.PBSserver.rda' in .\inst\SQLcode\ to hold the PACPBSGFDB server IP address
 	(to resolve poor DSN resolution through VPN).
 
 0.12  2007-09-28  Rowan

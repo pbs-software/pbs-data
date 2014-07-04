@@ -19,6 +19,7 @@
   \code{eez.bc}         \tab \bold{Topo:} Exclusive Economic Zone (EEZ) for BC coast.\cr
   \code{fos.fid}        \tab \bold{Code:} Fishery codes in GFFOS.\cr
   \code{gear}           \tab \bold{Code:} Gear code tables in various DFO databases.\cr
+  \code{gwaiihaanas}    \tab \bold{Topo:} Gwaii Haanas National Park Reserve simple boundary.\cr
   \code{hsgrid}         \tab \bold{Topo:} Hecate Strait survey grid.\cr
   \code{hsisob}         \tab \bold{Topo:} Hecate Strait isobaths.\cr
   \code{iphc.rbr}       \tab \bold{Data:} Longline indices of Redbanded Rockfish catch from the IPHC SSA.\cr
