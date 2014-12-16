@@ -6,7 +6,9 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
-1.23  2014-07-04
+1.23  2014-12-16
+  - Updated `trawlfoot' to be the one finalised in 2012. (NO 12/15)
+  - Added new data object `rrfhistory' that reports Reconstructed Rockfish catch not available in modern databases. (RH 9/9)
   - Ran `tools::checkRdaFiles' before and after `tools::resaveRdaFiles' and replaced those that were smaller (more compressed). (RH 7/4)
   - Added new PolySet object `gwaiihaanas' that outlines a simple boundary for Gwaii Haanas National Park Reserve. (RH 7/4)
   - Added new PolyData object `seamounts' that give the approximate location of common seamounts off the BC coast. (RH 1/20)

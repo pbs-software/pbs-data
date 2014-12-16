@@ -6,7 +6,8 @@
 }
 \description{
   Areas along the BC continental shelf/slope that have been vetted by DFO and 
-  conservation groups for trawling.
+  conservation groups for trawling. The footprint was frozen in 2012 and first 
+  appears in the 2013 Integrated Fisheries Management Plan (DFO 2013).
 }
 \usage{data(trawlfoot)}
 \format{
@@ -90,7 +91,7 @@ The new management measures are being implemented through the federal
 groundfish integrated fisheries management plan.
 }
 \source{
-  Lisa Lacko, Pacific Biological Station, Fisheries and Ocean Canada, Nanaimo BC
+  Norm Olsen, Pacific Biological Station, Fisheries and Ocean Canada, Nanaimo BC
 }
 \references{
 Pynn, L. (2013) 
@@ -98,6 +99,10 @@ Environmentalists, trawl industry agree on conservation measures for B.C. corals
 Vancouver Sun, March 28, 2012. 
 lpynn@vancouversun.com \cr
 \url{http://www.vancouversun.com/technology/Environmentalists+bottom+trawl+industry+agree+conservation+measures+corals+sponges/6373561/story.html}
+
+DFO. 2013. Pacific region integrated fisheries management plan: groundfish.
+  Effective February 21, 2013.
+
 }
 \keyword{datasets}
 
