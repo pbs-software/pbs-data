@@ -16,8 +16,8 @@
     \item{\code{PID}}{primary polygon ID}
     \item{\code{SID}}{secondary polygon ID}
     \item{\code{POS}}{vertex position}
-    \item{\code{X}}{geographic longitude (\eqn{^\circ}N)}
-    \item{\code{Y}}{geographic latitude (\eqn{^\circ}W)}
+    \item{\code{X}}{geographic longitude (\eqn{^\circ}{deg}W)}
+    \item{\code{Y}}{geographic latitude (\eqn{^\circ}{deg}N)}
   }
 }
 \details{
