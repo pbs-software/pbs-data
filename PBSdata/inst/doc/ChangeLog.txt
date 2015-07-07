@@ -6,6 +6,9 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
+1.25  2015-06-23
+  • Updated `orfhistory'to include 1995 data from PacHarv3. (RH 150623)
+
 1.24  2015-06-15
   • Last update to Google Code before transferring pbs-data repository to GitHub. (RH 150615)
   • Added new PolySet called `npafc' to outline the North Pacific Anadromous Fish Commission areas. (RH 150216)
