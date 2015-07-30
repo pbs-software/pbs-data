@@ -98,7 +98,7 @@ Pynn, L. (2013)
 Environmentalists, trawl industry agree on conservation measures for B.C. corals and sponges.
 Vancouver Sun, March 28, 2012. 
 lpynn@vancouversun.com \cr
-\url{http://www.vancouversun.com/technology/Environmentalists+bottom+trawl+industry+agree+conservation+measures+corals+sponges/6373561/story.html}
+\url{http://www.vancouversun.com/technology/technology/6373561/story.html}
 
 DFO. 2013. Pacific region integrated fisheries management plan: groundfish.
   Effective February 21, 2013.

@@ -26,7 +26,7 @@
   Norm Olsen, Pacific Biological Station, Nanaimo BC
 }
 \references{
-  \url{http://ibis.grdl.noaa.gov/cgi-bin/bathy/bathD.pl}
+  \url{http://www.star.nesdis.noaa.gov/sod/lsa/AltBathy/}
 }
 \examples{
 \dontrun{
