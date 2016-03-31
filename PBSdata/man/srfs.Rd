@@ -30,7 +30,7 @@
   for delimiting Queen Charlotte Sound gully boundaries in slope 
   rockfish assessments.
 
-  Slope rockfish assessment boundaries \code{\link{srfa}} were originally 
+  Slope rockfish assessment boundaries \code{\link[PBSdata]{srfa}} were originally 
   set up to delimit two main fishing grounds (Goose Island and Moresby Gullies) 
   for the slope complex of species. Consequently, the boundaries do not 
   follow those of the PMFC areas even though the names are similar (3C, 
@@ -47,22 +47,23 @@
   \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(srfs,nepacLL,envir=.PBSdataEnv)
-  plotMap(nepacLL,xlim=c(-134.2,-125),y=c(50,55),border="grey")
-  addPolys(srfs,border="coral",lwd=2)
-  addLabels(attributes(srfs)$PolyData,col="navy",cex=0.8)
-  box(); invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(srfs,nepacLL,envir=.PBSdataEnv)
+    plotMap(nepacLL,xlim=c(-134.2,-125),y=c(50,55),border="grey")
+    addPolys(srfs,border="coral",lwd=2)
+    addLabels(attributes(srfs)$PolyData,col="navy",cex=0.8)
+    box(); invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{srfa}}, \code{\link{popa}}, \code{\link{major}}, 
-  \code{\link{minor}}, \code{\link{locality}}
+  \code{\link[PBSdata]{srfa}}, \code{\link[PBSdata]{popa}}, \code{\link[PBSdata]{major}}, 
+  \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{locality}}
 }
 \keyword{datasets}

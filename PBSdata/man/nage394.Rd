@@ -20,16 +20,17 @@ data(nage394)
   Fisheries and Oceans Canada database: \code{GFBioSQL} on the server \code{SVBCPBSGFIIS}.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmodelling, quietly=TRUE)) stop("`PBSmodelling` package is required")
-  data(nage394,envir=.PBSdataEnv)
-  plotBubbles(nage394,dnam=TRUE,hide0=TRUE,size=0.1)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmodelling",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nage394,envir=.PBSdataEnv)
+    plotBubbles(nage394,dnam=TRUE,hide0=TRUE,size=0.1)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmodelling package to see the example.\n")
 })
-}
 }
 \keyword{datasets}

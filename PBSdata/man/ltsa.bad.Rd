@@ -21,7 +21,7 @@
   A data frame attached as an attribute called \code{PolyData} gives details on 
   the 26 no-trawl zones specified by Chris Roberts. \code{PolyData} has 4 columns: \cr
   \code{PID......}{primary polygon ID,} \cr
-  \code{BM6......}{fishing ground \code{\link{ltmose07}} in which the no-trawl polygon occurs,} \cr
+  \code{BM6......}{fishing ground \code{\link[PBSdata]{ltmose07}} in which the no-trawl polygon occurs,} \cr
   \code{label....}{one-word label describing the zone, and} \cr
   \code{detail...}{detailed description of the zone.}
 
@@ -56,22 +56,23 @@
   \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){ 
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(ltsa,ltsa.bad,envir=.PBSdataEnv)
-  plotMap(ltsa,border="grey")
-  addPolys(ltsa.bad,col="pink",border="red");
-  addLabels(attributes(ltsa.bad)$PolyData,polys=ltsa.bad,placement="MEAN_XY",
-    col="blue",cex=0.7,adj=-.3) 
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(ltsa,ltsa.bad,envir=.PBSdataEnv)
+    plotMap(ltsa,border="grey")
+    addPolys(ltsa.bad,col="pink",border="red");
+    addLabels(attributes(ltsa.bad)$PolyData,polys=ltsa.bad,
+      placement="MEAN_XY",col="blue",cex=0.7,adj=-.3) 
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{ltmose07}},  \code{\link{trawlability}}
+  \code{\link[PBSdata]{ltmose07}},  \code{\link[PBSdata]{trawlability}}
 }
 \keyword{datasets}

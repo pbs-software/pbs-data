@@ -68,27 +68,28 @@
   \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/1999/1999_184_e.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(trawlability,nepacLL,envir=.PBSdataEnv)
-  pdata=attributes(trawlability)$PolyData
-  plotMap(nepacLL,xlim=c(-134.3,-127.4),y=c(49.7,54.7),border="grey")
-  addPolys(trawlability,polyProps=pdata)
-  leglab=sapply(split(paste(pdata$label,pdata$brief,sep=": "),
-    pdata$col),unique)
-  leglab=leglab[order(leglab)]
-  legend(x="bottomleft",fill=names(leglab),
-    legend=leglab,bty="n",cex=.8,inset=.025)
-  box(); invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(trawlability,nepacLL,envir=.PBSdataEnv)
+    pdata=attributes(trawlability)$PolyData
+    plotMap(nepacLL,xlim=c(-134.3,-127.4),y=c(49.7,54.7),border="grey")
+    addPolys(trawlability,polyProps=pdata)
+    leglab=sapply(split(paste(pdata$label,pdata$brief,sep=": "),
+      pdata$col),unique)
+    leglab=leglab[order(leglab)]
+    legend(x="bottomleft",fill=names(leglab),
+      legend=leglab,bty="n",cex=.8,inset=.025)
+    box(); invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{qcb}}, \code{\link{ltmose07}}
+  \code{\link[PBSdata]{qcb}}, \code{\link[PBSdata]{ltmose07}}
 }
 \keyword{datasets}
 

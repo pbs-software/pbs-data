@@ -56,22 +56,23 @@
   Washington. 323 pp.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(major,nepacLL,envir=.PBSdataEnv)
-  plotMap(nepacLL,xlim=c(-134.2,-124),ylim=c(47.5,55),border="grey")
-  addPolys(major,border="purple")
-  addLabels(attributes(major)$PolyData,col="goldenrod",cex=1.5)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(major,nepacLL,envir=.PBSdataEnv)
+    plotMap(nepacLL,xlim=c(-134.2,-124),ylim=c(47.5,55),border="grey")
+    addPolys(major,border="purple")
+    addLabels(attributes(major)$PolyData,col="goldenrod",cex=1.5)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{pmfc}}, \code{\link{minor}}, \code{\link{srfa}}, \code{\link{locality}} \cr
-  \bold{\code{PBSdata}}: \code{gma.popymr}
+  \code{\link[PBSdata]{pmfc}}, \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{srfa}}, \code{\link[PBSdata]{locality}} \cr
+  \bold{\code{PBSvault}}: \code{gma.popymr}
 }
 \keyword{datasets}

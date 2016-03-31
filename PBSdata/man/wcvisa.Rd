@@ -45,21 +45,22 @@
   \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_028_E.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(wcvisa,nepacLL,envir=.PBSdataEnv)
-  pdata=attributes(wcvisa)$PolyData
-  plotMap(nepacLL,xlim=c(-129.0,-124.3),y=c(48.0,50.8),border="grey")
-  addPolys(wcvisa,polyProps=pdata)
-  box(); invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(wcvisa,nepacLL,envir=.PBSdataEnv)
+    pdata=attributes(wcvisa)$PolyData
+    plotMap(nepacLL,xlim=c(-129.0,-124.3),y=c(48.0,50.8),border="grey")
+    addPolys(wcvisa,polyProps=pdata)
+    box(); invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{ltsa}}, \code{\link{qcssa}}
+  \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{qcssa}}
 }
 \keyword{datasets}

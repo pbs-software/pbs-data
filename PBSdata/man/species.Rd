@@ -73,6 +73,6 @@ pbsfun()
 })
 }
 \seealso{
-  \code{\link{spn}}
+  \code{\link[PBSdata]{spn}}
 }
 \keyword{datasets}

@@ -7,9 +7,10 @@
 \description{
   \pkg{PBSdata} provides data for various PBS (Pacific Biological Station) 
   packages including \pkg{PBSmapx} and \pkg{PBStools}.
-  This package is a spin-off from a larger package called \pkg{PBSfishery}. 
+  Additional datasets (large and/or rarely used) can be found in the package
+  \pkg{PBSvault} (available on request from \pkg{PBSdata} maintainer).
 
-  \pkg{PBSdata} contains the following datasets for illustration purposes:
+  \pkg{PBSdata} contains the following datasets:
   \tabular{ll}{
   \bold{Datasets}       \tab \cr
   \code{bctopo}         \tab \bold{Topo:} British Columbia sea floor topography\cr
@@ -40,6 +41,7 @@
   \code{major}          \tab \bold{Topo:} Pacific Marine Fisheries Commission major areas\cr
   \code{minor}          \tab \bold{Topo:} Pacific Marine Fisheries Commission minor areas\cr
   \code{nage394}        \tab \bold{Data:} Age Frequency by Year for Rougheye Rockfish\cr
+  \code{npafc}          \tab \bold{Topo:} North Pacific Anadromous Fish Commission areas\cr
   \code{orfhistory}     \tab \bold{Data:} Historic landings of rockfish in BC\cr
   \code{parVec}         \tab \bold{Data:} Initial parameter vector for model fits\cr
   \code{phytospp}       \tab \bold{Code:} Species codes for phytoplankton\cr
@@ -64,6 +66,7 @@
   \code{ssid}           \tab \bold{Code:} Survey series information\cr
   \code{testdatC}       \tab \bold{Data:} Fisheries catch data with species by column\cr
   \code{testdatR}       \tab \bold{Data:} Fisheries catch data with species by row\cr
+  \code{tidemarks}      \tab \bold{Topo:} Tide Marks closed area\cr
   \code{trawlability}   \tab \bold{Topo:} Fisher knowledge of towable bottom\cr
   \code{trawlfoot}      \tab \bold{Topo:} BC trawl footprint\cr
   \code{utilize}        \tab \bold{Code:} Utilization code tables in various DFO databases\cr

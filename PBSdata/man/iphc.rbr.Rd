@@ -102,21 +102,22 @@ coastwide relative abundance indices for many groundfish species.
   of Fisheries and Aquatic Sciences} \bold{2796}, viii + 58 p.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
-  data(iphc.rbr,envir=.PBSdataEnv)
-  trend("401","iphc.rbr",dbName="none",type="FILE",ioenv=.PBSdataEnv)
-  print("Press the GUI button labelled 'TREND'")
-  invisible() }
-pbsfun()
+if(any(grepl("PBStools",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(iphc.rbr,envir=.PBSdataEnv)
+    trend("401","iphc.rbr",dbName="none",type="FILE",ioenv=.PBSdataEnv)
+    print("Press the GUI button labelled 'TREND'")
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBStools package to see the example.\n")
 })
 }
-}
 \seealso{
-  %\code{\link{trend}}, \code{\link{showIndices}}, 
+  %\code{\link[PBStools]{trend}}, \code{\link[PBStools]{showIndices}}, 
   \code{\link[PBSdata]{rca}}
 }
 \keyword{datasets}

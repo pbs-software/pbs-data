@@ -32,6 +32,6 @@
   \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_059_E.htm}
 }
 \seealso{
-  \code{\link{ltea}}, \code{\link{ltxa}}
+  \code{\link[PBSdata]{ltea}}, \code{\link[PBSdata]{ltxa}}
 }
 \keyword{datasets}

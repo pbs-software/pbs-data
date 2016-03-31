@@ -30,23 +30,24 @@
   Research} \bold{29}, 97--108.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,hsgrid,envir=.PBSdataEnv)
-  xlim=extendrange(hsgrid$X,f=0.2); ylim=extendrange(hsgrid$Y,f=0.1)
-  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
-  addPolys(hsgrid,border="blue",lwd=2)
-  addLabels(extractPolyData(hsgrid),placement="CENTROID",
-    polys=hsgrid,col="red")
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLL,hsgrid,envir=.PBSdataEnv)
+    xlim=extendrange(hsgrid$X,f=0.2); ylim=extendrange(hsgrid$Y,f=0.1)
+    plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
+    addPolys(hsgrid,border="blue",lwd=2)
+    addLabels(extractPolyData(hsgrid),placement="CENTROID",
+      polys=hsgrid,col="red")
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{ltsa}}, \code{\link{qcssa}}, \code{\link{wcvisa}}
+  \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{qcssa}}, \code{\link[PBSdata]{wcvisa}}
 }
 \keyword{datasets}

@@ -44,7 +44,7 @@
   channels, this area has not been trawled intensively by North American nationals.
 }
 \seealso{
-  \code{\link{major}}
+  \code{\link[PBSdata]{major}}
 }
 \examples{
 local(envir=.PBSdataEnv,expr={

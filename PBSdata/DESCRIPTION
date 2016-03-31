@@ -1,6 +1,6 @@
 Package: PBSdata
-Version: 1.25
-Date:    2015-07-28
+Version: 1.25.1
+Date:    2016-03-31
 Title: Data, Boundaries, and Key Codes for PBS Packages
 Authors@R: c(
    person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
@@ -9,7 +9,7 @@ Authors@R: c(
    person("Lisa", "Lacko", role = "ctb", email = "lisa.lacko@dfo-mpo.gc.ca"))
 Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb]
 Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
-Copyright:  2004-2015, Fisheries and Oceans Canada
+Copyright:  2004-2016, Fisheries and Oceans Canada
 Depends: R (>= 3.0.0)
 Description: Data objects to illustrate examples in `PBStools' and to provide
    shapefiles for `PBSmapx'. These data objects first appeared in a private

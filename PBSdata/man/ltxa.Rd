@@ -39,23 +39,24 @@
   \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_059_E.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,ltxa,envir=.PBSdataEnv)
-  xlim=c(-134.2,-125); ylim=c(48.5,54.40)
-  pdata=attributes(ltxa)$PolyData
-  plotMap(ltxa,xlim=xlim,ylim=ylim,polyProps=pdata)
-  addPolys(nepacLL,col="gainsboro")
-  addLabels(pdata,cex=.9)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLL,ltxa,envir=.PBSdataEnv)
+    xlim=c(-134.2,-125); ylim=c(48.5,54.40)
+    pdata=attributes(ltxa)$PolyData
+    plotMap(ltxa,xlim=xlim,ylim=ylim,polyProps=pdata)
+    addPolys(nepacLL,col="gainsboro")
+    addLabels(pdata,cex=.9)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{ltea}}, \code{\link{ltsa}}, \code{\link{pl230}}
+  \code{\link[PBSdata]{ltea}}, \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{pl230}}
 }
 \keyword{datasets}

@@ -25,25 +25,26 @@
   \url{http://topex.ucsd.edu/cgi-bin/get_data.cgi}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(xlim=c(-128.5,-124.5),ylim=c(48,50.5),zlev=c(123,1234)) { 
-  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(bctopo,nepacLL,envir=.PBSdataEnv)
-  zx=bctopo$x>=xlim[1] & bctopo$x<=xlim[2] &!is.na(bctopo$x)
-  zy=bctopo$y>=ylim[1] & bctopo$y<=ylim[2] &!is.na(bctopo$y)
-  topo=bctopo[zx&zy,]
-  bathy = makeTopography(topo)
-  bCL   = contourLines(bathy,levels=zlev)
-  bCP   = convCP(bCL,projection="LL",zone=9)
-  bPoly = bCP$PolySet
-  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="moccasin")
-  addLines(bPoly,col=c("red","blue"))
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(xlim=c(-128.5,-124.5),ylim=c(48,50.5),zlev=c(123,1234)) { 
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(bctopo,nepacLL,envir=.PBSdataEnv)
+    zx=bctopo$x>=xlim[1] & bctopo$x<=xlim[2] &!is.na(bctopo$x)
+    zy=bctopo$y>=ylim[1] & bctopo$y<=ylim[2] &!is.na(bctopo$y)
+    topo=bctopo[zx&zy,]
+    bathy = makeTopography(topo)
+    bCL   = contourLines(bathy,levels=zlev)
+    bCP   = convCP(bCL,projection="LL",zone=9)
+    bPoly = bCP$PolySet
+    plotMap(nepacLL,xlim=xlim,ylim=ylim,col="moccasin",cex.axis=1.2,cex.lab=1.5)
+    addLines(bPoly,col=c("red","blue"))
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
-}
 }
 \references{
   Smith, W.H.F., and Sandwell, D.T. (1997)
@@ -52,7 +53,7 @@ pbsfun()
   \url{http://topex.ucsd.edu/marine_topo/mar_topo.html}
 }
 \seealso{
-  %\code{\link{calcHabitat}}, 
+  %\code{\link[PBStools]{calcHabitat}}, 
   \code{\link[PBSdata]{isobath}} \cr
   \pkg{PBSmapping}: \code{\link[PBSmapping]{makeTopography}}, \code{\link[PBSmapping]{convCP}}
 }

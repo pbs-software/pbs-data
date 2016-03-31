@@ -49,20 +49,21 @@
   Norm Olsen, Pacific Biological Station, Fisheries and Oceans Canada, Nanaimo BC
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun = function() {
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(wchgsa,nepacLL,envir=.PBSdataEnv)
-  xlim = extendrange(wchgsa$X)
-  ylim = extendrange(wchgsa$Y)
-  par(mar=c(4,3,1.2,0.5), mgp=c(1.6,0.5,0))
-  plotMap(wchgsa,xlim=xlim,ylim=ylim,polyProps=attributes(wchgsa)$PolyData,border="grey",plt=NULL)
-  addPolys(nepacLL,col="ivory")
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(wchgsa,nepacLL,envir=.PBSdataEnv)
+    xlim = extendrange(wchgsa$X)
+    ylim = extendrange(wchgsa$Y)
+    par(mar=c(4,3,1.2,0.5), mgp=c(1.6,0.5,0))
+    plotMap(wchgsa,xlim=xlim,ylim=ylim,polyProps=attributes(wchgsa)$PolyData,border="grey",plt=NULL)
+    addPolys(nepacLL,col="ivory")
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
-}
 }
 \keyword{datasets}

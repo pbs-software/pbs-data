@@ -66,21 +66,26 @@
   \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){ 
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(ltsa,envir=.PBSdataEnv)
-  plotMap(ltsa,border="grey50",col=c("lightgreen","pink","skyblue"))
-  pdata <- attributes(ltsa)$PolyData
-  addLabels(pdata,polys=ltsa,placement="CENTROID",cex=.75,col="red3") 
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(ltsa,envir=.PBSdataEnv)
+    plotMap(ltsa,border="grey50",col=c("lightgreen","pink","skyblue"))
+    pdata <- attributes(ltsa)$PolyData
+    addLabels(pdata,polys=ltsa,placement="CENTROID",cex=.75,col="red3") 
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{ltmose07}}, \code{\link{ltea}}, \code{\link{ltxa}}, \code{\link{qcssa}}, \code{\link{wcvisa}}
+  \code{\link[PBSdata]{ltmose07}}, 
+  \code{\link[PBSdata]{ltea}}, 
+  \code{\link[PBSdata]{ltxa}}, 
+  \code{\link[PBSdata]{qcssa}}, 
+  \code{\link[PBSdata]{wcvisa}}
 }
 \keyword{datasets}

@@ -50,24 +50,25 @@ Abstract from Sinclair and Workman (2002): \cr
   \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2005/026}, 97 p.
 }
 \seealso{
-  \code{\link{ltmose07}}
+  \code{\link[PBSdata]{ltmose07}}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,pcoda,envir=.PBSdataEnv)
-  xlim=extendrange(pcoda$X,f=0.2); ylim=extendrange(pcoda$Y,f=0.1)
-  plotMap(nepacLL,xlim=xlim,ylim=ylim,plt=NULL,col="gainsboro")
-  pdata=attributes(pcoda)$PolyData
-  addPolys(pcoda,polyProps=pdata)
-  addLabels(pdata,polys=pcoda,placement="CENTROID",font=2)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLL,pcoda,envir=.PBSdataEnv)
+    xlim=extendrange(pcoda$X,f=0.2); ylim=extendrange(pcoda$Y,f=0.1)
+    plotMap(nepacLL,xlim=xlim,ylim=ylim,plt=NULL,col="gainsboro")
+    pdata=attributes(pcoda)$PolyData
+    addPolys(pcoda,polyProps=pdata)
+    addLabels(pdata,polys=pcoda,placement="CENTROID",font=2)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
-}
 }
 \keyword{datasets}
 

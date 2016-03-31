@@ -50,31 +50,32 @@ data(ltmose12)
   \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(ex=1){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  if (ex==1) {
-  data(ltmose07,nepacLL,envir=.PBSdataEnv)
-  xlim=extendrange(ltmose07$X); ylim=extendrange(ltmose07$Y)
-    plotMap(ltmose07,xlim=xlim,ylim=ylim,border="lightseagreen",lwd=2)
-    addPolys(nepacLL,col="sandybrown")
-    addLabels(attributes(ltmose07)$PolyData,polys=ltmose07,
-      placement="CENTROID",col="purple4") }
-  if (ex==2) {
-    data(ltmose12,nepacLL,envir=.PBSdataEnv)
-  xlim=extendrange(ltmose12$X); ylim=extendrange(ltmose12$Y)
-    plotMap(ltmose12,xlim=xlim,ylim=ylim,border="red",lwd=2)
-    addPolys(nepacLL,col="moccasin")
-    addLabels(attributes(ltmose12)$PolyData,polys=ltmose12,
-      placement="CENTROID",col="darkblue",cex=.8) }
-  invisible() }
-pbsfun(1); pbsfun(2)
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(ex=1){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    if (ex==1) {
+      data(ltmose07,nepacLL,envir=.PBSdataEnv)
+      xlim=extendrange(ltmose07$X); ylim=extendrange(ltmose07$Y)
+      plotMap(ltmose07,xlim=xlim,ylim=ylim,border="lightseagreen",lwd=2)
+      addPolys(nepacLL,col="sandybrown")
+      addLabels(attributes(ltmose07)$PolyData,polys=ltmose07,
+        placement="CENTROID",col="purple4") }
+    if (ex==2) {
+      data(ltmose12,nepacLL,envir=.PBSdataEnv)
+      xlim=extendrange(ltmose12$X); ylim=extendrange(ltmose12$Y)
+      plotMap(ltmose12,xlim=xlim,ylim=ylim,border="red",lwd=2)
+      addPolys(nepacLL,col="moccasin")
+      addLabels(attributes(ltmose12)$PolyData,polys=ltmose12,
+        placement="CENTROID",col="darkblue",cex=.8) }
+    invisible() }
+  pbsfun(1); pbsfun(2)
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{ltsa}}, \code{\link{ltxa}}, \code{\link{ltea}}
+  \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{ltxa}}, \code{\link[PBSdata]{ltea}}
 }
 \keyword{datasets}

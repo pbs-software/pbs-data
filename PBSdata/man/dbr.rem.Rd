@@ -52,14 +52,15 @@ data(ymr.rem)
 %  \code{\link{plotCatch}} 
 %}
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBStools, quietly=TRUE)) stop("`PBStools` package is required")
+if(any(grepl("PBSmodelling",.packages()))) {
+  if (dev.cur()>1) {
+    oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
   plotCatch(dbr.rem)
   plotCatch(ymr.rem)
+} else
+  cat("Load PBSmodelling package to see the example.\n")
 })
-}
 }
 \keyword{datasets}
 

@@ -44,26 +44,27 @@
   \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/1999/1999_184_e.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){ 
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(isobath,nepacLL,envir=.PBSdataEnv)
-  xlim = c(-131.5,-128); ylim = c(50.5,52.5)
-  ptemp = attributes(isobath)$PolyData
-  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="orange")
-  itemp = clipLines(isobath[is.element(isobath$PID,
-    c(200,500,1000)),],xlim=xlim,ylim=ylim)
-  addLines(itemp,polyProps=ptemp)
-  warn=options()$warn; options(warn=-1)
-  addLabels(ptemp,polys=itemp,placement="MEAN_XY",cex=.8,adj=1); box()
-  options(warn=warn); invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(isobath,nepacLL,envir=.PBSdataEnv)
+    xlim = c(-131.5,-128); ylim = c(50.5,52.5)
+    ptemp = attributes(isobath)$PolyData
+    plotMap(nepacLL,xlim=xlim,ylim=ylim,col="orange")
+    itemp = clipLines(isobath[is.element(isobath$PID,
+      c(200,500,1000)),],xlim=xlim,ylim=ylim)
+    addLines(itemp,polyProps=ptemp)
+    warn=options()$warn; options(warn=-1)
+    addLabels(ptemp,polys=itemp,placement="MEAN_XY",cex=.8,adj=1); box()
+    options(warn=warn); invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{bctopo}}, \code{\link{ltsa}}, \code{\link{qcssa}}, \code{\link{wcvisa}}
+  \code{\link[PBSdata]{bctopo}}, \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{qcssa}}, \code{\link[PBSdata]{wcvisa}}
 }
 \keyword{datasets}

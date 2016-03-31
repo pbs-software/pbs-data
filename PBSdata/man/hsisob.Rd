@@ -29,21 +29,24 @@
   \url{http://www.star.nesdis.noaa.gov/sod/lsa/AltBathy/}
 }
 \examples{
-\dontrun{
-pbsfun=function(){
-  oldpar=par(no.readonly=TRUE); on.exit(par(oldpar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,hsisob,envir=.PBSdataEnv)
-  pdata=attributes(hsisob)$PolyData
-  xlim=extendrange(hsisob$X,f=0.2); ylim=extendrange(hsisob$Y,f=0.1)
-  plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
-  addLines(hsisob,col=c("red","blue"),lwd=1)
-  addLabels(pdata,adj=0,polyProps=pdata)
-  invisible() }
-pbsfun()
-}
+local(envir=.PBSdataEnv,expr={
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLL,hsisob,envir=.PBSdataEnv)
+    pdata=attributes(hsisob)$PolyData
+    xlim=extendrange(hsisob$X,f=0.2); ylim=extendrange(hsisob$Y,f=0.1)
+    plotMap(nepacLL,xlim=xlim,ylim=ylim,col="aliceblue")
+    addLines(hsisob,col=c("red","blue"),lwd=1)
+    addLabels(pdata,adj=0,polyProps=pdata)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
+})
 }
 \seealso{
-  \code{\link{isobath}}, \code{\link{hsgrid}}
+  \code{\link[PBSdata]{isobath}}, \code{\link[PBSdata]{hsgrid}}
 }
 \keyword{datasets}

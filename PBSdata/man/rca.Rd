@@ -48,20 +48,21 @@
   \url{http://www.pac.dfo-mpo.gc.ca/recfish/Restricted_Areas/rca_e.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(xlim=c(-124,-123.4),ylim=c(48.77,49.25)){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLLhigh,rca,envir=.PBSdataEnv)
-  plotMap(nepacLLhigh,xlim=xlim,ylim=ylim,col="gainsboro",border="darkgrey")
-  pdata=attributes(rca)$PolyData
-  addPolys(rca,col="skyblue")
-  addLabels(pdata,cex=0.65,polys=rca,placement="CENTROID",col="red")
-  box(); invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(xlim=c(-124,-123.4),ylim=c(48.77,49.25)){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLLhigh,rca,envir=.PBSdataEnv)
+    plotMap(nepacLLhigh,xlim=xlim,ylim=ylim,col="gainsboro",border="darkgrey")
+    pdata=attributes(rca)$PolyData
+    addPolys(rca,col="skyblue")
+    addLabels(pdata,cex=0.65,polys=rca,placement="CENTROID",col="red")
+    box(); invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
-}
 }
 \seealso{
   \pkg{PBSmapping}: \code{\link[PBSmapping]{importShapefile}},

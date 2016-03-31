@@ -6,7 +6,8 @@ Authors: RH  = Rowan Haigh
          JTS = Jon T. Schnute
 ------------------------------
 
-1.25  2015-06-28
+1.25  2015-10-07
+  • Added `tidemarks' shapefile (RH 151007)
   • Fixed broken URLs identified by R Under development (unstable) (2015-06-29 r68604). (RH 150728)
   • Updated DESCRIPTION file for R's desired library documentation scheme. (RH 150728)
   • Updated `orfhistory'to include 1995 data from PacHarv3. (RH 150623)

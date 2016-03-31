@@ -47,6 +47,6 @@ pbsfun()
 })
 }
 \seealso{
-  \code{\link{species}}
+  \code{\link[PBSdata]{species}}
 }
 \keyword{datasets}

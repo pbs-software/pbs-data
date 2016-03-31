@@ -24,13 +24,13 @@
     \code{LST....}{Longspine thornyhead \emph{Sebastolobus altivelis} catch (kg) in tow}
 }
 \details{
-  Data subset for use with the GUI \code{dePeche Mode}.% \code{\link{map}}.
+  Data subset for use with the GUI \code{dePeche Mode}.% \code{\link{creatMap}}.
 }
 \source{
   Fisheries and Oceans Canada database \code{PacHarvest}
 }
 \seealso{
-  \code{\link[PBSdata]{testdatR}} %, \code{\link{map}} 
+  \code{\link[PBSdata]{testdatR}} %, \code{\link{createMap}} 
 }
 \keyword{datasets}
 

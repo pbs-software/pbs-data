@@ -86,6 +86,6 @@ pbsfun()
 }
 }
 \seealso{
-  \code{\link{ltmose12}}, \code{\link{qcb}}, \code{\link{trawlability}}
+  \code{\link[PBSdata]{ltmose12}}, \code{\link[PBSdata]{qcb}}, \code{\link[PBSdata]{trawlability}}
 }
 \keyword{datasets}

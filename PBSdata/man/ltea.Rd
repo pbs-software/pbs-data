@@ -21,7 +21,7 @@
   fishing years 2000 and 2001 (Schnute \emph{et al.} 2004). Fishing years start
   April 1 and end March 31. The division between the traditional west
   coast of Vancouver Island fishery and the northern exploratory area is
-  defined by a line 230\eqn{^\circ}{deg} True from Lookout Island (\code{\link{pl230}}).
+  defined by a line 230\eqn{^\circ}{deg} True from Lookout Island (\code{\link[PBSdata]{pl230}}).
 }
 \references{
   Schnute, J., Haigh, R., Krishka, B., Sinclair, A. and Starr, P. (2004) 
@@ -31,21 +31,22 @@
   \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_059_E.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(ltea,nepacLL,envir=.PBSdataEnv)
-  plotMap(ltea,xlim=range(ltea$X),ylim=range(ltea$Y),col=c("chartreuse","pink"))
-  addPolys(nepacLL,col="gold")
-  text(c(-127.23,-130.64), c(48.97,51.27),c("Established","Exploratory"),cex=.8)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(ltea,nepacLL,envir=.PBSdataEnv)
+    plotMap(ltea,xlim=range(ltea$X),ylim=range(ltea$Y),col=c("chartreuse","pink"))
+    addPolys(nepacLL,col="gold")
+    text(c(-127.23,-130.64), c(48.97,51.27),c("Established","Exploratory"),cex=.8)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{pl230}}, \code{\link{ltxa}}, \code{\link{ltsa}}
+  \code{\link[PBSdata]{pl230}}, \code{\link[PBSdata]{ltxa}}, \code{\link[PBSdata]{ltsa}}
 }
 \keyword{datasets}

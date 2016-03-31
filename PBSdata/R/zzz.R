@@ -24,7 +24,7 @@ Packaged on ", pkg_date, "
 Pacific Biological Station, Nanaimo
 
 All available PBS packages can be found at
-http://code.google.com/p/pbs-software/
+https://github.com/pbs-software
 -----------------------------------------------------------
 
 ")

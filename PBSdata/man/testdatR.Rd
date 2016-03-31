@@ -27,13 +27,13 @@
     \code{date...}{Date in YYYY-MM-DD format}
 }
 \details{
-  Data subset for use with the GUI \code{dePeche Mode}. %\code{\link{map}}.
+  Data subset for use with the GUI \code{dePeche Mode}. %\code{\link{createMap}}.
 }
 \source{
   Fisheries and Oceans Canada database: \code{PacHarvest}
 }
 \seealso{
-  \code{\link[PBSdata]{testdatC}} %, \code{\link{map}}
+  \code{\link[PBSdata]{testdatC}} %, \code{\link{createMap}}
 }
 \keyword{datasets}
 

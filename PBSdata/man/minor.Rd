@@ -57,21 +57,22 @@
   Washington. 323 pp.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(minor,nepacLL,envir=.PBSdataEnv)
-  plotMap(nepacLL,xlim=c(-134.2,-122.5),ylim=c(47.5,55),border="grey")
-  addPolys(minor,border="green4")
-  addLabels(attributes(minor)$PolyData,cex=.7,col=4)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(minor,nepacLL,envir=.PBSdataEnv)
+    plotMap(nepacLL,xlim=c(-134.2,-122.5),ylim=c(47.5,55),border="grey")
+    addPolys(minor,border="green4")
+    addLabels(attributes(minor)$PolyData,cex=.7,col=4)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{major}}, \code{\link{locality}}, \code{\link{srfa}}
+  \code{\link[PBSdata]{major}}, \code{\link[PBSdata]{locality}}, \code{\link[PBSdata]{srfa}}
 }
 \keyword{datasets}

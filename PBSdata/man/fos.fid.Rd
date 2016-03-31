@@ -32,6 +32,6 @@ pbsfun()
 })
 }
 \seealso{
-  \code{\link{spn}}, \code{\link{species}}
+  \code{\link[PBSdata]{spn}}, \code{\link[PBSdata]{species}}
 }
 \keyword{datasets}

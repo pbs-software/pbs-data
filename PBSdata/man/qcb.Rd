@@ -68,27 +68,28 @@
   \emph{In} The Spatial Dimension of Ecosystem Structure and Dynamics. \bold{ICES} CM 2005/L:25.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,qcb,envir=.PBSdataEnv)
-  pdata=attributes(qcb)$PolyData
-  leglab=sapply(split(pdata$label,pdata$col),function(x){
-    y=unique(x);paste(y,collapse=" / ")})
-  leglab=leglab[order(leglab)]
-  xlim=c(-132.5,-127.5); ylim=c(50.5,55)
-  plotMap(nepacLL,xlim=xlim,ylim=ylim,border="grey")
-  addPolys(qcb,border=FALSE, polyProps=pdata)
-  legend("bottomleft",fill=names(leglab),legend=leglab,bty="n",cex=.8)
-  invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLL,qcb,envir=.PBSdataEnv)
+    pdata=attributes(qcb)$PolyData
+    leglab=sapply(split(pdata$label,pdata$col),function(x){
+      y=unique(x);paste(y,collapse=" / ")})
+    leglab=leglab[order(leglab)]
+    xlim=c(-132.5,-127.5); ylim=c(50.5,55)
+    plotMap(nepacLL,xlim=xlim,ylim=ylim,border="grey")
+    addPolys(qcb,border=FALSE, polyProps=pdata)
+    legend("bottomleft",fill=names(leglab),legend=leglab,bty="n",cex=.8)
+    invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{trawlability}}, \code{\link{hsgrid}}
+  \code{\link[PBSdata]{trawlability}}, \code{\link[PBSdata]{hsgrid}}
 }
 \keyword{datasets}
 

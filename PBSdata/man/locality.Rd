@@ -22,8 +22,8 @@
   \code{PID........}{primary polygon ID,} \cr
   \code{SID........}{secondary polygon ID,} \cr
   \code{label......}{numeric area combining PMFC \code{minor} area and locality number,} \cr
-  \code{major......}{PMFC \code{\link{major}} area,} \cr
-  \code{minor......}{PMFC \code{\link{minor}} area,} \cr
+  \code{major......}{PMFC \code{\link[PBSdata]{major}} area,} \cr
+  \code{minor......}{PMFC \code{\link[PBSdata]{minor}} area,} \cr
   \code{locality...}{code of fishing ground within \code{minor},} \cr
   \code{name.......}{name of the ground used by fishermen.}
 }
@@ -62,30 +62,31 @@
   Washington. 323 pp.
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(ex=1){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  if (ex==1) {
-    data(locality,envir=.PBSdataEnv)
-    plotMap(locality,border="cornflowerblue")
-    addLabels(attributes(locality)$PolyData,polys=locality,
-      placement="CENTROID",col="gray40",cex=.5) }
-  if(ex==2) {
-    data(locality,nepacLL,envir=.PBSdataEnv)
-    plotMap(locality,xlim=c(-130.2,-127),ylim=c(49.8,52.1),col="aliceblue")
-    addPolys(nepacLL,col="#b9ed3f")
-    pdata <- attributes(locality)$PolyData
-    pdata$label <- gsub("[/-]"," ",pdata$name)
-    pdata$label=sapply(sapply(pdata$label,strsplit,split=" "),paste,collapse="\n")
-    addLabels(pdata,polys=locality,placement="CENTROID",cex=.65,col="red") }
-  invisible() }
-pbsfun(1); pbsfun(2)
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(ex=1){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    if (ex==1) {
+      data(locality,envir=.PBSdataEnv)
+      plotMap(locality,border="cornflowerblue")
+      addLabels(attributes(locality)$PolyData,polys=locality,
+        placement="CENTROID",col="gray40",cex=.5) }
+    if(ex==2) {
+      data(locality,nepacLL,envir=.PBSdataEnv)
+      plotMap(locality,xlim=c(-130.2,-127),ylim=c(49.8,52.1),col="aliceblue")
+      addPolys(nepacLL,col="#b9ed3f")
+      pdata <- attributes(locality)$PolyData
+      pdata$label <- gsub("[/-]"," ",pdata$name)
+      pdata$label=sapply(sapply(pdata$label,strsplit,split=" "),paste,collapse="\n")
+      addLabels(pdata,polys=locality,placement="CENTROID",cex=.65,col="red") }
+    invisible() }
+  pbsfun(1); pbsfun(2)
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{major}}, \code{\link{minor}}, \code{\link{srfa}}
+  \code{\link[PBSdata]{major}}, \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{srfa}}
 }
 \keyword{datasets}

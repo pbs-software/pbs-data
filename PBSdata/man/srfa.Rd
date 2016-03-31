@@ -44,22 +44,23 @@
   \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
 }
 \examples{
-\dontrun{
 local(envir=.PBSdataEnv,expr={
-pbsfun=function(){
-  opar = par(no.readonly=TRUE); on.exit(par(opar))
-  if (!require(PBSmapping, quietly=TRUE)) stop("`PBSmapping` package is required")
-  data(nepacLL,srfa,envir=.PBSdataEnv)
-  plotMap(nepacLL,xlim=c(-134.2,-124),y=c(47.5,55),border="grey")
-  addPolys(srfa,border="cornflowerblue",lwd=2)
-  addLabels(attributes(srfa)$PolyData,col="indianred",cex=0.9)
-  box(); invisible() }
-pbsfun()
+if(any(grepl("PBSmapping",.packages()))) {
+  pbsfun=function(){
+    if (dev.cur()>1) {
+      oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    data(nepacLL,srfa,envir=.PBSdataEnv)
+    plotMap(nepacLL,xlim=c(-134.2,-124),y=c(47.5,55),border="grey")
+    addPolys(srfa,border="cornflowerblue",lwd=2)
+    addLabels(attributes(srfa)$PolyData,col="indianred",cex=0.9)
+    box(); invisible() }
+  pbsfun()
+} else
+  cat("Load PBSmapping package to see the example.\n")
 })
 }
-}
 \seealso{
-  \code{\link{major}}, \code{\link{minor}}, \code{\link{locality}}, 
-  \code{\link{srfs}}, \code{\link{popa}}
+  \code{\link[PBSdata]{major}}, \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{locality}}, 
+  \code{\link[PBSdata]{srfs}}, \code{\link[PBSdata]{popa}}
 }
 \keyword{datasets}
