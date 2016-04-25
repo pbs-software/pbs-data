@@ -1,6 +1,6 @@
 Package: PBSdata
-Version: 1.25.1
-Date:    2016-03-31
+Version: 1.25.2
+Date:    2016-04-25
 Title: Data, Boundaries, and Key Codes for PBS Packages
 Authors@R: c(
    person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
