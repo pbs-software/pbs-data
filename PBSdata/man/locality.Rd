@@ -1,11 +1,15 @@
 \name{locality}
 \docType{data}
 \alias{locality}
+\alias{locality.plus}
 \title{Topo: Localities in Pacific Marine Fisheries Commission Minor Areas}
 \description{
   PolySet of polygons for fishing ground localities within PMFC minor areas.
 }
-\usage{data(locality)}
+\usage{
+data(locality)
+data(locality.plus)
+}
 \format{
   Data frame comprising 5 columns: \cr
     \code{PID...}{primary polygon ID} \cr
@@ -15,17 +19,21 @@
     \code{Y.....}{latitude coordinates}
 }
 \details{
-  The 5,942 vertices trace 237 contours which describe 237 fishing grounds.
+  In \code{locality}, 5942 vertices trace 237 contours which describe 237 fishing grounds.\cr
+  In \code{locality.plus}, 7686 vertices trace 287 contours with 12 holes; these polygons describe fishing grounds and named areas not previously identified as fishing grounds.
 
   A data frame attached as an attribute called \code{PolyData} gives details 
-  on the 237 fishing localities. \code{PolyData} has 7 columns: \cr
+  on the 237 (or 287) fishing localities. \code{PolyData} has these columns: \cr
   \code{PID........}{primary polygon ID,} \cr
   \code{SID........}{secondary polygon ID,} \cr
+  \code{X..........}{centroid X-value (longitude),} \cr
+  \code{Y..........}{centroid Y-value (latitude),} \cr
   \code{label......}{numeric area combining PMFC \code{minor} area and locality number,} \cr
   \code{major......}{PMFC \code{\link[PBSdata]{major}} area,} \cr
   \code{minor......}{PMFC \code{\link[PBSdata]{minor}} area,} \cr
   \code{locality...}{code of fishing ground within \code{minor},} \cr
-  \code{name.......}{name of the ground used by fishermen.}
+  \code{name.......}{name of the ground used by fishermen (or devised),}\cr
+  \code{ID.........}{unique code comprising major, minor, and locality.}
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region) 

@@ -21,7 +21,7 @@
 \details{
   The 13,451 vertices trace 131 contours with 18 holes. In total, 
   there are 57 polygons describing the biogeochemical provinces (BGCP).
-  This dataset was provided by Dr. Reg Watson (\url{http://www.ecomarres.com/contact.html})
+  This dataset was provided by Dr. Reg Watson (\url{http://ecomarres.com/?page_id=24})
   as an ArcView shapefile which was imported to R using \code{PBSmapping} commands: \cr
   \code{bgcp=importShapefile("long_all.shp")} 
 
@@ -48,7 +48,7 @@
   \code{perim} = the length of the polyline outlining the polygon (?).
 }
 \source{
-  Dr. Reg Watson (\url{http://www.ecomarres.com/}) -- email:
+  Dr. Reg Watson (\url{http://ecomarres.com/}) -- email:
 
   \emph{Hi Rowan} \cr
   \emph{Well, you can have the shapefiles which we constructed from text files 
@@ -63,7 +63,6 @@
 \references{
   Longhurst, A. (2007). \emph{Ecological Geography of the Sea.} Elsevier / Academic Press, 
   Burlington, MA. 542 pp. \cr
-  \url{http://www.mar.dfo-mpo.gc.ca/science/ocean/BedfordBasin/Papers/Longhurst1998/Provinces/EcologicalGeographyOfTheSea.htm}
 
   Pauly, D., Christensen, V., Froese, R., Longhurst, A., Platt, T., Sathyendranath, S.,
   Sherman, K. and Watson, R. (2000) Mapping fisheries onto marine ecosystems: a proposal 
