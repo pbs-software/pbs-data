@@ -2,8 +2,7 @@ Package: PBSdata
 Version: 1.26.0
 Date:    2018-01-03
 Title: Data, Boundaries, and Key Codes for PBS Packages
-Authors@R: c(
-   person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
+Authors@R: c(person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
    person(c("Jon", "T."), "Schnute", role = "ctb", email = "schnutej-dfo@shaw.ca"),
    person("Norm", "Olsen", role = "ctb", email = "norm.olsen@dfo-mpo.gc.ca"),
    person("Lisa", "Lacko", role = "ctb", email = "lisa.lacko@dfo-mpo.gc.ca"))
@@ -16,8 +15,9 @@ Description: Data objects to illustrate examples in 'PBStools' and to provide
    'DFO' package called 'PBSdata' before they were transferred to 'PBSfishery'.
    The latter became too bulky with a plethora of data and functions, so it was
    dismantled to form various smaller packages called 'PBSdata', 'PBStools',
-   and 'PBSmapx'. 
+   and 'PBSmapx'.
 License: GPL (>= 2)
 URL: https://github.com/pbs-software/pbs-data,
      https://github.com/pbs-software/pbs-tools,
      https://github.com/pbs-software/pbs-mapx
+     
