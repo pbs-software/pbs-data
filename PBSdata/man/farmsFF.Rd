@@ -35,13 +35,22 @@ data(farmsSF)
 \source{
   Geographic Data Discovery Service \cr
   \bold{Saltwater Finfish Tenures} (accessed 2013-12-19) \cr
-  \url{https://apps.gov.bc.ca/pub/geometadata/metadataDetail.do?recordUID=4025} \cr
+  \code{https://apps.gov.bc.ca/pub/geometadata/metadataDetail.do?recordUID=4025} [defunct]\cr
+  \href{https://catalogue.data.gov.bc.ca/dataset/saltwater-finfish-tenures-coastal-resource-information-management-system-crims}{Saltwater Finfish Tenures - CRIMS}\cr
   \bold{Shellfish Tenures} (accessed 2014-01-08) \cr
-  \url{https://apps.gov.bc.ca/pub/geometadata/metadataDetail.do?recordUID=4031} \cr
-  
+  \code{https://apps.gov.bc.ca/pub/geometadata/metadataDetail.do?recordUID=4031} [defunct]\cr
+  \href{https://catalogue.data.gov.bc.ca/dataset/shellfish-aquaculture-plan-unit-boundaries}{Shellfish Aquaculture Plan Unit Boundaries}
+
   Contact Name: Carol Ogborne \cr
   Contact Organization: BCGOV FLNRO GeoBC \cr
   Email Address: Carol.Ogborne@gov.bc.ca \cr
   Phone Number: 250 952-6557
 }
+\author{
+  \href{mailto:rowan.haigh@dfo-mpo.gc.ca}{Rowan Haigh}, Program Head -- Offshore Rockfish\cr
+  Pacific Biological Station (PBS), Fisheries & Oceans Canada (DFO), Nanaimo BC\cr
+  \emph{locus opus}: Institute of Ocean Sciences (IOS), Sidney BC\cr
+  Last modified \code{Rd: 2019-10-01}
+}
 \keyword{datasets}
+\concept{topo}

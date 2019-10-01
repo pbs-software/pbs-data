@@ -4,13 +4,35 @@ Authors: RH  = Rowan Haigh
          NO  = Norm Olsen
          LL  = Lisa Lacko
          JTS = Jon T. Schnute
+         AME = Andrew M.Edwards
 ------------------------------
+
+1.27.0 (2019-08-23)
+  * Data
+    + Added AME's IPHC historical datasets from the package `gfiphc'. (RH 190823)
+      - iphc.countData1995.rda
+      - iphc.countData1995rs.rda
+      - iphc.countData2013.rda
+      - iphc.data1996to2002.rda
+      - iphc.setData1995.rda
+      - iphc.setData1995rs.rda
+      - iphc.setData2013.rda
+
+1.26.1 (2019-01-21)
+  * Topo
+    + Fixed incorrect SIDs for PID 238 (changed 2 to 1) and PID 239 (changed 3 to 1) in `locality.plus'. (RH 190121)
+    + Removed small holes (<=3 vertices) from and fixed 2 badholes in `rca'. (RH 180827)
+  * Documentation
+    + Modified the Rd example for `locality'. (RH 180104)
+      - Note: PBSmapping function `addLabels' does not seem to work as it did previously.
+      - Not working: `addLabels(attributes(locality)$PolyData,polys=locality,placement="CENTROID"'
 
 1.26.0 (2017-12-21)
   * Topo
     + Added new data object `locality.plus' that covers the entire BC coast (RH 171221)
       - The original object `locality' describes BC fishing grounds and features large gaps.
   * Documentation
+    + Forgot to include revision description and I'm not going to learn about pre-revprop-changes (gibberish & rubbish). (RH 180103)
     + Removed old `index.html' in `.\inst\doc' and replaced with `Links.html' (RH 171221)
 
 1.25.4 (2017-10-16)

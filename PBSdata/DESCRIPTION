@@ -1,16 +1,17 @@
 Package: PBSdata
-Version: 1.26.0
-Date:    2018-01-03
+Version: 1.27.0
+Date:    2019-10-01
 Title: Data, Boundaries, and Key Codes for PBS Packages
 Authors@R: c(
    person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
    person(c("Jon", "T."), "Schnute", role = "ctb", email = "schnutej-dfo@shaw.ca"),
    person("Norm", "Olsen", role = "ctb", email = "norm.olsen@dfo-mpo.gc.ca"),
-   person("Lisa", "Lacko", role = "ctb", email = "lisa.lacko@dfo-mpo.gc.ca"))
-Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb]
+   person("Lisa", "Lacko", role = "ctb", email = "lisa.lacko@dfo-mpo.gc.ca"),
+   person(c("Andrew", "M."), "Edwards", role = "ctb", email = "andrew.edwards@dfo-mpo.gc.ca"))
+Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb], Andrew M. Edwards [ctb]
 Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
-Copyright:  2004-2016, Fisheries and Oceans Canada
-Depends: R (>= 3.0.0)
+Copyright:  2004-2019, Fisheries and Oceans Canada
+Depends: R (>= 3.5.0)
 Description: Data objects to illustrate examples in 'PBStools' and to provide
    shapefiles for 'PBSmapx'. These data objects first appeared in a private
    'DFO' package called 'PBSdata' before they were transferred to 'PBSfishery'.

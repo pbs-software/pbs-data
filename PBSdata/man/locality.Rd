@@ -75,21 +75,39 @@ if(any(grepl("PBSmapping",.packages()))) {
   pbsfun=function(ex=1){
     if (dev.cur()>1) {
       oldpar=par(no.readonly=TRUE); on.exit(par(oldpar)) }
+    par(mfrow=c(1,1), mar=c(3,3,0.5,0.5), oma=c(0,0,0,0), mgp=c(2,0.5,0))
     if (ex==1) {
-      data(locality,envir=.PBSdataEnv)
-      plotMap(locality,border="cornflowerblue")
-      addLabels(attributes(locality)$PolyData,polys=locality,
-        placement="CENTROID",col="gray40",cex=.5) }
-    if(ex==2) {
+      data(locality,package="PBSdata",envir=.PBSdataEnv)
+      plotMap(locality,border="cornflowerblue",plt=NULL)
+      pdata <- attributes(locality)$PolyData
+      #addLabels(pdata,polys=locality,placement="CENTROID",col="gray40",cex=.5)
+      addLabels(pdata,placement="DATA",col="gray40",cex=.5)
+    } else if (ex==2) {
       data(locality,nepacLL,envir=.PBSdataEnv)
-      plotMap(locality,xlim=c(-130.2,-127),ylim=c(49.8,52.1),col="aliceblue")
-      addPolys(nepacLL,col="#b9ed3f")
+      xlim=c(-130.2,-127); ylim=c(49.8,52.1)
+      plotMap(locality,xlim=xlim,ylim=ylim,plt=NULL)
+      addPolys(locality, col="aliceblue")
+      addPolys(nepacLL,col="lemonchiffon")
       pdata <- attributes(locality)$PolyData
       pdata$label <- gsub("[/-]"," ",pdata$name)
       pdata$label=sapply(sapply(pdata$label,strsplit,split=" "),paste,collapse="\n")
-      addLabels(pdata,polys=locality,placement="CENTROID",cex=.65,col="red") }
+      addLabels(pdata,placement="DATA",cex=.65,col="blue")
+      box()
+    } else if (ex==3) {
+      data(locality.plus,nepacLL,envir=.PBSdataEnv)
+      xlim=c(-134.8,-129); ylim=c(51.2,54.8)
+      plotMap(nepacLL,xlim=xlim, ylim=ylim, plt=NULL, cex.axis=1.2, cex.lab=1.5)
+      addPolys(locality.plus, border="orange")
+      addPolys(nepacLL,border="gainsboro",col="honeydew")
+      pdata <- attributes(locality.plus)$PolyData
+      pdata$label <- gsub("[/-]"," ",pdata$name)
+      pdata$label=sapply(sapply(pdata$label,strsplit,split=" "),paste,collapse="\n")
+      pdata = pdata[is.element(pdata$SID,1),]
+      addLabels(pdata,placement="DATA",col="black",cex=.6)
+      box()
+    }
     invisible() }
-  pbsfun(1); pbsfun(2)
+  pbsfun(1); pbsfun(2); pbsfun(3)
 } else
   cat("Load PBSmapping package to see the example.\n")
 })
