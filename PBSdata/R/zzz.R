@@ -23,8 +23,7 @@ A complete user guide 'PBSdata-UG.pdf' is located at
 Packaged on ", pkg_date, "
 Pacific Biological Station, Nanaimo
 
-All available PBS packages can be found at
-https://github.com/pbs-software
+'Torture the data, and it will confess to anything.' (Ronald Coase)
 -----------------------------------------------------------
 
 ")
