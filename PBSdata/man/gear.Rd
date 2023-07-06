@@ -8,11 +8,11 @@
   A named list object of gear tables where the names reflect acronyms
   of various DFO databases (\code{GFB GFC PH3 PHHL PHS PHT}).
 }
-\usage{data(gear)}
+\usage{data("gear", package="PBSdata")}
 \format{
   A list of 6 data frames:
   \tabular{ll}{
-  \bold{GFB: (15 rows, 3 cols) }  \tab \cr
+  \bold{GFB: (22 rows, 3 cols) }  \tab \cr
     \code{GEAR_CODE}                    \tab integer   \cr
     \code{GEAR_DESC}                    \tab character \cr
     \code{GEAR_SPECS_TABLE_NAME}        \tab character \cr \cr
@@ -52,6 +52,10 @@
 }
 \source{
   Fisheries and Oceans Canada, Nanaimo BC
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2023-03-13}
 }
 \keyword{datasets}
 

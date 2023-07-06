@@ -1,10 +1,16 @@
-\documentclass[letterpaper,12pt]{article}
+\documentclass[letterpaper,11pt]{article}
 %\documentclass[article,shortnames,letterpaper,12pt]{jss}
 %\VignetteIndexEntry{Introduction to PBSdata}
 %\VignettePackage{PBSdata}
 
 % Packages
 %\usepackage{Sweave}
+\renewcommand{\rmdefault}{phv}% Helvetica
+\renewcommand{\sfdefault}{phv}% Helvetica
+%\renewcommand{\ttdefault}{pcr}% Courier
+\usepackage[scaled=1.05]{inconsolata}
+\renewcommand{\ttdefault}{zi4}% Inconsolata
+
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{hyperref,url,parskip} %,inconsolata}
@@ -98,9 +104,11 @@ urlcolor=blue,%
 
 \section{What is PBSdata?}
 
-\tab \pkg{PBSdata} contains data objects used primarily by the R packages \pkg{PBStools} for illustrating function examples and \pkg{PBSmapx} for drawing various coastline and boundary shapefiles. The data herein either exist in the public domain or are non-proprietary and open for public use.
+\tab \href{https://github.com/pbs-software/pbs-data}{\code{PBSdata}} contains data objects used primarily by the R packages \href{https://github.com/pbs-software/pbs-tools}{\code{PBStools}}, for illustrating function examples, and \href{https://github.com/pbs-software/pbs-mapx}{\pkg{PBSmapx}}, for drawing various coastline and boundary shapefiles. 
+The data herein either exist in the public domain or are non-proprietary and open for public use.
 
-\tab A useful set of data (regional boundaries, key codes, example data), a GUI interface to \code{PBSmapping}, and handy utility functions evolved over time (2007--2012) in one R package called \pkg{PBSfishery}, which can be found on Google's Project Hosting site: \url{http://code.google.com/p/pbs-fishery/}. In April 2012, we decided to split this package into three separate libraries -- \code{PBSdata}, \code{PBSmapx}, and \code{PBStools} -- for distribution on CRAN.
+\tab A useful set of data (regional boundaries, key codes, example data), a GUI interface to \code{PBSmapping}, and handy utility functions evolved over time (2007--2012) in one R package called \href{https://code.google.com/archive/p/pbs-fishery/}{\code{PBSfishery}}, which was hosted on Google's Project site before Google discontinued its SVN repository.
+In April 2012, we split this package into three separate libraries -- \code{PBSdata}, \code{PBSmapx}, and \code{PBStools} -- for distribution on \href{https://github.com/pbs-software}{GitHub}.
 
 \section{What is PBS?}
 
@@ -112,30 +120,36 @@ urlcolor=blue,%
 	\label{fig:PBS}
 \end{figure}
 
-\tab The Pacific Biological Station is the oldest fisheries research centre on Canada's Pacific coast and forms part of a network of nine major scientific facilities operated by Fisheries and Oceans Canada. Located in Nanaimo, British Columbia, the Station is home to scientists, technicians, support staff and ships' crews whose common interests are the coastal waters of British Columbia, the Northeast Pacific Ocean, the Western Arctic and navigable waters east to the Manitoba, Saskatchewan border.
+\tab The \href{https://www.pac.dfo-mpo.gc.ca/science/facilities-installations/index-eng.html#pbs}{Pacific Biological Station} is the oldest fisheries research centre on Canada's Pacific coast and forms part of a network of nine major scientific facilities operated by Fisheries and Oceans Canada.
+Located in Nanaimo, British Columbia, the Station is home to scientists, technicians, support staff and ships' crews whose common interests are the coastal waters of British Columbia, the Northeast Pacific Ocean, the Western Arctic and navigable waters east to the Manitoba, Saskatchewan border.
 
-\tab PBS was established in 1908 and is the principal centre for fisheries research on Canada's west coast. There are some 22 structures on the site including a four-story office/wet lab building, specialty storage structures for hazardous chemicals and salt water pumping facilities. PBS maintains a number of workshops for research support. There is a wharf used for loading, unloading, and berthage of research vessels, as well as a small boat dock for inshore research boats. PBS also maintains a library and meeting facilities. Aquatic facilities, primarily used by Aquaculture Science, include ambient temperature and heated salt water and fresh water. 
+\tab PBS was established in 1908 and is the principal centre for fisheries research on Canada's west coast. 
+There are some 22 structures on the site including a four-story office/wet lab building, specialty storage structures for hazardous chemicals and salt water pumping facilities. 
+PBS maintains a number of workshops for research support. 
+There is a wharf used for loading, unloading, and berthage of research vessels, as well as a small boat dock for inshore research boats. 
+%%PBS also maintains a library and meeting facilities. 
+Aquatic facilities, primarily used by Aquaculture Science, include ambient temperature and heated salt water and fresh water. 
 
-\tab Research at PBS responds to stock assessment, aquaculture, marine environment, habitat, ocean science, and fish productivity priorities. Some fisheries management activities are also conducted here. 
-
-For more information, see:\\ \footnotesize
-\url{http://www.pac.dfo-mpo.gc.ca/science/facilities-installations/pbs-sbp/index-eng.htm}. \normalsize
+\tab Research at PBS responds to stock assessment, aquaculture, marine environment, habitat, ocean science, and fish productivity priorities. 
+Some fisheries management activities are also conducted here. 
 
 \section{Figure Demos}
 
-\tab The \pkg{PBSdata} help files provide examples to illustrate the data objects; however, these examples have been disabled using the \code{dontrun\{\}} enclosure because we want to keep \pkg{PBSdata} from depending on other packages. Many of the examples require \pkg{PBSmapping}, and a few will require \pkg{PBStools}. In turn, \pkg{PBStools} depends on \pkg{PBSmapping}, \pkg{PBSmodelling}, \pkg{PBSdata}, and \pkg{RODBC}.
+\tab The \pkg{PBSdata} help files provide examples to illustrate the data objects; however, these examples have been disabled using the \code{dontrun\{\}} enclosure because we want to keep \pkg{PBSdata} from depending on other packages. 
+Many of the examples require \pkg{PBSmapping}, and a few will require \pkg{PBStools}. 
+In turn, \pkg{PBStools} depends on \pkg{PBSmapping}, \pkg{PBSmodelling}, \pkg{PBSdata}, and \pkg{RODBC}.
 
 \section* {Contact Information}
 
 %\vspace*{4ex} \noindent {\bf \Large Contact}\\
 \vspace*{0ex} \noindent \blue{{\bf \normalsize Rowan Haigh}}\\
 \small
-\grey{Research Biologist, Groundfish Section\\
-Marine Ecosystems and Aquaculture Division\\
+\grey{Program Head, Offshore Rockfish\\
+Groundfish Section, Stock Assessment and Research Division\\
 Fisheries and Oceans Canada\\
 Pacific Biological Station, Nanaimo, BC  V9T 6N7}\\
-\sky{Tel. +1 250-756-7123  fac simile +1 250-756-7053\\
-Email rowan.haigh@dfo-mpo.gc.ca} 
+%%\sky{Tel. +1 250-756-7123  fac simile +1 250-756-7053\\
+\sky{email: rowan.haigh@dfo-mpo.gc.ca}
 \normalsize
 
 %\vspace*{4ex} \noindent {\bf \Large References}

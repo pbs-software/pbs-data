@@ -9,7 +9,7 @@
   for demonstrating the function \code{clarify}, which clusters many species
   into a smaller number of groups using \code{clara} from the \pkg{cluster} package.
 }
-\usage{data(claradat)}
+\usage{data("claradat", package="PBSdata")}
 \format{
   A data frame with 30,194 observations on the following 17 variables. \cr
     \code{EID...}{Event ID number} \cr
@@ -41,9 +41,16 @@
   Fisheries and Oceans Canada database \code{PacHarvest}
 }
 \seealso{
-  %\code{\link{clarify}}, 
-  \code{\link[PBSdata]{testdatC}}, 
-  \code{\link[cluster]{clara}}
+  \bold{PBSdata:}\cr
+  \code{\link[PBSdata]{testdatC}}\cr
+  \bold{PBStools:}\cr
+  \code{clarify} \cr
+  \bold{cluster:}\cr
+  \code{clara}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2014-12-16}
 }
 \keyword{datasets}
 

@@ -10,7 +10,7 @@
   seven anadromous fish stocks in the international waters of the North Pacific
   Ocean and two adjacent seas.
 }
-\usage{data("npafc")}
+\usage{data("npafc", package="PBSdata")}
 \format{
   A PolySet of three polygons, comprising 7145 vertices, and five fields.
   \describe{
@@ -39,11 +39,14 @@
   steelhead trout.  Anadromous stocks are the stocks of these species that 
   migrate into the Convention Area.
 
-  See \url{http://www.npafc.org/new/about_npafc.html} for further details.
+  See \url{https://npafc.org/about/} for further details.
 }
 \source{
   Michael Folkes, Pacific Biological Station, Fisheries and Oceans Canada, Nanaimo BC
 }
-
+\section{Dates}{
+  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{data: 2015-02-16}
+}
 \keyword{datasets}
 

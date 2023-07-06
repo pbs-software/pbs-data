@@ -25,8 +25,12 @@
 \source{
   Norm Olsen, Pacific Biological Station, Nanaimo BC
 }
+\section{Dates}{
+  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \references{
-  \url{http://www.star.nesdis.noaa.gov/sod/lsa/AltBathy/}
+  \url{https://www.star.nesdis.noaa.gov/socd/lsa/AltBathy/}
 }
 \examples{
 local(envir=.PBSdataEnv,expr={

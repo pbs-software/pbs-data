@@ -7,7 +7,7 @@
   Population parameter values (\eqn{p}, \eqn{\mu}, \eqn{\rho}) for Pacific Ocean Perch 
   \emph{Sebastes alutus} captured in Queen Charlotte Sound Synoptic survey strata. 
 }
-\usage{data(pop.pmr.qcss)}
+\usage{data("pop.pmr.qcss", package="PBSdata")}
 
 \format{
   A data frame with 32 rows and 8 columns: \cr
@@ -39,11 +39,19 @@
 }
 \references{
   Schnute, J.T. and R. Haigh. (2003) 
-  A simulation model for designing groundfish trawl surveys. 
+  \href{https://cdnsciencepub.com/doi/abs/10.1139/f03-041}{A simulation model for designing groundfish trawl surveys}. 
   \emph{Canadian Journal of Fisheries and Aquatic Sciences} \bold{60}, 640--656.
 }
-%\seealso{
-%  \code{\link{getPMR}}, \code{\link{calcPMR}}, \code{\link{sampBG}}, \code{\link{bootBG}}
-%}
+\seealso{
+  \bold{PBStools:}\cr
+  \code{calcPMR},
+  \code{getPMR},
+  \code{sampBG},
+  \code{bootBG}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \keyword{datasets}
 

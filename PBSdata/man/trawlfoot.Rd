@@ -93,16 +93,18 @@ groundfish integrated fisheries management plan.
 \source{
   Norm Olsen, Pacific Biological Station, Fisheries and Ocean Canada, Nanaimo BC
 }
+\section{Dates}{
+  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{data: 2014-12-16}
+}
 \references{
-Pynn, L. (2013) 
-Environmentalists, trawl industry agree on conservation measures for B.C. corals and sponges.
-Vancouver Sun, March 28, 2012. 
+Pynn, L. (2012) 
+\href{https://vancouversun.com/life/environment/environmentalists-trawl-industry-agree-on-conservation-measures-for-bc-corals-and-sponges}{Environmentalists, trawl industry agree on conservation measures for B.C. corals and sponges}.
+Vancouver Sun, March 27, 2012. 
 lpynn@vancouversun.com \cr
-\url{http://www.vancouversun.com/technology/technology/6373561/story.html}
 
 DFO. 2013. Pacific region integrated fisheries management plan: groundfish.
   Effective February 21, 2013.
-
 }
 \keyword{datasets}
 

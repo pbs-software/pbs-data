@@ -8,7 +8,7 @@
   A named list object of utilization tables where the names reflect acronyms
   of various DFO databases (\code{FOS GFB GFC PH3 PHHL PHS PHT}).
 }
-\usage{data(utilize)}
+\usage{data("utilize", package="PBSdata")}
 \format{
   A list of 7 data frames:
   \tabular{ll}{
@@ -57,15 +57,19 @@
 }
 \details{
   The DFO database acronyms are: \cr
-  \code{FOS....}Fisheries Operation System data on Oracle (\code{GFFOS}); \cr
-  \code{GFB....}Groundfish Biological data on Oracle (\code{GFBIO}) and SQL Server (\code{GFBioSQL}); \cr
-  \code{GFC....}Groundfish Catch data (1954-1995) on SQL Server (\code{GFCatch}); \cr
-  \code{PH3....}Sales slip catch data (1982-1994) on Oracle (\code{HARVEST_V2_0}); \cr
-  \code{PHHL...}Hook and line catch data (1986-2006) on SQL Server (\code{PacHarvHL}); \cr
-  \code{PHS....}Sablefish trap data on SQL Server (\code{PacHarvSable}); \cr
+  \code{FOS....}Fisheries Operation System data on Oracle (\code{FOS}) and SQL Server (\code{GFFOS});\cr
+  \code{GFB....}Groundfish Biological data on Oracle (\code{GFBIO}) and SQL Server (\code{GFBioSQL});\cr
+  \code{GFC....}Groundfish Catch data (1954-1995) on SQL Server (\code{GFCatch});\cr
+  \code{PH3....}Sales slip catch data (1982-1994) on Oracle (\code{HARVEST_V2_0});\cr
+  \code{PHHL...}Hook and line catch data (1986-2006) on SQL Server (\code{PacHarvHL});\cr
+  \code{PHS....}Sablefish trap data on SQL Server (\code{PacHarvSable});\cr
   \code{PHT....}Observer trawl catch data (1995-2006) on SQL Server (\code{PacHarvest}).
 }
 \source{
   Fisheries and Oceans Canada, Nanaimo BC
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2014-07-04}
 }
 \keyword{datasets}

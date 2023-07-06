@@ -7,6 +7,16 @@ Authors: RH  = Rowan Haigh
          AME = Andrew M.Edwards
 ------------------------------
 
+1.27.2 (2023-06-06)  [Rcheck=T, Rbuild=T]
+  * Data
+    + Replaced data object `bctopo' with a version that extends eastward to include Strait of Georgia. (RH 230308)
+    + Updated data object `gear'. (RH 230313)
+    + Updated data objects `orfhistory' and `rrfhistory' for catch reconstructions (includes minor PMFC areas and locality codes). (RH 230510)
+    + Added new PolySet `major.pop' that shows PMFC areas for Pacific Ocean Perch and Yellowmouth Rockfish. (RH 230516)
+  * Documentation
+    + Updated the User's Guide (RH 230307)
+    + Updated Rd files
+
 1.27.1 (2020-07-14)
   * Code
     + PBStools needs a rebuilt PBSdata when using `R Under development (unstable) (2020-07-13 r78838)'.

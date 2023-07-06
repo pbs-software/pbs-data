@@ -1,5 +1,5 @@
 ## PBSdata: data, boundaries, and key codes for PBS packages ##
-&copy; Fisheries and Oceans Canada (2004-2020)
+&copy; Fisheries and Oceans Canada (2004-2023)
 
 **PBSdata** contains data objects used primarily by the R packages **PBStools** for illustrating utility examples and **PBSmapx** for drawing various coastline and boundary shapefiles. The data herein either exist in the public domain or are non-proprietary and open for public use.
 

@@ -1,11 +1,15 @@
 \name{major}
 \docType{data}
 \alias{major}
+\alias{major.pop}
 \title{Topo: Pacific Marine Fisheries Commission Major Areas}
 \description{
   PolySet of polygons for BC's PMFC major areas.
 }
-\usage{data(major)}
+\usage{
+data("major", package="PBSdata")
+data("major.pop", package="PBSdata")
+}
 \format{
   Data frame comprising 4 columns: \cr
     \code{PID...}{primary polygon ID} \cr
@@ -15,6 +19,8 @@
 }
 \details{
   The 301 vertices trace 8 contours which describe 8 PMFC major areas in BC.
+  A similar structure is provided in \code{major.pop}, but the 5C polygon has been
+  extended to include Moresby Gully in 5B and Flamingo Inlet/Anthony Island in 5E.
 
   A PolyData set attached as an attribute called \code{PolyData} gives details 
   on the 8 major PMFC areas. \code{PolyData} has 4 columns: \cr
@@ -22,6 +28,10 @@
   \code{major...}{numeric code of PMFC major area,} \cr
   \code{label...}{PMFC alpha-numeric designation, and} \cr
   \code{name....}{geographic name of the PMFC major area.}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{data: 2023-05-16}
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region)
@@ -45,15 +55,15 @@
   cover the BC coast, so do minors, but localities do not.
 }
 \references{
-  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001) Pacific
-  Ocean Perch assessment for the west coast of Canada in 2001. \emph{Canadian
-  Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
+  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2001/2001_138-eng.htm}{
+  Pacific Ocean Perch assessment for the west coast of Canada in 2001}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 p.\cr
 
   Tagart, J.V. (1991) Population dynamics of Yellowtail Rockfish
   (\emph{Sebastes flavidus}) stocks in the northern California to
   southwest Vancouver Island region. Ph. D. thesis, University of
-  Washington. 323 pp.
+  Washington. 323 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={

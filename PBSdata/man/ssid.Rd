@@ -8,7 +8,7 @@
   A list object of data frames detailing survey information.
 }
 \usage{
-data(ssid)
+data("ssid", package="PBSdata")
 }
 \format{
   A list of data frames, one for each database, of survey series.
@@ -37,6 +37,12 @@ local(envir=.PBSdataEnv,expr={
 })
 }
 \seealso{
-  \pkg{PBStools}: \code{getData}, \code{makeSSID}
+  \bold{PBStools:}\cr
+  \code{getData},
+  \code{makeSSID}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2014-07-04}
 }
 \keyword{datasets}

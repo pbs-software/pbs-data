@@ -7,7 +7,7 @@
 \description{
   Unique numeric locality codes used by Paul J. Starr for GLM analyses.
 }
-\usage{data(pjsa)}
+\usage{data("pjsa", package="PBSdata")}
 \format{
   A data frame with 311 observations on the following 8 variables.
   \tabular{ll}{
@@ -26,8 +26,13 @@
 \source{
   Paul J. Starr, Stock Assessment Scientist, Nanaimo BC and Wellington NZ
 }
-%\seealso{
-%  \code{\link{glimmer}}
-%}
+\seealso{
+  \bold{PBStools:}\cr
+  \code{glimmer}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2011-11-14}
+}
 \keyword{datasets}
 

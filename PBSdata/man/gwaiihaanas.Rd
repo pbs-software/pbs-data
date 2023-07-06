@@ -7,7 +7,9 @@
 \description{
   Simple boundary data object outlining the Gwaii Haanas National Park Reserve.
 }
-\usage{data(gwaiihaanas)}
+\usage{
+data("gwaiihaanas", package="PBSdata")
+}
 \format{
   A data frame with 9 observations on the following 5 variables.
   \describe{
@@ -24,7 +26,7 @@
   \code{class}       \tab \code{c("PolySet","data.frame")} \cr
   \code{projection}  \tab \code{"LL"} \cr
   \code{description} \tab "GWAII HAANAS NATIONAL MARINE CONSERVATION AREA" \cr
-  \code{url}         \tab http://laws-lois.justice.gc.ca/eng/acts/C-7.3/page-16.html\#sched2 [defunct] \cr
+  \code{url}         \tab http://laws-lois.justice.gc.ca/eng/acts/C-7.3/page-16.html#sched2 [defunct] \cr
   \code{PolyData}    \tab A data frame with 1 record on the following 5 variables: \cr
                      \tab \code{c("PID","X","Y","col","border","label")} \cr
   \code{exceptions}  \tab Parcels of land excluded from Gwaii Haanas \cr
@@ -32,14 +34,12 @@
                      \tab \code{c("PID","SID","POS","latdeg","latmin","latsec","londeg","lonmin","lonsec")}
   }
 }
+\section{Dates}{
+  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \references{
 \href{https://laws-lois.justice.gc.ca/eng/regulations/SOR-96-93/FullText.html}{Gwaii Haanas National Park Reserve Order}
-}
-\author{
-  \href{mailto:rowan.haigh@dfo-mpo.gc.ca}{Rowan Haigh}, Program Head -- Offshore Rockfish\cr
-  Pacific Biological Station (PBS), Fisheries & Oceans Canada (DFO), Nanaimo BC\cr
-  \emph{locus opus}: Institute of Ocean Sciences (IOS), Sidney BC\cr
-  Last modified \code{Rd: 2019-10-01}
 }
 \keyword{datasets}
 \concept{topo}

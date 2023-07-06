@@ -4,10 +4,10 @@
 \title{Data: Pacific Ocean Perch Age Data (5AB, 5CD)}
 
 \description{
-  Biological data (primarily age but also length, weight, etc.) for Pacific Ocean Perch 
+  Biological data (primarily age but also length, weight, etc.) for Pacific Ocean Perch (POP)
   \emph{Sebastes alutus} in slope rockfish assessment areas 5AB and 5CD.
 }
-\usage{data(pop.age)}
+\usage{data("pop.age", package="PBSdata")}
 
 \format{
   A data frame with 54,585 rows and 18 columns:
@@ -87,12 +87,19 @@
 }
 \references{
   Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001) 
-  Pacific Ocean Perch assessment for the west coast of Canada in 2001. 
-  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}. 90 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/Publications/resdocs-docrech/2001/2001_138-eng.htm}{Pacific Ocean Perch assessment for the west coast of Canada in 2001}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}. 90 p.
 }
-%\seealso{
-%  \code{\link{plotProp}}, \code{\link{calcVB}}, \code{\link{compCsum}}
-%}
+\seealso{
+  \bold{PBStools:}\cr
+  \code{plotProp},
+  \code{calcVB},
+  \code{compCsum}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2014-12-16}
+}
 \keyword{datasets}
+
 

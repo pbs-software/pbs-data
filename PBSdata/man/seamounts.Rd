@@ -2,10 +2,10 @@
 \alias{seamounts}
 \docType{data}
 \title{
-  Topo: Seamounts Off the BC Coast
+  Topo: Seamounts Along the BC Coast
 }
 \description{
-  Seamount geographic locations as PolyData summary events. (There are no associated polygons at this time.)
+  Seamount geographic locations as \code{PolyData} summary events. (There are no associated polygons at this time.)
 }
 \usage{data(seamounts)}
 \format{
@@ -24,13 +24,18 @@
   }
 }
 \details{
-  PolyData set can be used by \code{addPoints} and \code{addLabels} to supplement maps with seamount locations.
+  This \code{PolyData} set can be used by \code{addPoints} and \code{addLabels}
+  to supplement maps with seamount locations.
 }
 \source{
   Lisa Lacko (Pacific Biological Station, Nanaimo BC) supplied seamount data for PIDs 1--22.
-  
+
   Seamount data for PIDs 23--29 are extracted from NOAA's National Geophysical Data Center: \cr
-  \url{http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO5/GAZETEER/BGNGAZ/BGNGAZ.TXT} \cr
+  \url{https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO5/GAZETEER/BGNGAZ/BGNGAZ.TXT} \cr
   NGDC data are supplemented with depths from various websites like \code{wikipedia}.
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{data: 2014-12-16}
 }
 \keyword{datasets}

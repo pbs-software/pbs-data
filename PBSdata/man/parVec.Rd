@@ -8,7 +8,7 @@
   \code{PBSmodelling::calcMin}.
 }
 \usage{
-data(parVec)
+data("parVec", package="PBSdata")
 }
 
 \format{
@@ -45,9 +45,16 @@ data(parVec)
   Pacific Biological Station, Fisheries and Oceans Canada, Nanaimo BC
 }
 \seealso{
-  %\code{\link{calcVB}}, 
+  \bold{PBSdata:}\cr
   \code{\link[PBSdata]{pop.age}} \cr
-  \pkg{PBSmodelling}: \code{\link[PBSmodelling]{calcMin}}
+  \bold{PBSmodelling:}\cr
+  \code{calcMin}\cr
+  \bold{PBStools:}\cr
+  \code{calcVB}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2014-07-04}
 }
 \keyword{datasets}
 

@@ -9,7 +9,7 @@
   IPHC longline surveys in 1995-2002 and 2013.
 }
 \usage{
-data("iphcdata")
+data("iphcdata", package="PBSdata")
 }
 \format{
   A list of 7 data frames:
@@ -88,10 +88,10 @@ data("iphcdata")
   based on the true number of hooks observed for 1997-2002.
 }
 \note{
-  Datasets come from Andrew M. Edward's R package \pkg{gfiphc}.
+  Datasets come from the R package \href{https://github.com/pbs-assess/gfiphc}{gfiphc}, maintained by Andrew M. Edwards.
 }
 \references{
-  \href{https://github.com/pbs-assess/gfiphc}{An R package for standardizing IPHC survey data for non-halibut groundfish stocks in British Columbia}
+  \href{https://github.com/pbs-assess/gfiphc}{gfiphc} -- An R package for extracting and analysing groundfish data from the IPHC longline survey in BC.
 }
 \source{
   \code{countData1995} -- Originally from file \code{1995IPHCSetlineData.xlsx} that
@@ -122,11 +122,11 @@ view(iphcdata)
 }
 }
 \author{
-  \href{mailto:andrew.edwards@dfo-mpo.gc.ca}{Andrew M. Edwards}, Quantitative Assessment Methods Section\cr
-  \href{mailto:rowan.haigh@dfo-mpo.gc.ca}{Rowan Haigh}, Program Head -- Offshore Rockfish\cr
-  Pacific Biological Station (PBS), Fisheries & Oceans Canada (DFO), Nanaimo BC\cr
-  \emph{locus opus}: Institute of Ocean Sciences (IOS), Sidney BC\cr
-  Last modified \code{Rd: 2019-10-01}
+  \href{mailto:andrew.edwards@dfo-mpo.gc.ca}{Andrew M. Edwards}, PBS, Nanaimo BC
+}
+\section{Dates}{
+  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{data: 2019-08-23}
 }
 \keyword{datasets}
 \concept{data}
