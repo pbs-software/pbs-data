@@ -9,11 +9,11 @@
 \usage{data(qcb)}
 \format{
   Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{SID...} secondary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 21,843 vertices trace 190 polygons (255 contours, 65 holes) which 
@@ -24,14 +24,14 @@
 
   A data frame attached as an attribute called \code{PolyData} gives 
   details of the 190 polygons. \code{PolyData} has 8 columns: \cr
-    \code{PID...........}{primary polygon ID,} \cr
-    \code{gisID.........}{original polygon ID in \code{QCB_geo.shp},} \cr
-    \code{pmfc..........}{a loose set of \code{PMFC} codes,} \cr
-    \code{len...........}{polygon circumference (km),} \cr
-    \code{area..........}{polgon area (km\eqn{^2}{.sq}),} \cr
-    \code{description...}{detailed description of surficial geology,} \cr
-    \code{label.........}{simplified category for surficial geology, and} \cr
-    \code{col...........}{colour for each category.}
+    \code{PID...........} primary polygon ID,\cr
+    \code{gisID.........} original polygon ID in \code{QCB_geo.shp},\cr
+    \code{pmfc..........} a loose set of \code{PMFC} codes,\cr
+    \code{len...........} polygon circumference (km),\cr
+    \code{area..........} polgon area (km\eqn{^2}{.sq}),\cr
+    \code{description...} detailed description of surficial geology,\cr
+    \code{label.........} simplified category for surficial geology, and\cr
+    \code{col...........} colour for each category.
 }
 \source{
   Abstract from Barrie \emph{et al.} (1991):
@@ -60,7 +60,7 @@
 \references{
   Barrie, V., Bornhold, B.D., Conway, K.W. and Luternauer, J.L. (1991)
   Surficial geology of the northwestern Canadian continental shelf.
-  \emph{Continental Shelf Research} \bold{19S(8--10)}, 701--715 pp.
+  \emph{Continental Shelf Research} \bold{19S(8--10)}, 701--715 p.
 
   Sinclair, A.F., Conway, K.W. and Crawford, W.R. (2005) 
   Associations between bathymetric, geologic and oceanographic features and 
@@ -91,5 +91,11 @@ if(any(grepl("PBSmapping",.packages()))) {
 \seealso{
   \code{\link[PBSdata]{trawlability}}, \code{\link[PBSdata]{hsgrid}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2008-07-18}
+}
 \keyword{datasets}
+\concept{topo}
+
 

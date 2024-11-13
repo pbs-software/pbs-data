@@ -8,10 +8,12 @@
 }
 \usage{data(fos.fid)}
 \format{
-  Data frame comprising 3 columns: \cr
-    \code{fid...........}{Fishery identification number} \cr
-    \code{fishery.......}{Fishery name} \cr
-    \code{description...}{Short description of the fishery}
+  Data frame comprising 3 columns:
+  \tabular{ll}{
+    \code{fid}         \tab fishery identification number\cr
+    \code{fishery}     \tab fishery name\cr
+    \code{description} \tab short description of the fishery
+  }
 }
 \details{
   The data frame comprises 59 rows (fisheries) and 3 columns. The data
@@ -32,6 +34,13 @@ pbsfun()
 })
 }
 \seealso{
-  \code{\link[PBSdata]{spn}}, \code{\link[PBSdata]{species}}
+In package \pkg{PBSdata}:\cr
+  \code{\link[PBSdata]{spn}},
+  \code{\link[PBSdata]{species}}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2008-07-21}
 }
 \keyword{datasets}
+\concept{code}

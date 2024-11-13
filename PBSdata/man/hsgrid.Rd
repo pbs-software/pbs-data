@@ -7,12 +7,14 @@
 }
 \usage{data(hsgrid)}
 \format{
-  Data frame comprising 5 columns: \cr
-    \code{PID....}{primary polygon ID} \cr
-    \code{POS....}{position of each vertex within a given polygon} \cr
-    \code{X......}{longitude coordinates} \cr
-    \code{Y......}{latitude coordinates} \cr
-    \code{cell...}{cell designation within survey grid, where rows span A-L and columns span 1-6}
+  Data frame comprising 5 columns:
+  \tabular{ll}{
+    \code{PID}  \tab primary polygon ID\cr
+    \code{POS}  \tab position of each vertex within a given polygon\cr
+    \code{X}    \tab longitude coordinates\cr
+    \code{Y}    \tab latitude coordinates\cr
+    \code{cell} \tab cell designation within survey grid, where rows span A-L and columns span 1-6
+  }
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region)
@@ -25,9 +27,9 @@
   columns are designated 1-6.
 }
 \references{
-  Fargo, J. and Tyler, A.V. (1992) Statistical testing of research trawl
-  data with implications for survey design. \emph{Netherlands Journal of Sea
-  Research} \bold{29}, 97--108.
+  Fargo, J. and Tyler, A.V. (1992)
+  Statistical testing of research trawl data with implications for survey design.
+  \emph{Netherlands Journal of Sea Research} \bold{29}, 97--108.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -48,6 +50,14 @@ if(any(grepl("PBSmapping",.packages()))) {
 })
 }
 \seealso{
-  \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{qcssa}}, \code{\link[PBSdata]{wcvisa}}
+In package \pkg{PBSdata}:\cr
+  \code{\link[PBSdata]{ltsa}},
+  \code{\link[PBSdata]{qcssa}},
+  \code{\link[PBSdata]{wcvisa}}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2004-07-19}
 }
 \keyword{datasets}
+\concept{topo}

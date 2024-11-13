@@ -1,22 +1,22 @@
 Package: PBSdata
-Version: 1.27.2
-Date:    2023-06-06
+Version: 1.27.3
+Date:    2024-11-13
 Title: Data, Boundaries, and Key Codes for PBS Packages
 Authors@R: c(
    person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
-   person(c("Jon", "T."), "Schnute", role = "ctb", email = "schnutej-dfo@shaw.ca"),
+   person(c("Jon", "T."), "Schnute", role = "ctb", email = "schnutej@shaw.ca"),
    person("Norm", "Olsen", role = "ctb", email = "norm.olsen@dfo-mpo.gc.ca"),
    person("Lisa", "Lacko", role = "ctb", email = "lisa.lacko@dfo-mpo.gc.ca"),
    person(c("Andrew", "M."), "Edwards", role = "ctb", email = "andrew.edwards@dfo-mpo.gc.ca"))
 Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb], Andrew M. Edwards [ctb]
 Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
-Copyright:  2004-2023, Fisheries and Oceans Canada
+Copyright:  2004-2024, Fisheries and Oceans Canada
 Depends: R (>= 3.5.0)
-Description: Beautiful data objects to illustrate examples in 'PBStools' and to
+Description: Ethereal data objects to illustrate examples in 'PBStools' and to
    provide shapefiles for 'PBSmapx'. These flying objects first appeared in a
    private 'UFO' package called 'PBSdata' before they were transported to 'PBSfishery'.
    The latter attracted a plethora of unicorns and popsicles, so it was dismantled
-   to form three smaller repositories of magic called 'PBSdata', 'PBStools',
+   and resurrected as three smaller repositories of magic called 'PBSdata', 'PBStools',
    and 'PBSmapx'. 
 License: GPL (>= 2)
 URL: https://github.com/pbs-software/pbs-data,

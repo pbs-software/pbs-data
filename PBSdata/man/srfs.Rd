@@ -9,10 +9,10 @@
 \usage{data(srfs)}
 \format{
   Data frame comprising 4 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 285 vertices trace 3 contours which describe the 3 QCS gulllies.
@@ -41,10 +41,10 @@
   purposes, primarily the Pacific ocean perch catch-age model.
 }
 \references{
-  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001) Pacific 
-  ocean perch assessment for the west coast of Canada in 2001. \emph{Canadian
-  Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
+  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2001/2001_138-eng.htm}{%
+  Pacific ocean perch assessment for the west coast of Canada in 2001}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -66,4 +66,10 @@ if(any(grepl("PBSmapping",.packages()))) {
   \code{\link[PBSdata]{srfa}}, \code{\link[PBSdata]{popa}}, \code{\link[PBSdata]{major}}, 
   \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{locality}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2008-09-17}
+}
 \keyword{datasets}
+\concept{topo}
+

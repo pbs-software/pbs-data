@@ -13,10 +13,10 @@ data(ltmose12)
 }
 \format{
   Data frame comprising 4 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   \code{ltmose07}: 55 vertices trace 7 contours that describe 7 fishing grounds. \cr
@@ -25,29 +25,28 @@ data(ltmose12)
   A data frame attached as an attribute called \code{PolyData} gives the names 
   assigned to the 7 (or 12) fishing grounds by Brian Mose.
   \code{PolyData} has 2 columns: \cr 
-  \code{PID.....}{primary polygon ID,} \cr
-  \code{label...}{name of the fishing ground.}
+  \code{PID.....} primary polygon ID,\cr
+  \code{label...} name of the fishing ground.
 }
 \source{
-  Brian Mose, Canadian Groundfish Research and Conservation Society
+  Brian Mose, Canadian Groundfish Research and Conservation Society\cr
+  August 7, 1959 -- August 13, 2024 (age 65)
 }
 \references{
-  Krishka, B.A., Starr, P.J. and Choromanski, E.M. (2005) Longspine Thornyhead 
-  random stratified trawl survey off the West Coast of Vancouver Island, 
-  September 4--21, 2003. \emph{Canadian Technical Report of Fisheries and Aquatic 
-  Sciences} \bold{2577}, vi + 93 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
+  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002) 
+  \href{https://publications.gc.ca/site/eng/462859/publication.html}{%
+  Trawl survey for Thornyhead biomass estimation off the West Coast of Vancouver Island, September 15 to October 2, 2001}.
+  \emph{Canadian Technical Report of Fisheries and Aquatic Sciences} \bold{2421}, 60 pp.
 
-  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002) Trawl survey for 
-  Thornyhead biomass estimation off the West Coast of Vancouver Island, 
-  September 15 to October 2, 2001. \emph{Canadian Technical Report of Fisheries and 
-  Aquatic Sciences} \bold{2421}, 60 pp.
+  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002)
+  \href{https://publications.gc.ca/site/eng/422382/publication.html}{%
+  Longspine Thornyhead random stratified trawl survey off the West Coast of Vancouver Island, September 6--23, 2002}.
+  \emph{Canadian Technical Report of Fisheries and Aquatic Sciences} \bold{2558}, 81 pp.
 
-  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002) Longspine Thornyhead 
-  random stratified trawl survey off the West Coast of Vancouver Island, 
-  September 6--23, 2002. \emph{Canadian Technical Report of Fisheries and Aquatic 
-  Sciences} \bold{2558}, 81 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
+  Krishka, B.A., Starr, P.J. and Choromanski, E.M. (2005)
+  \href{https://publications.gc.ca/site/eng/422422/publication.html}{%
+  Longspine Thornyhead random stratified trawl survey off the West Coast of Vancouver Island, September 4--21, 2003}.
+  \emph{Canadian Technical Report of Fisheries and Aquatic Sciences} \bold{2577}, vi + 93 pp.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -75,7 +74,12 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \seealso{
   \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{ltxa}}, \code{\link[PBSdata]{ltea}}
 }
 \keyword{datasets}
+\concept{topo}

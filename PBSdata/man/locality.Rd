@@ -2,38 +2,39 @@
 \docType{data}
 \alias{locality}
 \alias{locality.plus}
-\title{Topo: Localities in Pacific Marine Fisheries Commission Minor Areas}
+\title{Topo: Localities in PMFC Minor Areas}
 \description{
-  PolySet of polygons for fishing ground localities within PMFC minor areas.
+  PolySet of polygons for fishing ground localities within 
+  Pacific Marine Fisheries Commission (PMFC) minor areas.
 }
 \usage{
 data(locality)
 data(locality.plus)
 }
 \format{
-  Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+  Data frame comprising 5 columns:\cr
+    \code{PID...} primary polygon ID\cr
+    \code{SID...} secondary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   In \code{locality}, 5942 vertices trace 237 contours which describe 237 fishing grounds.\cr
   In \code{locality.plus}, 7686 vertices trace 287 contours with 12 holes; these polygons describe fishing grounds and named areas not previously identified as fishing grounds.
 
   A data frame attached as an attribute called \code{PolyData} gives details 
-  on the 237 (or 287) fishing localities. \code{PolyData} has these columns: \cr
-  \code{PID........}{primary polygon ID,} \cr
-  \code{SID........}{secondary polygon ID,} \cr
-  \code{X..........}{centroid X-value (longitude),} \cr
-  \code{Y..........}{centroid Y-value (latitude),} \cr
-  \code{label......}{numeric area combining PMFC \code{minor} area and locality number,} \cr
-  \code{major......}{PMFC \code{\link[PBSdata]{major}} area,} \cr
-  \code{minor......}{PMFC \code{\link[PBSdata]{minor}} area,} \cr
-  \code{locality...}{code of fishing ground within \code{minor},} \cr
-  \code{name.......}{name of the ground used by fishermen (or devised),}\cr
-  \code{ID.........}{unique code comprising major, minor, and locality.}
+  on the 237 (or 287) fishing localities. \code{PolyData} has these columns:\cr
+  \code{PID........} primary polygon ID,\cr
+  \code{SID........} secondary polygon ID,\cr
+  \code{X..........} centroid X-value (longitude),\cr
+  \code{Y..........} centroid Y-value (latitude),\cr
+  \code{label......} numeric area combining PMFC \code{minor} area and locality number,\cr
+  \code{major......} PMFC \code{\link[PBSdata]{major}} area,\cr
+  \code{minor......} PMFC \code{\link[PBSdata]{minor}} area,\cr
+  \code{locality...} code of fishing ground within \code{minor},\cr
+  \code{name.......} name of the ground used by fishermen (or devised),\cr
+  \code{ID.........} unique code comprising major, minor, and locality.
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region) 
@@ -59,15 +60,15 @@ data(locality.plus)
   localities do not.
 }
 \references{
-  Schnute, J.T., Haigh, R., Krishka, B.A., and Starr, P. (2001) Pacific
-  Ocean Perch assessment for the west coast of Canada in 2001. \emph{Canadian
-  Science Advisory Secretariat, Research Document} \bold{2001/138}. 90 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
+  Schnute, J.T., Haigh, R., Krishka, B.A., and Starr, P. (2001) 
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2001/2001_138-eng.htm}{%
+  Pacific Ocean Perch assessment for the west coast of Canada in 2001}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}. 90 pp.
 
-  Tagart, J.V. (1991) Population dynamics of Yellowtail Rockfish
-  (\emph{Sebastes flavidus}) stocks in the northern California to
-  southwest Vancouver Island region. Ph. D. thesis, University of
-  Washington. 323 pp.
+  Tagart, J.V. (1991) 
+  Population dynamics of Yellowtail Rockfish (\emph{Sebastes flavidus}) stocks in the 
+  northern California to southwest Vancouver Island region.
+  Ph. D. thesis, University of Washington. 323 pp.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -112,7 +113,13 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2017-10-16}
+}
 \seealso{
   \code{\link[PBSdata]{major}}, \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{srfa}}
 }
 \keyword{datasets}
+\concept{topo}
+

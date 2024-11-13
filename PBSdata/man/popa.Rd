@@ -9,10 +9,10 @@
 \usage{data(popa)}
 \format{
   Data frame comprising 4 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 58 vertices trace 6 contours which describe 6 population areas 
@@ -20,9 +20,9 @@
 
   An attribute dataset called \code{PolyData} gives the names 
   assigned to the 6 POP areas: \cr
-  \code{PID.....}{primary polygon ID,} \cr
-  \code{label...}{population area label, and} \cr
-  \code{col.....}{colour code for the area.}
+  \code{PID.....} primary polygon ID,\cr
+  \code{label...} population area label, and\cr
+  \code{col.....} colour code for the area.
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region)
@@ -42,10 +42,10 @@
   }
 }
 \references{
-  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001) 
-  Pacific Ocean Perch assessment for the west coast of Canada in 2001. 
-  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
+  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2001/2001_138-eng.htm}{%
+  Pacific Ocean Perch assessment for the west coast of Canada in 2001}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -67,4 +67,10 @@ if(any(grepl("PBSmapping",.packages()))) {
   \code{\link[PBSdata]{major}}, \code{\link[PBSdata]{minor}}, \code{\link[PBSdata]{locality}}, 
   \code{\link[PBSdata]{srfa}}, \code{\link[PBSdata]{srfs}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2008-09-16}
+}
 \keyword{datasets}
+\concept{topo}
+

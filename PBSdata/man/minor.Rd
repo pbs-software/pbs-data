@@ -8,21 +8,21 @@
 \usage{data(minor)}
 \format{
   Data frame comprising 4 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 552 vertices trace 30 contours which describe 30 PMFC minor areas in BC.
 
   A PolyData set attached as an attribute called \code{PolyData} gives details 
   on the 30 minor PMFC areas. \code{PolyData} has 5 columns: \cr
-  \code{PID.....}{primary polygon ID,} \cr
-  \code{major...}{numeric code of PMFC major area,} \cr
-  \code{minor...}{numeric code of PMFC minor area,} \cr
-  \code{label...}{short label describing the minor area, and} \cr
-  \code{name....}{geographic name of the PMFC minor area.}
+  \code{PID.....} primary polygon ID,\cr
+  \code{major...} numeric code of PMFC major area,\cr
+  \code{minor...} numeric code of PMFC minor area,\cr
+  \code{label...} short label describing the minor area, and\cr
+  \code{name....} geographic name of the PMFC minor area.
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region)
@@ -46,15 +46,15 @@
   cover the BC coast, so do minors, but localities do not.
 }
 \references{
-  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001) Pacific
-  Ocean Perch assessment for the west coast of Canada in 2001. \emph{Canadian
-  Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/Csas/publications/ResDocs-DocRech/2001/2001_138_e.htm}
+  Schnute, J.T., Haigh, R., Krishka, B.A. and Starr, P. (2001)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2001/2001_138-eng.htm}{%
+  Pacific Ocean Perch assessment for the west coast of Canada in 2001}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2001/138}, 90 p.\cr
 
   Tagart, J.V. (1991) Population dynamics of Yellowtail Rockfish
   (\emph{Sebastes flavidus}) stocks in the northern California to
   southwest Vancouver Island region. Ph. D. thesis, University of
-  Washington. 323 pp.
+  Washington. 323 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -72,7 +72,13 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2008-09-17}
+}
 \seealso{
   \code{\link[PBSdata]{major}}, \code{\link[PBSdata]{locality}}, \code{\link[PBSdata]{srfa}}
 }
 \keyword{datasets}
+\concept{topo}
+

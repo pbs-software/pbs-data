@@ -10,11 +10,11 @@
 \usage{data(trawlability)}
 \format{
   Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{SID...} secondary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 13,673 vertices trace 77 contours with 11 holes, all of which describe 
@@ -39,7 +39,7 @@
   \code{full} = full description of bottom type.
 }
 \source{
-  Rowan Haigh, Pacific Biological Station, Nanaimo BC.
+  Rowan Haigh, Pacific Biological Station, Nanaimo BC.\cr
   Digitized  using a GTCO Super L II Plus from UTM charts marked by expert fishermen.
 
   A workshop in August 1999 solicited the opinions of commercial fishers on what 
@@ -62,10 +62,15 @@
   Charlotte Islands using the same classification scheme.
 }
 \references{
-  Schnute, J.T., Olsen, N. and Haigh, R. (1999) Slope rockfish assessment 
-  for the west coast of Canada in 1998. \emph{Canadian Stock Assessment Secretariat, 
-  Research Document} \bold{99/184}, 104 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/1999/1999_184_e.htm}
+  Schnute, J.T., Olsen, N., and Haigh, R. (1999)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/1999/1999_016-eng.htm}{%
+  Slope rockfish assessment for the west coast of Canada in 1998}.
+  \emph{Canadian Stock Assessment Secretariat, Research Document} \bold{99/016}, vi + 79 p.
+
+  Schnute, J.T., Olsen, N., and Haigh, R. (1999)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/1999/1999_184-eng.htm}{%
+  Slope rockfish assessment for the west coast of Canada in 1999}.
+  \emph{Canadian Stock Assessment Secretariat, Research Document} \bold{99/184}, vi + 104 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -91,5 +96,10 @@ if(any(grepl("PBSmapping",.packages()))) {
 \seealso{
   \code{\link[PBSdata]{qcb}}, \code{\link[PBSdata]{ltmose07}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2007-01-22}
+}
 \keyword{datasets}
+\concept{topo}
 

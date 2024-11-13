@@ -7,12 +7,14 @@
 }
 \usage{data(rca)}
 \format{
-  Data frame comrising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+  Data frame comrising 5 columns:
+  \tabular{ll}{
+    \code{PID} \tab primary polygon ID\cr
+    \code{SID} \tab secondary polygon ID\cr
+    \code{POS} \tab position of each vertex within a given polygon\cr
+    \code{X}   \tab longitude coordinates\cr
+    \code{Y}   \tab latitude coordinates
+  }
 }
 \details{
   The 21,733 vertices trace 3,567 contours with 3,357 holes. There are 
@@ -45,7 +47,7 @@
   the closed area element of the strategy over time.
 }
 \references{
-  \url{http://www.pac.dfo-mpo.gc.ca/recfish/Restricted_Areas/rca_e.htm}
+  \href{https://www.pac.dfo-mpo.gc.ca/fm-gp/maps-cartes/rca-acs/index-eng.html}{Rockfish Conservation Area maps}
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -65,7 +67,13 @@ if(any(grepl("PBSmapping",.packages()))) {
 })
 }
 \seealso{
-  \pkg{PBSmapping}: \code{\link[PBSmapping]{importShapefile}},
+In package \pkg{PBSmapping}:\cr
+  %\code{\link[PBSmapping]{importShapefile}},
   \code{\link[PBSmapping]{thinPolys}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2018-08-27}
+}
 \keyword{datasets}
+\concept{topo}

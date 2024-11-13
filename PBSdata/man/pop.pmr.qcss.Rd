@@ -11,14 +11,14 @@
 
 \format{
   A data frame with 32 rows and 8 columns: \cr
-    \code{SID...}{Survey ID number assigned by the GFBio team} \cr
-    \code{h.....}{Strata ID (alpha and/or numeric)} \cr
-    \code{p.....}{Proportion of zero measurements} \cr
-    \code{mu....}{Mean of nonzero measurements} \cr
-    \code{rho...}{CV of nonzero measurements} \cr
-    \code{A.....}{Bottom area (km\eqn{^2}) of each stratum} \cr
-    \code{n.....}{Actual number of tows performed to derive \code{(p,mu,rho)}} \cr
-    \code{k.....}{Preference/weighting of new tows}
+    \code{SID...} Survey ID number assigned by the GFBio team\cr
+    \code{h.....} Strata ID (alpha and/or numeric)\cr
+    \code{p.....} Proportion of zero measurements\cr
+    \code{mu....} Mean of nonzero measurements\cr
+    \code{rho...} CV of nonzero measurements\cr
+    \code{A.....} Bottom area (km\eqn{^2}) of each stratum\cr
+    \code{n.....} Actual number of tows performed to derive \code{(p,mu,rho)}\cr
+    \code{k.....} Preference/weighting of new tows
 
   Attributes include \code{fqt} (query name), \code{strSpp} (string 
   species code), \code{h} (strata), and \code{survey} (data frame 
@@ -50,8 +50,9 @@
   \code{bootBG}
 }
 \section{Dates}{
-  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{Rd: 2024-11-13}\cr
   Last modified \code{data: 2014-07-04}
 }
 \keyword{datasets}
+\concept{data}
 

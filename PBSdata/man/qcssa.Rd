@@ -9,11 +9,11 @@
 \usage{data(qcssa)}
 \format{
   Data frame comprising 5 columns: \cr
-    \code{PID.....}{primary polygon ID} \cr
-    \code{POS.....}{position of each vertex within a given polygon} \cr
-    \code{X.......}{longitude coordinates} \cr
-    \code{Y.......}{latitude coordinates} \cr
-    \code{strat...}{stratum descriptor}
+    \code{PID.....} primary polygon ID\cr
+    \code{POS.....} position of each vertex within a given polygon\cr
+    \code{X.......} longitude coordinates\cr
+    \code{Y.......} latitude coordinates\cr
+    \code{strat...} stratum descriptor
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region)
@@ -24,10 +24,10 @@
   are used in the survey but not delimited in this PolySet.
 }
 \references{
-  Stanley, R.D., Starr, P., Olsen, N. and Haigh, R. (2004) 
-  Summary of results of the 2003 Queen Charlotte Sound bottom trawl survey. 
-  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/028}, 50 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_028_E.htm}
+  Stanley, R.D., Starr, P., Olsen, N. and Haigh, R. (2004)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2004/2004_028-eng.htm}{%
+  Summary of results of the 2003 Queen Charlotte Sound bottom trawl survey}. 
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/028}, 50 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -49,4 +49,10 @@ if(any(grepl("PBSmapping",.packages()))) {
 \seealso{
   \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{wcvisa}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2004-07-19}
+}
 \keyword{datasets}
+\concept{topo}
+

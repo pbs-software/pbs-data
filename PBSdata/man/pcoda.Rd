@@ -6,19 +6,19 @@
 }
 \description{
   Simple polygons that outline the Hecate Strait Pacific Cod Monitoring Survey areas: \cr \cr
-    \code{TPBW...}Two Peaks / Butterworth \cr
-    \code{SG.....}Shell Ground \cr
-    \code{WR.....}White Rocks \cr
-    \code{RI.....}Reef Island \cr
-    \code{HS.....}Horseshoe 
+    \code{TPBW...} Two Peaks / Butterworth \cr
+    \code{SG.....} Shell Ground \cr
+    \code{WR.....} White Rocks \cr
+    \code{RI.....} Reef Island \cr
+    \code{HS.....} Horseshoe 
 }
 \usage{data(pcoda)}
 \format{
   A data frame with 206 observations on the following 4 variables. \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{POS...}{vertex position} \cr
-    \code{X.....}{longitude (degrees West)} \cr
-    \code{Y.....}{latitude (degrees North)}
+    \code{PID...} primary polygon ID\cr
+    \code{POS...} vertex position\cr
+    \code{X.....} longitude (degrees West)\cr
+    \code{Y.....} latitude (degrees North)
 }
 \details{
 Abstract from Sinclair and Workman (2002): \cr
@@ -41,12 +41,14 @@ Abstract from Sinclair and Workman (2002): \cr
   Norm Olsen, Pacific Biological Station, Nanaimo BC
 }
 \references{
-  Sinclair, A. and Workman, G. (2002) 
-  A review of Pacific cod (\emph{Gadus macrocephalus}) monitoring surveys in Hecate Strait, March - July, 2002. 
+  Sinclair, A. and Workman, G. (2002)
+  \href{https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/273926.pdf}{%
+  A review of Pacific cod (\emph{Gadus macrocephalus}) monitoring surveys in Hecate Strait, March - July, 2002}.
   \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2002/130}, 59 p.
 
-  Sinclair, A.F. and Starr, P.J. (2005) 
-  Assessment of Pacific cod in Hecate Strait (5CD) and Queen Charlotte Sound (5AB), January, 2005. 
+  Sinclair, A.F. and Starr, P.J. (2005)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2005/2005_026-eng.htm}{%
+  Assessment of Pacific cod in Hecate Strait (5CD) and Queen Charlotte Sound (5AB), January, 2005}. 
   \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2005/026}, 97 p.
 }
 \seealso{
@@ -70,5 +72,10 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \keyword{datasets}
+\concept{topo}
 

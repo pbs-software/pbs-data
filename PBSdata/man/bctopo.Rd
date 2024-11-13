@@ -9,10 +9,12 @@
 }
 \usage{data("bctopo", package="PBSdata")}
 \format{
-  Data frame with 3 columns: \cr
-    \code{x...}{Longitude in degrees West (original \code{x} - 360)} \cr
-    \code{y...}{Latitude in degrees North} \cr
-    \code{z...}{Sea floor depth in metres (negative value of original)}
+  Data frame with 3 columns:
+  \tabular{ll}{
+    \code{x} \tab longitude in degrees West (global \code{x} - 360)\cr
+    \code{y} \tab latitude in degrees North\cr
+    \code{z} \tab sea floor depth in metres (negative value of original)
+  }
 }
 \details{
   The data frame comprises 488,117 rows (georeferenced depth observations) and 3 columns.
@@ -28,8 +30,6 @@
 \source{
   Topography Ocean Experiment (TOPEX):\cr
   \href{https://topex.ucsd.edu/cgi-bin/get_data.cgi}{Extract XYZ grid -- topography or gravity}
-
-  Last accessed for \code{bctopo} on 2017-01-24.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -56,18 +56,18 @@ if(any(grepl("PBSmapping",.packages()))) {
 \references{
   Smith, W.H.F., and Sandwell, D.T. (1997)
   \href{https://topex.ucsd.edu/marine_topo/mar_topo.html}{Global seafloor topography from satellite altimetry and ship depth soundings}.
-  \emph{Science} \bold{277}: 1957--1962. \cr
+  \emph{Science} \bold{277}: 1957--1962.
 }
 \seealso{
-  \code{PBSdata:}\cr
-  \code{\link[PBSdata]{isobath}} \cr
-  \code{PBSmapping:}\cr
-  \code{makeTopography},
-  \code{convCP}
+In package \pkg{PBSdata}:\cr
+  \code{\link[PBSdata]{isobath}}\cr
+In package \pkg{PBSmapping}:\cr
+  \code{\link[PBSmapping]{makeTopography}},
+  \code{\link[PBSmapping]{convCP}}
 }
 \section{Dates}{
-  Last modified \code{Rd: 2023-06-06}\cr
-  Last modified \code{data: 2017-01-24}
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2023-06-06}
 }
 \keyword{datasets}
-
+\concept{topo}

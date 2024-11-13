@@ -9,11 +9,11 @@
 \usage{data(wcvisa)}
 \format{
   Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{SID...} secondary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 
   A PolyData set attached as an attribute called \code{PolyData} gives
   the following for each \code{PID} and \code{SID}: \cr 
@@ -33,16 +33,15 @@
   Queen Charlotte Sound survey (Stanley \emph{et al.} 2004).
 }
 \references{
-  Schnute, J., Haigh R., Krishka, B., Sinclair, A. and Starr, P. (2004) 
-  The British Columbia longspine thornyhead fishery: analysis of survey and 
-  commercial data (1996-2003). \emph{Canadian Science Advisory Secretariat, 
-  Research Document} \bold{2004/059}, 75 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_059_E.htm}
+  Schnute, J., Haigh R., Krishka, B., Sinclair, A. and Starr, P. (2004)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2004/2004_059-eng.htm}{%
+  The British Columbia Longspine Thornyhead fishery: analysis of survey and commercial data (1996--2003)}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/059}, 75 p.
 
-  Stanley, R.D., Starr, P., Olsen, N. and Haigh, R. (2004) Summary of results 
-  of the 2003 Queen Charlotte Sound bottom trawl survey. \emph{Canadian Science 
-  Advisory Secretariat, Research Document} \bold{2004/028}, 50 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_028_E.htm}
+  Stanley, R.D., Starr, P., Olsen, N. and Haigh, R. (2004)
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2004/2004_028-eng.htm}{%
+  Summary of results of the 2003 Queen Charlotte Sound bottom trawl survey}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/028}, 50 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -63,4 +62,10 @@ if(any(grepl("PBSmapping",.packages()))) {
 \seealso{
   \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{qcssa}}
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2007-01-19}
+}
 \keyword{datasets}
+\concept{topo}
+

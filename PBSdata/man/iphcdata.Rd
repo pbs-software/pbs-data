@@ -19,46 +19,46 @@ data("iphcdata", package="PBSdata")
   \code{countData1995rs} -- dimension = c(365, 4), random sample?\cr
   \code{countData2013}  -- dimension = c(1304, 4)\cr
   with 4 fields each:\cr
-  \code{year.......}{1995 or 2013, depending on the dataset}\cr
-  \code{station....}{station name, to link with \code{setData1995} or \code{setData2013}}\cr
-  \code{specName...}{species name for the counts for that set}\cr
-  \code{specCount..}{count of that species for that set}
+  \code{year.......} 1995 or 2013, depending on the dataset\cr
+  \code{station....} station name, to link with \code{setData1995} or \code{setData2013}\cr
+  \code{specName...} species name for the counts for that set\cr
+  \code{specCount..} count of that species for that set
 
   Three data frames of station data for 1995|2003 IPHC surveys:\cr
   \code{setData1995} -- dimension = c(120, 5)\cr
   \code{setData1995rs} -- dimension = c(39, 5), random sample?\cr
   \code{setData2013} -- dimension = c(170, 8)\cr
   with 5 fields for 1995 and 8 fields for 2013:\cr
-  \code{lat..........}{1995 | 2013 latitude of station}\cr
-  \code{lon..........}{1995 | 2013 longitude of station}\cr
-  \code{station......}{1995 | 2013 station name}\cr
-  \code{effSkate.....}{1995 effective skate number of the set, as calculated by IPHC}\cr
-  \code{usable.......}{1995 | 2013 whether or not the set is usable,
+  \code{lat..........} 1995 | 2013 latitude of station\cr
+  \code{lon..........} 1995 | 2013 longitude of station\cr
+  \code{station......} 1995 | 2013 station name\cr
+  \code{effSkate.....} 1995 effective skate number of the set, as calculated by IPHC\cr
+  \code{usable.......} 1995 | 2013 whether or not the set is usable,
     as determined by IPHC plus four extra that had no hooks enumerated
-    except for Pacific Halibut, and so are not usable by DFO}\cr
-  \code{year.........}{2013 for this data set}\cr
-  \code{avgDepthlon..}{2013 average depth of set}\cr
-  \code{effSkateIPHC.}{2013 effective skate number of the set, as calculated by IPHC}\cr
-  \code{E_it20.......}{2013 effective skate number of the set based on the
-    first 20 hooks only, calculated as the 
-    (number of hooks observed) / (number of hooks retrieved) * effSkateIPHC}
+    except for Pacific Halibut, and so are not usable by DFO\cr
+  \code{year.........} 2013 for this data set\cr
+  \code{avgDepthlon..} 2013 average depth of set\cr
+  \code{effSkateIPHC.} 2013 effective skate number of the set, as calculated by IPHC\cr
+  \code{E_it20.......} 2013 effective skate number of the set based on the
+    first 20 hooks only, calculated as:\cr 
+    (number of hooks observed) / (number of hooks retrieved) * effSkateIPHC
   
   One data frame of set-by-set level data (with species counts) from 1996 to 2002:\cr
   \code{data1996to2002} -- dimension = c(8569, 13)\cr
   with 13 fields :\cr
-  \code{year.........}{year}\cr
-  \code{station......}{station name}\cr
-  \code{set..........}{set number within a trip (double check that)}\cr
-  \code{lat..........}{latitude of station}\cr
-  \code{lon..........}{longitude of station}\cr
-  \code{depthAvge....}{average depth of set}\cr
-  \code{spCodeIPHC...}{species code as used by the IPHC}\cr
-  \code{spNameIPHC...}{species name as used by the IPHC}\cr
-  \code{E_it.........}{effective skate number of the set calculated by IPHC (based on obs. hook numbers)}\cr
-  \code{catchCount...}{count of that species for that set}\cr
-  \code{skates.......}{number of skates on that set}\cr
-  \code{hooksObserved.}{number of hooks observed on that set}\cr
-  \code{usable.......}{whether or not the set is usable, as determined by IPHC}
+  \code{year..........} year\cr
+  \code{station.......} station name\cr
+  \code{set...........} set number within a trip (double check that)\cr
+  \code{lat...........} latitude of station\cr
+  \code{lon...........} longitude of station\cr
+  \code{depthAvge.....} average depth of set\cr
+  \code{spCodeIPHC....} species code as used by the IPHC\cr
+  \code{spNameIPHC....} species name as used by the IPHC\cr
+  \code{E_it..........} effective skate number of the set calculated by IPHC (based on obs. hook numbers)\cr
+  \code{catchCount....} count of that species for that set\cr
+  \code{skates........} number of skates on that set\cr
+  \code{hooksObserved.} number of hooks observed on that set\cr
+  \code{usable........} whether or not the set is usable, as determined by IPHC
 }
 \details{
   \code{countData1995} -- dataset containing counts of each species 
@@ -125,7 +125,7 @@ view(iphcdata)
   \href{mailto:andrew.edwards@dfo-mpo.gc.ca}{Andrew M. Edwards}, PBS, Nanaimo BC
 }
 \section{Dates}{
-  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{Rd: 2024-11-13}\cr
   Last modified \code{data: 2019-08-23}
 }
 \keyword{datasets}

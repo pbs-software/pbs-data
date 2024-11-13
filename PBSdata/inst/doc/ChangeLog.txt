@@ -7,6 +7,17 @@ Authors: RH  = Rowan Haigh
          AME = Andrew M.Edwards
 ------------------------------
 
+1.27.3 (2024-11-13)  [Rcheck=T, Rbuild=T]
+  * R code
+    + Added `dbcodes.r' in new module `C01_codes' (RH 241113)
+      - perhaps smaller data objects can be stored as ASCII for portability
+  * Data
+    + Updated catch data object `orfhistory' (RH 240313)
+    + Updated `Historical_Catch.mdb' and `Catch_Historical.xls' (RH 240313)
+    + Updated species code object `spn' (RH 240522)
+  * Documentation
+    + Fixed numerous Rcheck nonsense reports about lost braces in Rd files (RH 241113)
+
 1.27.2 (2023-06-06)  [Rcheck=T, Rbuild=T]
   * Data
     + Replaced data object `bctopo' with a version that extends eastward to include Strait of Georgia. (RH 230308)

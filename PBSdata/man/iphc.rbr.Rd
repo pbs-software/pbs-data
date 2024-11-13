@@ -20,12 +20,14 @@ data(iphc.yyr)
 }
 
 \format{
-  A data frame with 998 rows and 5 columns, where each row represents a longline set: \cr
-    \code{year......}{Calendar year} \cr
-    \code{station...}{Station identifier} \cr
-    \code{effsk.....}{Number of effective skates per longline} \cr
-    \code{pcs.......}{Catch of rockfish (pieces)} \cr
-    \code{cpue......}{CPUE of rockfish (pieces/effective skate)}
+  A data frame with 998 rows and 5 columns, where each row represents a longline set:
+  \tabular{ll}{
+    \code{year}    \tab Calendar year\cr
+    \code{station} \tab Station identifier\cr
+    \code{effsk}   \tab Number of effective skates per longline\cr
+    \code{pcs}     \tab Catch of rockfish (pieces)\cr
+    \code{cpue}    \tab CPUE of rockfish (pieces/effective skate)
+  }
 }
 \details{
   Aside from these three example data objects, the IPHC rockfish bycatch data
@@ -117,8 +119,15 @@ if(any(grepl("PBStools",.packages()))) {
 })
 }
 \seealso{
-  %\code{\link[PBStools]{trend}}, \code{\link[PBStools]{showIndices}}, 
-  \code{\link[PBSdata]{rca}}
+In package \pkg{PBSdata}:\cr
+  \code{\link[PBSdata]{rca}}\cr
+In package \pkg{PBStools}:\cr
+  \code{\link[PBStools]{trend}},
+  \code{\link[PBStools]{showIndices}}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2011-11-14}
 }
 \keyword{datasets}
-
+\concept{data}

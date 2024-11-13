@@ -11,17 +11,17 @@
 
 \format{
   A data frame with 9,565 rows and 11 columns: \cr
-    \code{EID....}{Event identification number} \cr
-    \code{X......}{Longitude (degrees W) at start position of tow} \cr
-    \code{Y......}{Latitude (degrees N) at start position of tow} \cr
-    \code{X2.....}{Longitude (degrees W) at end position of tow} \cr
-    \code{Y2.....}{Latitude (degrees N) at end position of tow} \cr
-    \code{date...}{Date in YYYY-MM-DD format} \cr
-    \code{fdep...}{Depth (m) of fishing} \cr
-    \code{eff....}{Duration (min) of trawl tow} \cr
-    \code{cfv....}{Fictitious vessel number} \cr
-    \code{POP....}{Pacific ocean perch \emph{Sebastes alutus} catch (kg) in tow} \cr
-    \code{LST....}{Longspine thornyhead \emph{Sebastolobus altivelis} catch (kg) in tow}
+    \code{EID....} Event identification number\cr
+    \code{X......} Longitude (degrees W) at start position of tow\cr
+    \code{Y......} Latitude (degrees N) at start position of tow\cr
+    \code{X2.....} Longitude (degrees W) at end position of tow\cr
+    \code{Y2.....} Latitude (degrees N) at end position of tow\cr
+    \code{date...} Date in YYYY-MM-DD format\cr
+    \code{fdep...} Depth (m) of fishing\cr
+    \code{eff....} Duration (min) of trawl tow\cr
+    \code{cfv....} Fictitious vessel number\cr
+    \code{POP....} Pacific ocean perch \emph{Sebastes alutus} catch (kg) in tow\cr
+    \code{LST....} Longspine thornyhead \emph{Sebastolobus altivelis} catch (kg) in tow
 }
 \details{
   Data subset for use with the GUI \code{dePeche Mode}.% \code{\link{creatMap}}.
@@ -32,5 +32,10 @@
 \seealso{
   \code{\link[PBSdata]{testdatR}} %, \code{\link{createMap}} 
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \keyword{datasets}
+\concept{data}
 

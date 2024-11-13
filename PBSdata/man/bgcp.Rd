@@ -3,27 +3,29 @@
 \alias{bgcp}
 \title{Topo: Biogeochemical Provinces}
 \description{
-  Polygons outlining the biogeochemical provinces of the world's oceans 
-  as defined by Dr. Alan Longhurst and others.
+  Polygons outlining the biogeochemical provinces
+  of the world's oceans as defined by Dr. Alan Longhurst and others.
 }
 \usage{data(bgcp)}
 \format{
-  Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{numeric position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
-
+  Data frame comprising 5 columns:
+  \tabular{ll}{
+    \code{PID} \tab primary polygon ID\cr
+    \code{SID} \tab secondary polygon ID\cr
+    \code{POS} \tab numeric position of each vertex within a given polygon\cr
+    \code{X}   \tab longitude coordinates\cr
+    \code{Y}   \tab latitude coordinates
+  }
   The geographic data are centered at 0 degrees on the Greenwich prime 
   meridian and span -180 to 180 degrees.
 }
 \details{
   The 13,451 vertices trace 131 contours with 18 holes. In total, 
-  there are 57 polygons describing the biogeochemical provinces (BGCP).
-  This dataset was provided by Dr. Reg Watson (\url{http://ecomarres.com/?page_id=24})
+  there are 57 polygons describing the biogeochemical provinces
+  (\href{http://ecomarres.com/?page_id=158}{BGCP}).
+  This dataset was provided by \href{http://ecomarres.com/?page_id=24}{Dr. Reg Watson}
   as an ArcView shapefile which was imported to R using \code{PBSmapping} commands: \cr
-  \code{bgcp=importShapefile("long_all.shp")} 
+  \code{bgcp=importShapefile("long_all.shp")}
 
   A data frame attached as an attribute called \code{PolyData} gives 
   details of the 57 polygons. \code{PolyData} has 19 columns: \cr
@@ -85,6 +87,18 @@ pbsfun()
 }
 }
 \seealso{
-  \code{\link[PBSdata]{ltmose07}}, \code{\link[PBSdata]{qcb}}, \code{\link[PBSdata]{trawlability}}
+In package \pkg{PBSdata}:\cr
+  \code{\link[PBSdata]{ltmose07}},
+  \code{\link[PBSdata]{qcb}},
+  \code{\link[PBSdata]{trawlability}}
+}
+\note{
+  The PBSmapping function \code{'importShapefile'} is not available in the 
+  latest version of \pkg{PBSmapping} on CRAN.
+}
+\section{Dates}{
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2008-10-15}
 }
 \keyword{datasets}
+\concept{topo}

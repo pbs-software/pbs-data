@@ -10,10 +10,10 @@
 }
 \format{
   Data frame of PMFC areas (\code{dim=c(22,4)}) with fields: \cr
-    \code{major...}{major PMFC area code} \cr
-    \code{name....}{descriptive name of the PMFC area} \cr
-    \code{lats....}{latitude range of the PMFC area (approximate in some cases)} \cr
-    \code{gmu.....}{label given to this PMFC area by DFO's Groundfish Management Unit}
+    \code{major...} major PMFC area code\cr
+    \code{name....} descriptive name of the PMFC area\cr
+    \code{lats....} latitude range of the PMFC area (approximate in some cases)\cr
+    \code{gmu.....} label given to this PMFC area by DFO's Groundfish Management Unit
 }
 \references{
   Forrester, C.R. (1969) Results of English Sole tagging in British Columbia waters. 
@@ -21,7 +21,7 @@
 
   Tagart, J. V. (1991) Population dynamics of Yellowtail Rockfish 
   (\emph{Sebastes flavidus}) stocks in the northern California to southwest 
-  Vancouver Island region. Ph.D. thesis (University of Washington). 323 pp.
+  Vancouver Island region. Ph.D. thesis (University of Washington). 323 p.
 }
 \note{
   Footnote in Forrester (1969) as \code{attributes(pmfc)$history}:
@@ -58,4 +58,10 @@ pbsfun=function(){
 pbsfun()
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2008-06-09}
+}
 \keyword{datasets}
+\concept{code}
+

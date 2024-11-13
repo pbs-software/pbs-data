@@ -10,10 +10,10 @@
 \usage{data(ltea)}
 \format{
   Data frame comprising 4 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \source{
   Polygon data in use at Fisheries and Oceans Canada (Pacific region)
@@ -25,10 +25,9 @@
 }
 \references{
   Schnute, J., Haigh, R., Krishka, B., Sinclair, A. and Starr, P. (2004) 
-  The British Columbia Longspine Thornyhead fishery: analysis of survey and 
-  commercial data (1996--2003). \emph{Canadian Science Advisory Secretariat, 
-  Research Document} \bold{2004/059}, 75 pp.\cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_059_E.htm}
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2004/2004_059-eng.htm}{%
+  The British Columbia Longspine Thornyhead fishery: analysis of survey and commercial data (1996--2003)}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/059}, 75 pp.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -46,7 +45,12 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \seealso{
   \code{\link[PBSdata]{pl230}}, \code{\link[PBSdata]{ltxa}}, \code{\link[PBSdata]{ltsa}}
 }
 \keyword{datasets}
+\concept{topo}

@@ -7,12 +7,14 @@
 }
 \usage{data(hsisob)}
 \format{
-  Data frame comprising 5 columns: \cr
-    \code{PID....}{primary polygon ID} \cr
-    \code{SID....}{secondary polygon ID} \cr
-    \code{POS....}{position of each vertex within a given polygon} \cr
-    \code{X......}{longitude coordinates} \cr
-    \code{Y......}{latitude coordinates} 
+  Data frame comprising 5 columns:
+  \tabular{ll}{
+    \code{PID} \tab primary polygon ID\cr
+    \code{SID} \tab secondary polygon ID\cr
+    \code{POS} \tab position of each vertex within a given polygon\cr
+    \code{X}   \tab longitude coordinates\cr
+    \code{Y}   \tab latitude coordinates
+  }
 }
 \details{
   The 3,151 vertices trace 2 contours. \code{PID}s are either \code{20} or \code{50}.
@@ -30,7 +32,8 @@
   Last modified \code{data: 2014-07-04}
 }
 \references{
-  \url{https://www.star.nesdis.noaa.gov/socd/lsa/AltBathy/}
+  \href{https://www.star.nesdis.noaa.gov/socd/lsa/AltBathy/}{
+  NOAA/NESDIS/STAR Laboratory for Satellite Altimetry -- Altimetric Bathymetry}
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -51,6 +54,13 @@ if(any(grepl("PBSmapping",.packages()))) {
 })
 }
 \seealso{
-  \code{\link[PBSdata]{isobath}}, \code{\link[PBSdata]{hsgrid}}
+In package \pkg{PBSdata}:\cr
+  \code{\link[PBSdata]{isobath}},
+  \code{\link[PBSdata]{hsgrid}}
+}
+\section{Dates}{
+  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{data: 2007-01-18}
 }
 \keyword{datasets}
+\concept{topo}

@@ -1,28 +1,28 @@
 \name{isobath}
 \docType{data}
 \alias{isobath}
-\title{Topo: Isobaths (100 to 1800 m, at 100 m intervals)}
+\title{Topo: Isobaths (100 to 1800 metres)}
 \description{
   PolySet of polylines describing isobaths from 100 m to 1800 m at 100 m increments.
 }
 \usage{data(isobath)}
 \format{
-  Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polyline ID} \cr
-    \code{SID...}{secondary polyline ID} \cr
-    \code{POS...}{position of each vertex within a given polyline} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+  Data frame comprising 5 columns:\cr
+    \code{PID...} primary polyline ID\cr
+    \code{SID...} secondary polyline ID\cr
+    \code{POS...} position of each vertex within a given polyline\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 23,922 vertices trace 92 contours which describe 18 isobaths.
 
   A data frame attached as an attribute called \code{PolyData} gives 
   four columns on 18 isobaths: \cr
-  \code{PID.....}{primary polyline ID,} \cr
-  \code{SID.....}{secondary polyline ID,} \cr
-  \code{label...}{isobath in metres, and} \cr
-  \code{col.....}{colour code for each isobath.}
+  \code{PID.....} primary polyline ID,\cr
+  \code{SID.....} secondary polyline ID,\cr
+  \code{label...} isobath in metres, and\cr
+  \code{col.....} colour code for each isobath.
 }
 \source{
   Polyline data in use at Fisheries and Oceans Canada (Pacific region)
@@ -38,10 +38,10 @@
   Environmental Systems Research Institute. (1996). ArcView GIS: the 
   geographic information system for everyone. ESRI Press, Redlands, California.
 
-  Schnute, J.T., Olsen, N., and Haigh, R. 1999. Slope rockfish assessment
-  for the west coast of Canada in 1999. \emph{Canadian Stock Assessment Secretariat, 
-  Research Document} \bold{99/184}, 104 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/1999/1999_184_e.htm}
+  Schnute, J.T., Olsen, N., and Haigh, R. 1999.
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/1999/1999_184-eng.htm}{%
+  Slope rockfish assessment for the west coast of Canada in 1999}.
+  \emph{Canadian Stock Assessment Secretariat, Research Document} \bold{99/184}, 104 pp. \cr
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -64,7 +64,13 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \seealso{
   \code{\link[PBSdata]{bctopo}}, \code{\link[PBSdata]{ltsa}}, \code{\link[PBSdata]{qcssa}}, \code{\link[PBSdata]{wcvisa}}
 }
 \keyword{datasets}
+\concept{topo}
+

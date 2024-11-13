@@ -11,13 +11,15 @@
 }
 \usage{data("eez.bc", package="PBSdata")}
 \format{
-  A data frame with 3986 observations on the following 6 variables. \cr
-    \code{PID......}{primary polygon ID} \cr
-    \code{POS......}{vertex position} \cr
-    \code{X........}{longitude expressed as a negative real number that represents \eqn{^\circ}{deg}W} \cr
-    \code{Y........}{latitude expressed a positive real number that represents \eqn{^\circ}{deg}N} \cr
-    \code{oldPID...}{original PID in a Polyset imported from ArcView's \code{Canada_Political} shapefile} \cr
-    \code{oldPOS...}{ditto for POS}
+  A data frame with 3986 observations on the following 6 variables.
+  \tabular{ll}{
+    \code{PID}    \tab primary polygon ID\cr
+    \code{POS}    \tab vertex position\cr
+    \code{X}      \tab longitude expressed as a negative real number that represents \eqn{^\circ}{deg}W\cr
+    \code{Y}      \tab latitude expressed a positive real number that represents \eqn{^\circ}{deg}N\cr
+    \code{oldPID} \tab original PID in a Polyset imported from ArcView's \code{Canada_Political} shapefile\cr
+    \code{oldPOS} \tab ditto for POS
+  }
 }
 \details{
   This PolySet is a polyline, so use \code{PBSmapping} functions \code{plotLines} or \code{addLines}.
@@ -26,15 +28,16 @@
   Lisa Lacko, Pacific Biological Station, Fisheries and Oceans Canada, Nanaimo BC
 }
 \seealso{
-  \bold{PBSmapping:}\cr
-  \code{plotLines},
-  \code{addLines}\cr
-  \bold{PBSvault:}\cr
+In package \pkg{PBSmapping}:\cr
+  \code{\link[PBSmapping]{plotLines}},
+  \code{\link[PBSmapping]{addLines}}\cr
+In package \pkg{PBSvault}:\cr
   \code{Canada_Political}
 }
 \section{Dates}{
-  Last modified \code{Rd: 2023-03-14}\cr
+  Last modified \code{Rd: 2024-05-22}\cr
   Last modified \code{data: 2014-07-04}
 }
 \keyword{datasets}
+\concept{topo}
 

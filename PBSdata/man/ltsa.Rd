@@ -9,21 +9,21 @@
 \usage{data(ltsa)}
 \format{
   Data frame comprising 5 columns: \cr
-    \code{PID...}{primary polygon ID} \cr
-    \code{SID...}{secondary polygon ID} \cr
-    \code{POS...}{position of each vertex within a given polygon} \cr
-    \code{X.....}{longitude coordinates} \cr
-    \code{Y.....}{latitude coordinates}
+    \code{PID...} primary polygon ID\cr
+    \code{SID...} secondary polygon ID\cr
+    \code{POS...} position of each vertex within a given polygon\cr
+    \code{X.....} longitude coordinates\cr
+    \code{Y.....} latitude coordinates
 }
 \details{
   The 9,837 vertices trace 30 contours which form 21 survey strata. 
 
   A data frame attached as an attribute called \code{PolyData} describes 
   zonation information for each of the 21 strata. \code{PolyData} has 4 columns: \cr
-  \code{PID.....}{primary polygon ID,} \cr
-  \code{dep.....}{shallowest depth of depth strata,} \cr
-  \code{azone...}{areal zone, and} \cr
-  \code{dzone...}{depth zone.}
+  \code{PID.....} primary polygon ID,\cr
+  \code{dep.....} shallowest depth of depth strata,\cr
+  \code{azone...} areal zone, and\cr
+  \code{dzone...} depth zone.
 
   The Longspine Thornyhead survey strata comprise 7 areal zones: \cr
   \code{A = Barkley}, \cr
@@ -42,28 +42,25 @@
   \emph{et al.} 2005. Survey assessment appears in Schnute \emph{et al.} (2004).
 }
 \references{
-  Krishka, B.A., Starr, P.J. and Choromanski, E.M. (2005) Longspine Thornyhead 
-  random stratified trawl survey off the West Coast of Vancouver Island, 
-  September 4--21, 2003. \emph{Canadian Technical Report of Fisheries and Aquatic 
-  Sciences} \bold{2577}, vi + 93 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
+  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002) 
+  \href{https://publications.gc.ca/site/eng/462859/publication.html}{%
+  Trawl survey for Thornyhead biomass estimation off the West Coast of Vancouver Island, September 15 to October 2, 2001}.
+  \emph{Canadian Technical Report of Fisheries and Aquatic Sciences} \bold{2421}, 60 p.
+
+  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002)
+  \href{https://publications.gc.ca/site/eng/422382/publication.html}{%
+  Longspine Thornyhead random stratified trawl survey off the West Coast of Vancouver Island, September 6--23, 2002}.
+  \emph{Canadian Technical Report of Fisheries and Aquatic Sciences} \bold{2558}, 81 p.
+
+  Krishka, B.A., Starr, P.J. and Choromanski, E.M. (2005)
+  \href{https://publications.gc.ca/site/eng/422422/publication.html}{%
+  Longspine Thornyhead random stratified trawl survey off the West Coast of Vancouver Island, September 4--21, 2003}.
+  \emph{Canadian Technical Report of Fisheries and Aquatic Sciences} \bold{2577}, vi + 93 p.
 
   Schnute, J., Haigh R., Krishka, B., Sinclair, A. and Starr, P. (2004) 
-  The British Columbia Longspine Thornyhead fishery: analysis of survey and 
-  commercial data (1996--2003). \emph{Canadian Science Advisory Secretariat, 
-  Research Document} \bold{2004/059}, 75 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/csas/CSAS/publications/ResDocs-DocRech/2004/2004_059_E.htm}
-
-  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002) Trawl survey for 
-  Thornyhead biomass estimation off the West Coast of Vancouver Island, 
-  September 15 to October 2, 2001. \emph{Canadian Technical Report of Fisheries and 
-  Aquatic Sciences} \bold{2421}, 60 pp.
-
-  Starr, P.J., Krishka, B.A. and Choromanski, E.M. (2002) Longspine Thornyhead 
-  random stratified trawl survey off the West Coast of Vancouver Island, 
-  September 6--23, 2002. \emph{Canadian Technical Report of Fisheries and Aquatic 
-  Sciences} \bold{2558}, 81 pp. \cr
-  \url{http://www.dfo-mpo.gc.ca/libraries-bibliotheques/tech-eng.htm}
+  \href{https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2004/2004_059-eng.htm}{%
+  The British Columbia Longspine Thornyhead fishery: analysis of survey and commercial data (1996--2003)}.
+  \emph{Canadian Science Advisory Secretariat, Research Document} \bold{2004/059}, 75 p.
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -81,6 +78,10 @@ if(any(grepl("PBSmapping",.packages()))) {
   cat("Load PBSmapping package to see the example.\n")
 })
 }
+\section{Dates}{
+  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{data: 2014-07-04}
+}
 \seealso{
   \code{\link[PBSdata]{ltmose07}}, 
   \code{\link[PBSdata]{ltea}}, 
@@ -89,3 +90,5 @@ if(any(grepl("PBSmapping",.packages()))) {
   \code{\link[PBSdata]{wcvisa}}
 }
 \keyword{datasets}
+\concept{topo}
+
