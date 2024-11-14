@@ -7,6 +7,18 @@ Authors: RH  = Rowan Haigh
          AME = Andrew M.Edwards
 ------------------------------
 
+1.27.4 (2024-11-14)  [Rcheck=T, Rbuild=T]
+  * R code
+    + Changed list object `dbcodes' to `gfb.codes', removing the first level (DB) in the list (RH 241113)
+      - it's far easier for a user to access a data object for each database rather than have all DB's in one list
+    + Added a new list object called `gfc.codes' for code tables in GFCatch (241114)
+  * Documentation
+    + Updated `Links.html' and added a background to the webpage (RH 241114)
+      - R check doesn't like the use of a background file in `inst/doc':
+      - The following files should probably not be installed: 'background.jpg'
+      - Consider the use of a .Rinstignore file: see 'Writing R Extensions',
+      - or move the vignette sources from 'inst/doc' to 'vignettes'.
+
 1.27.3 (2024-11-13)  [Rcheck=T, Rbuild=T]
   * R code
     + Added `dbcodes.r' in new module `C01_codes' (RH 241113)
