@@ -7,6 +7,12 @@ Authors: RH  = Rowan Haigh
          AME = Andrew M.Edwards
 ------------------------------
 
+1.27.5 (2024-11-15)  [Rcheck=T, Rbuild=T]
+  * R code
+    + Added a new list object called `fos.codes' for code tables in GFFOS (241115)
+  * Documentation
+    + Moved `Links.html' and `background.jpg' from `inst/doc' to `vignettes' (RH 241115)
+
 1.27.4 (2024-11-14)  [Rcheck=T, Rbuild=T]
   * R code
     + Changed list object `dbcodes' to `gfb.codes', removing the first level (DB) in the list (RH 241113)
