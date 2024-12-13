@@ -77,7 +77,7 @@ Code keys for databases \code{gfb} (GFCatch):
   \code{class}      \tab \code{TON}     \tab \code{Tonnage}\cr
   \code{gear}       \tab \code{GRT}     \tab \code{Gear_Type}\cr
   \code{invert}     \tab \code{SPP}     \tab \code{GFCATCH_Species}\cr
-  \code{log}        \tab \code{LOG}     \tab \code{og_Source}\cr
+  \code{log}        \tab \code{LOG}     \tab \code{Log_Source}\cr
   \code{port}       \tab \code{PRT}     \tab \code{Location}\cr
   \code{sales}      \tab \code{SAS}     \tab \code{Sales_Source}\cr
   \code{skipper}    \tab \code{SKP}     \tab \code{Skipper}\cr
@@ -100,9 +100,9 @@ Code keys for databases \code{gfb} (GFCatch):
   from DFO databases:
   \tabular{ll}{
     \code{DB}  \tab \code{DFO database}\cr
-    \code{fos} \tab \code{GFFOS}\cr
-    \code{gfb} \tab \code{GFBioSQL}\cr
-    \code{gfc} \tab \code{GFCatch}
+    \code{fos.....} \tab \code{GFFOS}\cr
+    \code{gfb.....} \tab \code{GFBioSQL}\cr
+    \code{gfc.....} \tab \code{GFCatch}
   }
 }
 \note{

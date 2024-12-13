@@ -1,17 +1,21 @@
 Package: PBSdata
-Version: 1.27.5
-Date:    2024-11-15
+Version: 1.27.6
+Date:    2024-12-13
 Title: Data, Boundaries, and Key Codes for PBS Packages
 Authors@R: c(
    person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
    person(c("Jon", "T."), "Schnute", role = "ctb", email = "schnutej@shaw.ca"),
    person("Norm", "Olsen", role = "ctb", email = "norm.olsen@dfo-mpo.gc.ca"),
    person("Lisa", "Lacko", role = "ctb", email = "lisa.lacko@dfo-mpo.gc.ca"),
-   person(c("Andrew", "M."), "Edwards", role = "ctb", email = "andrew.edwards@dfo-mpo.gc.ca"))
-Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb], Andrew M. Edwards [ctb]
+   person(c("Andrew", "M."), "Edwards", role = "ctb", email = "andrew.edwards@dfo-mpo.gc.ca"),
+   person(c("Paul", "J."), "Starr", role = "ctb", email = "paul@starrfish.net")
+   )
+Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb], 
+        Andrew M. Edwards [ctb], Paul J. Starr [ctb]
 Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
 Copyright:  2004-2024, Fisheries and Oceans Canada
-Depends: R (>= 3.5.0)
+Depends:    R (>= 3.5.0)
+Imports:    utils
 Description: Ethereal data objects to illustrate examples in 'PBStools' and to
    provide shapefiles for 'PBSmapx'. These flying objects first appeared in a
    private 'UFO' package called 'PBSdata' before they were transported to 'PBSfishery'.

@@ -4,5 +4,4 @@ exportPattern("^[^\\.]")
 exportPattern("^\\.PBS")
 
 # Packages declared in the 'Depends' field should not also be in the 'Imports' field (from R-exts.pdf).
-#import(something)
-
+importFrom("utils", "read.csv")
