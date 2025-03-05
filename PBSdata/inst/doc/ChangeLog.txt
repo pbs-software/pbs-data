@@ -7,6 +7,12 @@ Authors: RH  = Rowan Haigh
          AME = Andrew M.Edwards
 ------------------------------
 
+1.27.7 (2025-03-05)  [Rcheck=T, Rbuild=T]
+  * R code
+    + Added historical Silvergray (SGR, 405) trawl catch from Ketchen (1980_gf) to data object `rrfhistory' (RH 250304)
+  * BAT code
+    + Changed copy program from `xxcopy.exe' to `robocopy.exe' in `Rcopy.bat' (RH 250305)
+
 1.27.6 (2024-12-13)  [Rcheck=T, Rbuild=T]
   * R code
     + Added new functions `capFun' and `make.loc.pjs' in new module `A01_Utility.r' (RH 241213)
