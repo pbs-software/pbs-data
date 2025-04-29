@@ -17,9 +17,6 @@
 PBS Data ", pkg_info$Version, " -- Copyright (C) 2004-",year," Fisheries and Oceans Canada
 (Data objects for PBS packages)
 
-A complete user guide 'PBSdata-UG.pdf' is located at 
-", userguide_path, "
-
 Packaged on ", pkg_date, "
 Pacific Biological Station, Nanaimo
 

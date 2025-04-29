@@ -4,6 +4,7 @@
 ##  fos.codes.......Groundfish database codes -- GFFOS
 ##  gfb.codes.......Groundfish database codes -- GFBioSQL
 ##  gfc.codes.......Groundfish database codes -- GFCatch
+##  gfm.codes.......Groundfish database codes -- GFFOS Merged Catch (query)
 ##===============================================================================
 
 ## fos.codes ---------------------------2024-11-15
@@ -851,3 +852,55 @@ gfc.codes <- list(
 		'3071'="Yan Yuan#3", '3072'="Zolotoy", '3073'="Marlin", '3074'="Tunek", '3075'="Acrux")
 )
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gfc.codes
+
+
+## gfm.codes ---------------------------2025-04-28
+##  Groundfish database codes -- GFFOS Merged Catch
+## ---------------------------------------------RH
+gfm.codes <- list(
+	fid = c('field'="FISHERY_SECTOR FS, GEAR GC", 
+		'1'="Trawl: FS in ('GROUNDFISH TRAWL','JOINT VENTURE TRAWL')",
+		'2a'="Halibut: FS in ('HALIBUT') or ",
+		'2b'="Halibut: FS in ('HALIBUT AND SABLEFISH','K/L') and GC in ('HOOK AND LINE','LONGLINE')",
+		'3a'="Sablefish: FS in ('SABLEFISH') or",
+		'3b'="Sablefish: FS in ('HALIBUT AND SABLEFISH','K/L','K/ZN') and GC in ('TRAP')",
+		'4'="Dogfish|Lingcod: FS in ('LINGCOD','SPINY DOGFISH','SCHEDULE II')",
+		'5a'="H&L Rockfish: FS in ('ROCKFISH INSIDE','ROCKFISH OUTSIDE','ZN') or",
+		'5b'="H&L Rockfish: FS in ('K/ZN') and GC in ('HOOK AND LINE','LONGLINE')",
+		'8'="Longline: FS in ('GROUNDFISH LONGLINE')",
+		'9'="Foreign: FS in ('FOREIGN')"),
+	fid2 = c('field'="FISHERY_SECTOR FS, GEAR GC, SPECIES_CODE SC", 
+		'1a'="Bottom Trawl: FS in ('GROUNDFISH TRAWL') and GC in ('BOTTOM TRAWL') or",
+		'1b'="Bottom Trawl: FS in ('GROUNDFISH TRAWL') and GC in ('UNKNOWN TRAWL') and SC not in ('225','417','418')",
+		'2a'="Halibut: FS in ('HALIBUT') or ",
+		'2b'="Halibut: FS in ('HALIBUT AND SABLEFISH','K/L') and GC in ('HOOK AND LINE','LONGLINE')",
+		'3a'="Sablefish: FS in ('SABLEFISH') or",
+		'3b'="Sablefish: FS in ('HALIBUT AND SABLEFISH','K/L','K/ZN') and GC in ('TRAP')",
+		'4'="Dogfish|Lingcod: FS in ('LINGCOD','SPINY DOGFISH','SCHEDULE II')",
+		'5a'="H&L Rockfish: FS in ('ROCKFISH INSIDE','ROCKFISH OUTSIDE','ZN') or",
+		'5b'="H&L Rockfish: FS in ('K/ZN') and GC in ('HOOK AND LINE','LONGLINE')",
+		'6a'="Midwater Trawl: FS in ('GROUNDFISH TRAWL') and GC in ('MIDWATER TRAWL') or",
+		'6b'="Midwater Trawl: FS in ('GROUNDFISH TRAWL') and GC in ('UNKNOWN TRAWL') and SC in ('225','417','418')",
+		'8'="Longline: FS in ('GROUNDFISH LONGLINE')",
+		'9'="Foreign: FS in ('FOREIGN')"),
+	gear = c('field'="GEAR", 
+		'1'="BOTTOM TRAWL, UNKNOWN TRAWL",
+		'2'="TRAP",
+		'3'="MIDWATER TRAWL",
+		'4'="HOOK AND LINE",
+		'5'="LONGLINE"),
+	log = c('field'="LOG_TYPE",
+		'0'="UNKNOWN",
+		'1'="OBSERVER LOG",
+		'2'="FISHER LOG",
+		'3'="DMP"),
+	tar = c('field'="FISHERY_SECTOR FS, SPECIES_CODE SC",
+		'trawl'="FS in ('GROUNDFISH TRAWL','JOINT VENTURE TRAWL') and SC in All RF",
+		'halibut'="FS in ('HALIBUT','HALIBUT AND SABLEFISH','K/L') and SC in ('614')",
+		'sable'="FS in ('SABLEFISH') and SC in ('454','455')",
+		'dogfish'="FS in ('SPINY DOGFISH') and SC in ('042','044')",
+		'lingcod'="FS in ('LINGCOD') and SC in ('467')",
+		'sched2'="FS in ('SCHEDULE II') and SC in ('042','044','467')",
+		'zn'="FS in ('ROCKFISH INSIDE','ROCKFISH OUTSIDE','ZN','K/ZN') and SC in ('424','407','431','433','442')")
+)
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gfm.codes

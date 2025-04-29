@@ -3,6 +3,7 @@
 \alias{fos.codes}
 \alias{gfb.codes}
 \alias{gfc.codes}
+\alias{gfm.codes}
 \docType{data}
 \title{
   Code: Database Codes
@@ -14,6 +15,7 @@
 fos.codes
 gfb.codes
 gfc.codes
+gfm.codes
 }
 \format{
 Code keys for databases \code{fos} (GFFOS):
@@ -86,6 +88,15 @@ Code keys for databases \code{gfb} (GFCatch):
   \code{use}        \tab \code{UTZ}     \tab \code{Utilization}\cr
   \code{vessel}     \tab \code{VSL}     \tab \code{Vessel_Name}
 }
+Code keys for query \code{fos_mcatORF.sql} (GFFOS.GF_MERGED_CATCH):
+\tabular{lll}{
+  \code{key}        \tab \code{acronym} \tab \code{DB field(s)}\cr
+  \code{fid}        \tab \code{FID}     \tab \code{FISHERY_SECTOR, GEAR}\cr
+  \code{fid2}       \tab \code{FID2}    \tab \code{FISHERY_SECTOR, GEAR, SPECIES_CODE}\cr
+  \code{gear}       \tab \code{gear}    \tab \code{GEAR}\cr
+  \code{log}        \tab \code{log}    \tab \code{LOG_TYPE}\cr
+  \code{tar}        \tab \code{TAR}    \tab \code{FISHERY_SECTOR, SPECIES_CODE}
+}
 }
 \source{
   Department of Fisheries and Oceans Canada (DFO)
@@ -102,7 +113,8 @@ Code keys for databases \code{gfb} (GFCatch):
     \code{DB}  \tab \code{DFO database}\cr
     \code{fos.....} \tab \code{GFFOS}\cr
     \code{gfb.....} \tab \code{GFBioSQL}\cr
-    \code{gfc.....} \tab \code{GFCatch}
+    \code{gfc.....} \tab \code{GFCatch}\cr
+    \code{gfm.....} \tab \code{GFFOS.GF_MERGED_CATCH}
   }
 }
 \note{
@@ -114,7 +126,7 @@ Code keys for databases \code{gfb} (GFCatch):
   \href{mailto:rowan.haigh@dfo-mpo.gc.ca}{Rowan Haigh}, Program Head -- Offshore Rockfish\cr
   Pacific Biological Station (PBS), Fisheries & Oceans Canada (DFO), Nanaimo BC\cr
   \emph{locus opus}: Remote office, Vancouver BC\cr
-  Last modified \code{Rd: 2024-11-15}
+  Last modified \code{Rd: 2025-04-28}
 }
 \keyword{datasets}
 \concept{code}
