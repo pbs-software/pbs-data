@@ -9,6 +9,10 @@ Although **PBSdata** is not available on <a href="https://cran.r-project.org/">C
 
 `devtools::install_github("pbs-software/pbs-data/PBSdata")`.
 
+<font color="red"><h3>Disclaimer</h3></font>
+
+"Fisheries and Oceans Canada (DFO) GitHub project code is provided on an 'as is' basis and the user assumes responsibility for its use. DFO relinquishes control of the information and assumes no responsibility to protect the integrity, confidentiality, or availability of the information. Any claims against DFO stemming from the use of its GitHub project will be governed by all applicable Canadian Federal laws. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favouring by DFO. The Fisheries and Oceans Canada seal and logo, or the seal and logo of a DFO bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DFO or the Canadian Government.”
+
 As with any freely available product, there is no warranty or promise that **PBSdata** will be free from errors. Users should contact the package maintainer if bugs are detected.
 
 Maintainer: <a href="mailto:rowan.haigh@dfo-mpo.gc.ca">Rowan Haigh</a>

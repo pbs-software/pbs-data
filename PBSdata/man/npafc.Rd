@@ -39,13 +39,13 @@
   steelhead trout.  Anadromous stocks are the stocks of these species that 
   migrate into the Convention Area.
 
-  See \url{https://npafc.org/about/} for further details.
+  See \url{https://www.npafc.org/about/} for further details.
 }
 \source{
   Michael Folkes, Pacific Biological Station, Fisheries and Oceans Canada, Nanaimo BC
 }
 \section{Dates}{
-  Last modified \code{Rd: 2023-06-06}\cr
+  Last modified \code{Rd: 2025-06-03}\cr
   Last modified \code{data: 2015-02-16}
 }
 \keyword{datasets}

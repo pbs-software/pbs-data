@@ -3,24 +3,26 @@
 \alias{species}
 \title{Code: Species Codes and Names}
 \description{
-  Data frame of species described primarily by Hart codes. The information resides in 
-  a data table called \code{C_Species} in the relational database \code{PacHarvest},
-  and is supplemented from species codes in \code{GFBIO}.
+  Data frame of species described by Hart codes (fish) and alphanumeric codes (invertebrates).
+  The groundfish information resides in a data table called \code{C_Species}
+  in the relational database \code{PacHarvest}, and is supplemented from species 
+  codes in \code{GFBIO}.
 }
 \usage{data(species)}
 \format{
-  Data frame comprising 5139 rows (species) and 20 columns:
+  Data frame comprising 5142 rows (species) and 21 columns:
   \tabular{ll}{
-    \code{code}    \tab Hart code \cr
+    \code{code}    \tab Hart numeric codes for fish, alphanumeric codes for invertebrates\cr
     \code{latin}   \tab scientific (latin) name \cr
-    \code{name}    \tab common species name \cr
-    \code{aka}     \tab also known as \cr
+    \code{name}    \tab common species name (if one exists) \cr
+    \code{aka}     \tab spcies `also known as' \cr
     \code{code2}   \tab 2-letter code if available \cr
     \code{code3}   \tab 3-letter code if available \cr
     \code{group}   \tab alpha code used as the third letter in \code{code3} to group species by  \cr
                    \tab common name (see \code{attributes(species)$group}) \cr
     \code{taxon}   \tab numeric code used for taxonomic grouping of fish \cr
                    \tab (see \code{attributes(species)$taxa}) \cr
+    \code{spp}    \tab logical: \code{TRUE} indicates a proper species (with genus and species names)\cr
     \code{gf}      \tab logical: \code{TRUE} indicates a groundfish species \cr
     \code{rf}      \tab logical: \code{TRUE} indicates a rockfish species \cr
     \code{ff}      \tab logical: \code{TRUE} indicates a flatfish species \cr
@@ -36,15 +38,16 @@
   }
 }
 \details{
-  The data frame comprises 5,139 rows (species) and 20 columns. Hart codes for fish 
-  species essentially reference page numbers in Hart (1973). The invertebrate codes 
-  are invented as needed by Georg Jorgensen (DFO).
+  The data frame comprises 5,142 rows (at various taxonomic levels) and 21 columns.
+  Hart codes for fish species reference page numbers in Hart (1973).
+  The invertebrate codes were invented as needed by Georg Jorgensen (DFO).
 
   Quick reference to species name:  \code{species["424",]$name} yields \code{Quillback rockfish}.
 
-  Quick reference to latin name:  \code{species["424",]$latin} yields \code{Sebastes maliger}.
+  Quick reference to latin name:  \code{species["424",]$latin} yields \emph{Sebastes maliger}.
   
-  Mean weights are calculated by the SQL query \code{gfb_fishwt.sql} located in \cr
+  Mean weights are calculated by the SQL queries \code{gfb_fishwt.sql} and
+  \code{fos_fishwt.sql} located in \cr
   \code{.../library/PBStools/sql}
 }
 \source{
@@ -53,6 +56,12 @@
 \references{
   Hart, J.L. (1973) Pacific Fishes of Canada. \emph{Bulletin of the Fisheries Research 
   Board of Canada} \bold{180}, 740 pp.
+}
+\author{
+  Maintainer: \href{mailto:rowan.haigh@dfo-mpo.gc.ca}{Rowan Haigh}, Program Head -- Offshore Rockfish\cr
+  Pacific Biological Station (PBS), Fisheries & Oceans Canada (DFO), Nanaimo BC\cr
+  \emph{locus opus}: Remote office, Vancouver BC\cr
+  Last modified \code{Rd: 2025-06-02}
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -76,3 +85,5 @@ pbsfun()
   \code{\link[PBSdata]{spn}}
 }
 \keyword{datasets}
+\concept{codes}
+

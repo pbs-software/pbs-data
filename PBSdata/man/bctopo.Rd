@@ -4,8 +4,8 @@
 \title{Topo: British Columbia Sea Floor Topography}
 \description{
   Data frame of sea floor topography downloaded from \cr
-  \url{https://topex.ucsd.edu/cgi-bin/get_data.cgi} \cr and reformatted for 
-  use in by \code{makeTopography} in \code{PBSmapping}.
+  \verb{https://topex.ucsd.edu/cgi-bin/get_data.cgi} (deprecated?)\cr 
+  and reformatted for use in by \code{makeTopography} in \code{PBSmapping}.
 }
 \usage{data("bctopo", package="PBSdata")}
 \format{
@@ -29,7 +29,15 @@
 }
 \source{
   Topography Ocean Experiment (TOPEX):\cr
-  \href{https://topex.ucsd.edu/cgi-bin/get_data.cgi}{Extract XYZ grid -- topography or gravity}
+  Formerly: \href{https://topex.ucsd.edu/cgi-bin/get_data.cgi}{Extract XYZ grid -- topography or gravity} (\emph{deactivated})
+
+  Currently unsure where this portal exists (NOAA undergoing reorganisation? 250603).
+  
+  Check out: \href{https://topex.ucsd.edu/marine_topo/mar_topo.html}{%
+  Global Topography v.27.1 Apr 7, 2025}
+  
+  Possible interest: \href{https://www.ncei.noaa.gov/maps/grid-extract/}{%
+  National Centers for Environmental Information grid extract}
 }
 \examples{
 local(envir=.PBSdataEnv,expr={
@@ -66,7 +74,7 @@ In package \pkg{PBSmapping}:\cr
   \code{\link[PBSmapping]{convCP}}
 }
 \section{Dates}{
-  Last modified \code{Rd: 2024-05-22}\cr
+  Last modified \code{Rd: 2025-06-03}\cr
   Last modified \code{data: 2023-06-06}
 }
 \keyword{datasets}

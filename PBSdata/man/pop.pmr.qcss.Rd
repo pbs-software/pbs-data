@@ -26,20 +26,30 @@
 }
 \details{
   Groundfish synoptic surveys to date by survey ID \code{SID}: \cr
-  QCS Synoptic \code{c(1, 2, 3, 121, 167)} \cr
-  WCVI Synoptic \code{c(16, 70, 126)} \cr
-  WCQCI Synoptic \code{c(158, 159, 160)} \cr
-  Hecate Strait Synoptic \code{c(15, 111, 166)}
+  Queen Charlotte Sound (QCS) Synoptic (SSID 1)\cr
+    \code{...c(1, 2, 3, 121, 167, 304, 424, 448, 506, 539, 553, 582)}\cr
+  West Coast Vancouver Island (WCVI) Synoptic (SSID 4):\cr
+    \code{...c(16, 70, 126, 250, 382, 434, 472, 523, 552, 570, 609)}\cr
+  West Coast Haida Gwaii (WCHG) Synoptic (SSID 16):\cr 
+    \code{...c(122, 123, 129, 253, 383, 437, 474, 524, 547, 571, 610)}\cr
+  Hecate Strait (HS) Synoptic (SSID 3):\cr
+    \code{...c(15, 111, 166, 303, 421, 447, 504, 536, 551, 586)}
 
-  Use \code{getPMR} to get population parameters (\eqn{p}, \eqn{\mu}, \eqn{\rho}) 
+  Use \code{getPMR()} to get population parameters (\eqn{p}, \eqn{\mu}, \eqn{\rho}) 
   for other species and/or surveys.
+}
+\author{
+  Maintainer: \href{mailto:rowan.haigh@dfo-mpo.gc.ca}{Rowan Haigh}, Program Head -- Offshore Rockfish\cr
+  Pacific Biological Station (PBS), Fisheries & Oceans Canada (DFO), Nanaimo BC\cr
+  \emph{locus opus}: Remote office, Vancouver BC\cr
+  Last modified \code{Rd: 2025-06-03}
 }
 \source{
   Fisheries and Oceans Canada database \code{GFBioSQL}
 }
 \references{
   Schnute, J.T. and R. Haigh. (2003) 
-  \href{https://cdnsciencepub.com/doi/abs/10.1139/f03-041}{A simulation model for designing groundfish trawl surveys}. 
+  \href{https://doi.org/10.1139/f03-041}{A simulation model for designing groundfish trawl surveys}. 
   \emph{Canadian Journal of Fisheries and Aquatic Sciences} \bold{60}, 640--656.
 }
 \seealso{
@@ -50,7 +60,7 @@
   \code{bootBG}
 }
 \section{Dates}{
-  Last modified \code{Rd: 2024-11-13}\cr
+  Last modified \code{Rd: 2025-06-03}\cr
   Last modified \code{data: 2014-07-04}
 }
 \keyword{datasets}

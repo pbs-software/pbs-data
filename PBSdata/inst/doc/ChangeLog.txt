@@ -1,11 +1,22 @@
 PBSdata Changes
-==============================
+===================================
 Authors: RH  = Rowan Haigh
          NO  = Norm Olsen
          LL  = Lisa Lacko
          JTS = Jon T. Schnute
          AME = Andrew M.Edwards
-------------------------------
+-----------------------------------
+CRAN package version numbers follow a "major.minor.patch" format (e.g., 1.2.3), where: 
+	Major: Indicates a significant change that might break existing code.
+	Minor: Indicates the addition of new features or improvements, while generally maintaining backward compatibility.
+	Patch: Indicates bug fixes and minor improvements that do not introduce new features.
+-----------------------------------
+
+1.27.9 (2025-06-03)  [Rcheck=T, Rbuild=T]
+  * Data
+    + Removed `C01_Codes.r' and added individual code lists because the single file was becoming unwieldy (RH 250527)
+      - added `fos.codes.r', `gfb.codes.r', `gfc.codes.r', `gfm.codes.r', `pht.codes.r'
+    + Updated `species' reference object (RH 250602)
 
 1.27.8 (2025-04-28)  [Rcheck=T, Rbuild=T]
   * Data
