@@ -12,6 +12,15 @@ CRAN package version numbers follow a "major.minor.patch" format (e.g., 1.2.3), 
 	Patch: Indicates bug fixes and minor improvements that do not introduce new features.
 -----------------------------------
 
+1.28.0 (2025-06-04)  [Rcheck=T, Rbuild=T]
+  * Data
+    + Transferred `bcnames' from `PBSvault' (bcnames.csv) to `PBSdata' (bcnames.rda) (RH 250603)
+    + Transferred `bledge' from `PBSvault' to `PBSdata' (RH 250603)
+    + Updated `species.xlsx' and `species.rda' (RH 250604)
+  * Documentation
+    + Transferred `bcnames.Rd' from PBSvault to PDSdata and updated it with new information (RH 250603)
+    + Transferred `bledge.Rd' from PBSvault to PDSdata (RH 250603)
+
 1.27.9 (2025-06-03)  [Rcheck=T, Rbuild=T]
   * Data
     + Removed `C01_Codes.r' and added individual code lists because the single file was becoming unwieldy (RH 250527)
