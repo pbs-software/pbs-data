@@ -1,6 +1,6 @@
 Package: PBSdata
-Version: 1.28.0
-Date:    2025-06-04
+Version: 1.29.0
+Date:    2026-06-08
 Title: Data, Boundaries, and Key Codes
 Authors@R: c(
    person("Rowan", "Haigh", role = c("aut", "cre"), email = "rowan.haigh@dfo-mpo.gc.ca"),
@@ -13,9 +13,9 @@ Authors@R: c(
 Author: Rowan Haigh [aut, cre], Jon T. Schnute [ctb], Norm Olsen [ctb], Lisa Lacko [ctb], 
         Andrew M. Edwards [ctb], Paul J. Starr [ctb]
 Maintainer: Rowan Haigh <rowan.haigh@dfo-mpo.gc.ca>
-Copyright:  2004-2025, Fisheries and Oceans Canada
+Copyright:  2004-2026, Fisheries and Oceans Canada
 Depends:    R (>= 3.5.0)
-Imports:    utils
+Imports:    grDevices, graphics, PBSmapping, PBSmodelling, utils
 Description: Ethereal data objects to elevate examples in 'PBStools' and to
    provide shapefiles for 'PBSmapx'. These flying objects first appeared in a
    private 'UFO' package called 'PBSdata' before they were transported to 'PBSfishery'.
