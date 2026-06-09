@@ -5,12 +5,22 @@ Authors: RH  = Rowan Haigh
          LL  = Lisa Lacko
          JTS = Jon T. Schnute
          AME = Andrew M.Edwards
+         RB  = Roger Bivand
 -----------------------------------
 CRAN package version numbers follow a "major.minor.patch" format (e.g., 1.2.3), where: 
 	Major: Indicates a significant change that might break existing code.
 	Minor: Indicates the addition of new features or improvements, while generally maintaining backward compatibility.
 	Patch: Indicates bug fixes and minor improvements that do not introduce new features.
 -----------------------------------
+
+1.30.0 (2026-06-09)  [Rcheck=T, Rbuild=T]
+  * R code
+    + Added defunct PBSmapping function `importShapefile' (RH 260609)
+      - usable as long as RB's `maptools' is already installed
+      - maptools was removed from CRAN when RB retired, and so PBSmapping had to remove importShapefile
+  * Data
+    + Added the CSV file `parks-polygon-representation.csv' (modified in a few places) from City of Vancouver (RH 260609)
+
 
 1.29.0 (2026-06-08)  [Rcheck=T, Rbuild=T]
   * R code

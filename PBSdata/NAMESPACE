@@ -4,9 +4,10 @@ exportPattern("^[^\\.]")
 exportPattern("^\\.PBS")
 
 # Packages declared in the 'Depends' field should not also be in the 'Imports' field (from R-exts.pdf).
+importFrom("foreign", "read.dbf")
 importFrom("grDevices", "extendrange")
 importFrom("graphics", "box")
-importFrom("PBSmapping", "plotMap", "addPolys", "addPoints", "as.PolySet", "as.EventData")
+importFrom("PBSmapping", ".calcOrientation", ".checkRDeps", ".getBasename", "addPoints", "addPolys", "as.EventData", "as.PolySet", "placeHoles", "plotMap")
 importFrom("PBSmodelling", "expandGraph")
 importFrom("utils", "data", "read.csv", "read.table")
 

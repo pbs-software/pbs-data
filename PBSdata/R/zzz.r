@@ -33,6 +33,7 @@ Pacific Biological Station, Nanaimo
 # No Visible Bindings
 # ===================
 if(getRversion() >= "2.15.1") utils::globalVariables(names=c(
+	"bivand",
 	"lenv",
 	"nepacLLhigh"
 	), package="PBSdata")
